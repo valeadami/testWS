@@ -1,0 +1,3050 @@
+C:\Program Files\nodejs\node.exe --inspect-brk=17889 index.js 
+Debugger listening on ws://127.0.0.1:17889/460c8b48-0d9c-4820-9c7c-eb10334ce5d6
+
+For help, see: https://nodejs.org/en/docs/inspector
+
+response <?xml version="1.0" encoding="utf-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><ns1:fn_retrieve_xmlResponse soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns1="http://ws.esse3.frk.kion.it"><fn_retrieve_xmlReturn href="#id0"/><xml xsi:type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">&lt;?xml version=&quot;1.0&quot; encoding=&quot;Windows-1252&quot;?&gt;
+&lt;WS&gt;
+
+&lt;DataSet LocalEntityName=&quot;CLASSI_WS&quot;&gt;
+
+	&lt;Row Num=&quot;1&quot;&gt;
+
+		&lt;cla_m_id&gt;1&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle Lauree in biotecnologie&lt;/des&gt;
+
+		&lt;cod&gt;1&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;2&quot;&gt;
+
+		&lt;cla_m_id&gt;2&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle Lauree in scienze dei servizi giuridici&lt;/des&gt;
+
+		&lt;cod&gt;2&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;3&quot;&gt;
+
+		&lt;cla_m_id&gt;3&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in scienze della mediazione linguistica&lt;/des&gt;
+
+		&lt;cod&gt;3&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;4&quot;&gt;
+
+		&lt;cla_m_id&gt;4&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in scienze dell'architettura e dell'ingegneria edile&lt;/des&gt;
+
+		&lt;cod&gt;4&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;5&quot;&gt;
+
+		&lt;cla_m_id&gt;5&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in lettere&lt;/des&gt;
+
+		&lt;cod&gt;5&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;6&quot;&gt;
+
+		&lt;cla_m_id&gt;6&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in scienze del servizio sociale&lt;/des&gt;
+
+		&lt;cod&gt;6&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;7&quot;&gt;
+
+		&lt;cla_m_id&gt;7&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in urbanistica e scienze della pianificazione territoriale e ambientale&lt;/des&gt;
+
+		&lt;cod&gt;7&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;8&quot;&gt;
+
+		&lt;cla_m_id&gt;8&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in ingegneria civile e ambientale&lt;/des&gt;
+
+		&lt;cod&gt;8&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;9&quot;&gt;
+
+		&lt;cla_m_id&gt;9&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in ingegneria dell'informazione&lt;/des&gt;
+
+		&lt;cod&gt;9&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;10&quot;&gt;
+
+		&lt;cla_m_id&gt;10&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in ingegneria industriale&lt;/des&gt;
+
+		&lt;cod&gt;10&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;11&quot;&gt;
+
+		&lt;cla_m_id&gt;11&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in lingue e culture moderne&lt;/des&gt;
+
+		&lt;cod&gt;11&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;12&quot;&gt;
+
+		&lt;cla_m_id&gt;12&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in scienze biologiche&lt;/des&gt;
+
+		&lt;cod&gt;12&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;13&quot;&gt;
+
+		&lt;cla_m_id&gt;13&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in scienze dei beni culturali&lt;/des&gt;
+
+		&lt;cod&gt;13&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;14&quot;&gt;
+
+		&lt;cla_m_id&gt;14&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in scienze della comunicazione&lt;/des&gt;
+
+		&lt;cod&gt;14&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;15&quot;&gt;
+
+		&lt;cla_m_id&gt;15&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in scienze politiche e delle relazioni internazionali&lt;/des&gt;
+
+		&lt;cod&gt;15&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;16&quot;&gt;
+
+		&lt;cla_m_id&gt;16&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in scienze della Terra&lt;/des&gt;
+
+		&lt;cod&gt;16&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;17&quot;&gt;
+
+		&lt;cla_m_id&gt;17&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in scienze dell'economia e della gestione aziendale&lt;/des&gt;
+
+		&lt;cod&gt;17&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;18&quot;&gt;
+
+		&lt;cla_m_id&gt;18&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in scienze dell'educazione e della formazione&lt;/des&gt;
+
+		&lt;cod&gt;18&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;19&quot;&gt;
+
+		&lt;cla_m_id&gt;19&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in scienze dell'amministrazione&lt;/des&gt;
+
+		&lt;cod&gt;19&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;20&quot;&gt;
+
+		&lt;cla_m_id&gt;21&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in scienze e tecnologie chimiche&lt;/des&gt;
+
+		&lt;cod&gt;21&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;21&quot;&gt;
+
+		&lt;cla_m_id&gt;23&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in scienze e tecnologie delle arti figurative, della musica, dello spettacolo e della moda&lt;/des&gt;
+
+		&lt;cod&gt;23&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;22&quot;&gt;
+
+		&lt;cla_m_id&gt;24&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in scienze e tecnologie farmaceutiche&lt;/des&gt;
+
+		&lt;cod&gt;24&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;23&quot;&gt;
+
+		&lt;cla_m_id&gt;25&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in scienze e tecnologie fisiche&lt;/des&gt;
+
+		&lt;cod&gt;25&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;24&quot;&gt;
+
+		&lt;cla_m_id&gt;26&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in scienze e tecnologie informatiche&lt;/des&gt;
+
+		&lt;cod&gt;26&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;25&quot;&gt;
+
+		&lt;cla_m_id&gt;27&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in scienze e tecnologie per l'ambiente e la natura&lt;/des&gt;
+
+		&lt;cod&gt;27&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;26&quot;&gt;
+
+		&lt;cla_m_id&gt;28&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in scienze economiche&lt;/des&gt;
+
+		&lt;cod&gt;28&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;27&quot;&gt;
+
+		&lt;cla_m_id&gt;29&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in filosofia&lt;/des&gt;
+
+		&lt;cod&gt;29&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;28&quot;&gt;
+
+		&lt;cla_m_id&gt;31&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in scienze giuridiche&lt;/des&gt;
+
+		&lt;cod&gt;31&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;29&quot;&gt;
+
+		&lt;cla_m_id&gt;32&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in scienze matematiche&lt;/des&gt;
+
+		&lt;cod&gt;32&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;30&quot;&gt;
+
+		&lt;cla_m_id&gt;34&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in scienze e tecniche psicologiche&lt;/des&gt;
+
+		&lt;cod&gt;34&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;31&quot;&gt;
+
+		&lt;cla_m_id&gt;36&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in scienze sociologiche&lt;/des&gt;
+
+		&lt;cod&gt;36&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;32&quot;&gt;
+
+		&lt;cla_m_id&gt;37&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in scienze statistiche&lt;/des&gt;
+
+		&lt;cod&gt;37&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;33&quot;&gt;
+
+		&lt;cla_m_id&gt;38&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in scienze storiche&lt;/des&gt;
+
+		&lt;cod&gt;38&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;34&quot;&gt;
+
+		&lt;cla_m_id&gt;43&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in professioni sanitarie, infermieristiche e professione sanitaria ostetrica&lt;/des&gt;
+
+		&lt;cod&gt;SNT/1&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;35&quot;&gt;
+
+		&lt;cla_m_id&gt;44&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in professioni sanitarie della riabilitazione&lt;/des&gt;
+
+		&lt;cod&gt;SNT/2&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;36&quot;&gt;
+
+		&lt;cla_m_id&gt;45&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in professioni sanitarie tecniche&lt;/des&gt;
+
+		&lt;cod&gt;SNT/3&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;37&quot;&gt;
+
+		&lt;cla_m_id&gt;46&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in professioni sanitarie della prevenzione&lt;/des&gt;
+
+		&lt;cod&gt;SNT/4&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;38&quot;&gt;
+
+		&lt;cla_m_id&gt;1002&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in archeologia&lt;/des&gt;
+
+		&lt;cod&gt;2/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;39&quot;&gt;
+
+		&lt;cla_m_id&gt;1004&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LC5&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in architettura e ingegneria edile&lt;/des&gt;
+
+		&lt;cod&gt;4/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;40&quot;&gt;
+
+		&lt;cla_m_id&gt;1005&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in archivistica e biblioteconomia&lt;/des&gt;
+
+		&lt;cod&gt;5/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;41&quot;&gt;
+
+		&lt;cla_m_id&gt;1006&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in biologia&lt;/des&gt;
+
+		&lt;cod&gt;6/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;42&quot;&gt;
+
+		&lt;cla_m_id&gt;1009&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in biotecnologie mediche, veterinarie e farmaceutiche&lt;/des&gt;
+
+		&lt;cod&gt;9/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;43&quot;&gt;
+
+		&lt;cla_m_id&gt;1013&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in editoria, comunicazione multimediale e giornalismo&lt;/des&gt;
+
+		&lt;cod&gt;13/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;44&quot;&gt;
+
+		&lt;cla_m_id&gt;1014&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LC5&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in farmacia e farmacia industriale&lt;/des&gt;
+
+		&lt;cod&gt;14/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;45&quot;&gt;
+
+		&lt;cla_m_id&gt;1015&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in filologia e letterature dell'antichit&#xE0;&lt;/des&gt;
+
+		&lt;cod&gt;15/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;46&quot;&gt;
+
+		&lt;cla_m_id&gt;1016&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in filologia moderna&lt;/des&gt;
+
+		&lt;cod&gt;16/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;47&quot;&gt;
+
+		&lt;cla_m_id&gt;1018&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in filosofia teoretica, morale, politica ed estetica&lt;/des&gt;
+
+		&lt;cod&gt;18/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;48&quot;&gt;
+
+		&lt;cla_m_id&gt;1020&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in fisica&lt;/des&gt;
+
+		&lt;cod&gt;20/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;49&quot;&gt;
+
+		&lt;cla_m_id&gt;1021&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in geografia&lt;/des&gt;
+
+		&lt;cod&gt;21/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;50&quot;&gt;
+
+		&lt;cla_m_id&gt;1022&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in giurisprudenza&lt;/des&gt;
+
+		&lt;cod&gt;22/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;51&quot;&gt;
+
+		&lt;cla_m_id&gt;1026&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in ingegneria biomedica&lt;/des&gt;
+
+		&lt;cod&gt;26/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;52&quot;&gt;
+
+		&lt;cla_m_id&gt;1027&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in ingegneria chimica&lt;/des&gt;
+
+		&lt;cod&gt;27/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;53&quot;&gt;
+
+		&lt;cla_m_id&gt;1028&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in ingegneria civile&lt;/des&gt;
+
+		&lt;cod&gt;28/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;54&quot;&gt;
+
+		&lt;cla_m_id&gt;1029&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in ingegneria dell'automazione&lt;/des&gt;
+
+		&lt;cod&gt;29/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;55&quot;&gt;
+
+		&lt;cla_m_id&gt;1030&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in ingegneria delle telecomunicazioni&lt;/des&gt;
+
+		&lt;cod&gt;30/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;56&quot;&gt;
+
+		&lt;cla_m_id&gt;1031&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in ingegneria elettrica&lt;/des&gt;
+
+		&lt;cod&gt;31/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;57&quot;&gt;
+
+		&lt;cla_m_id&gt;1032&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in ingegneria elettronica&lt;/des&gt;
+
+		&lt;cod&gt;32/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;58&quot;&gt;
+
+		&lt;cla_m_id&gt;1034&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in ingegneria gestionale&lt;/des&gt;
+
+		&lt;cod&gt;34/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;59&quot;&gt;
+
+		&lt;cla_m_id&gt;1035&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in ingegneria informatica&lt;/des&gt;
+
+		&lt;cod&gt;35/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;60&quot;&gt;
+
+		&lt;cla_m_id&gt;1036&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in ingegneria meccanica&lt;/des&gt;
+
+		&lt;cod&gt;36/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;61&quot;&gt;
+
+		&lt;cla_m_id&gt;1037&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in ingegneria navale&lt;/des&gt;
+
+		&lt;cod&gt;37/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;62&quot;&gt;
+
+		&lt;cla_m_id&gt;1038&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in ingegneria per l'ambiente e il territorio&lt;/des&gt;
+
+		&lt;cod&gt;38/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;63&quot;&gt;
+
+		&lt;cla_m_id&gt;1039&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in interpretariato di conferenza&lt;/des&gt;
+
+		&lt;cod&gt;39/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;64&quot;&gt;
+
+		&lt;cla_m_id&gt;1042&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in lingue e letterature moderne euroamericane&lt;/des&gt;
+
+		&lt;cod&gt;42/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;65&quot;&gt;
+
+		&lt;cla_m_id&gt;1043&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in lingue straniere per la comunicazione internazionale&lt;/des&gt;
+
+		&lt;cod&gt;43/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;66&quot;&gt;
+
+		&lt;cla_m_id&gt;1045&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in matematica&lt;/des&gt;
+
+		&lt;cod&gt;45/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;67&quot;&gt;
+
+		&lt;cla_m_id&gt;1046&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LC6&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in medicina e chirurgia&lt;/des&gt;
+
+		&lt;cod&gt;46/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;68&quot;&gt;
+
+		&lt;cla_m_id&gt;1052&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LC5&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in odontoiatria e protesi dentaria&lt;/des&gt;
+
+		&lt;cod&gt;52/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;69&quot;&gt;
+
+		&lt;cla_m_id&gt;1054&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in pianificazione territoriale urbanistica e ambientale&lt;/des&gt;
+
+		&lt;cod&gt;54/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;70&quot;&gt;
+
+		&lt;cla_m_id&gt;1056&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in programmazione e gestione dei servizi educativi e formativi&lt;/des&gt;
+
+		&lt;cod&gt;56/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;71&quot;&gt;
+
+		&lt;cla_m_id&gt;1057&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in programmazione e gestione delle politiche e dei servizi sociali&lt;/des&gt;
+
+		&lt;cod&gt;57/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;72&quot;&gt;
+
+		&lt;cla_m_id&gt;1058&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in psicologia&lt;/des&gt;
+
+		&lt;cod&gt;58/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;73&quot;&gt;
+
+		&lt;cla_m_id&gt;1059&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in pubblicit&#xE0; e comunicazione d'impresa&lt;/des&gt;
+
+		&lt;cod&gt;59/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;74&quot;&gt;
+
+		&lt;cla_m_id&gt;1060&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in relazioni internazionali&lt;/des&gt;
+
+		&lt;cod&gt;60/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;75&quot;&gt;
+
+		&lt;cla_m_id&gt;1061&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in scienza e ingegneria dei materiali&lt;/des&gt;
+
+		&lt;cod&gt;61/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;76&quot;&gt;
+
+		&lt;cla_m_id&gt;1062&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in scienze chimiche&lt;/des&gt;
+
+		&lt;cod&gt;62/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;77&quot;&gt;
+
+		&lt;cla_m_id&gt;1063&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in scienze cognitive&lt;/des&gt;
+
+		&lt;cod&gt;63/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;78&quot;&gt;
+
+		&lt;cla_m_id&gt;1064&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in scienze dell'economia&lt;/des&gt;
+
+		&lt;cod&gt;64/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;79&quot;&gt;
+
+		&lt;cla_m_id&gt;1065&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in scienze dell'educazione degli adulti e della formazione continua&lt;/des&gt;
+
+		&lt;cod&gt;65/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;80&quot;&gt;
+
+		&lt;cla_m_id&gt;1066&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in scienze dell'universo&lt;/des&gt;
+
+		&lt;cod&gt;66/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;81&quot;&gt;
+
+		&lt;cla_m_id&gt;1067&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in scienze della comunicazione sociale e istituzionale&lt;/des&gt;
+
+		&lt;cod&gt;67/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;82&quot;&gt;
+
+		&lt;cla_m_id&gt;1068&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in scienze della natura&lt;/des&gt;
+
+		&lt;cod&gt;68/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;83&quot;&gt;
+
+		&lt;cla_m_id&gt;1070&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in scienze della politica&lt;/des&gt;
+
+		&lt;cod&gt;70/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;84&quot;&gt;
+
+		&lt;cla_m_id&gt;1071&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in scienze delle pubbliche amministrazioni&lt;/des&gt;
+
+		&lt;cod&gt;71/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;85&quot;&gt;
+
+		&lt;cla_m_id&gt;1073&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in scienze dello spettacolo e della produzione multimediale&lt;/des&gt;
+
+		&lt;cod&gt;73/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;86&quot;&gt;
+
+		&lt;cla_m_id&gt;1082&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in scienze e tecnologie per l'ambiente e il territorio&lt;/des&gt;
+
+		&lt;cod&gt;82/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;87&quot;&gt;
+
+		&lt;cla_m_id&gt;1083&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in scienze economiche per l'ambiente e la cultura&lt;/des&gt;
+
+		&lt;cod&gt;83/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;88&quot;&gt;
+
+		&lt;cla_m_id&gt;1084&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in scienze economico-aziendali&lt;/des&gt;
+
+		&lt;cod&gt;84/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;89&quot;&gt;
+
+		&lt;cla_m_id&gt;1085&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in scienze geofisiche&lt;/des&gt;
+
+		&lt;cod&gt;85/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;90&quot;&gt;
+
+		&lt;cla_m_id&gt;1086&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in scienze geologiche&lt;/des&gt;
+
+		&lt;cod&gt;86/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;91&quot;&gt;
+
+		&lt;cla_m_id&gt;1087&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in scienze pedagogiche&lt;/des&gt;
+
+		&lt;cod&gt;87/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;92&quot;&gt;
+
+		&lt;cla_m_id&gt;1088&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in scienze per la cooperazione allo sviluppo&lt;/des&gt;
+
+		&lt;cod&gt;88/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;93&quot;&gt;
+
+		&lt;cla_m_id&gt;1089&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in sociologia&lt;/des&gt;
+
+		&lt;cod&gt;89/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;94&quot;&gt;
+
+		&lt;cla_m_id&gt;1091&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in statistica economica, finanziaria ed attuariale&lt;/des&gt;
+
+		&lt;cod&gt;91/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;95&quot;&gt;
+
+		&lt;cla_m_id&gt;1093&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in storia antica&lt;/des&gt;
+
+		&lt;cod&gt;93/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;96&quot;&gt;
+
+		&lt;cla_m_id&gt;1094&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in storia contemporanea&lt;/des&gt;
+
+		&lt;cod&gt;94/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;97&quot;&gt;
+
+		&lt;cla_m_id&gt;1095&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in storia dell'arte&lt;/des&gt;
+
+		&lt;cod&gt;95/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;98&quot;&gt;
+
+		&lt;cla_m_id&gt;1097&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in storia medievale&lt;/des&gt;
+
+		&lt;cod&gt;97/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;99&quot;&gt;
+
+		&lt;cla_m_id&gt;1098&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in storia moderna&lt;/des&gt;
+
+		&lt;cod&gt;98/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;100&quot;&gt;
+
+		&lt;cla_m_id&gt;1099&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in studi europei&lt;/des&gt;
+
+		&lt;cod&gt;99/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;101&quot;&gt;
+
+		&lt;cla_m_id&gt;1100&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in tecniche e metodi per la societ&#xE0; dell'informazione&lt;/des&gt;
+
+		&lt;cod&gt;100/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;102&quot;&gt;
+
+		&lt;cla_m_id&gt;1101&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in teoria della comunicazione&lt;/des&gt;
+
+		&lt;cod&gt;101/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;103&quot;&gt;
+
+		&lt;cla_m_id&gt;1104&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche in traduzione letteraria e in traduzione tecnico-scientifica&lt;/des&gt;
+
+		&lt;cod&gt;104/S&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;104&quot;&gt;
+
+		&lt;cla_m_id&gt;1106&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche nelle scienze infermieristiche e ostetriche&lt;/des&gt;
+
+		&lt;cod&gt;SNT_SPEC/1&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;105&quot;&gt;
+
+		&lt;cla_m_id&gt;1107&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche nelle scienze delle professioni sanitarie della riabilitazione&lt;/des&gt;
+
+		&lt;cod&gt;SNT_SPEC/2&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;106&quot;&gt;
+
+		&lt;cla_m_id&gt;1109&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree specialistiche nelle scienze delle professioni sanitarie della prevenzione&lt;/des&gt;
+
+		&lt;cod&gt;SNT_SPEC/4&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;107&quot;&gt;
+
+		&lt;cla_m_id&gt;2001&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in Beni culturali&lt;/des&gt;
+
+		&lt;cod&gt;L-1&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;108&quot;&gt;
+
+		&lt;cla_m_id&gt;2002&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in Biotecnologie&lt;/des&gt;
+
+		&lt;cod&gt;L-2&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;109&quot;&gt;
+
+		&lt;cla_m_id&gt;2003&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in Discipline delle arti figurative, della musica, dello spettacolo e della moda&lt;/des&gt;
+
+		&lt;cod&gt;L-3&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;110&quot;&gt;
+
+		&lt;cla_m_id&gt;2005&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in Filosofia&lt;/des&gt;
+
+		&lt;cod&gt;L-5&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;111&quot;&gt;
+
+		&lt;cla_m_id&gt;2007&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in Ingegneria civile e ambientale&lt;/des&gt;
+
+		&lt;cod&gt;L-7&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;112&quot;&gt;
+
+		&lt;cla_m_id&gt;2008&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in Ingegneria dell'informazione&lt;/des&gt;
+
+		&lt;cod&gt;L-8&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;113&quot;&gt;
+
+		&lt;cla_m_id&gt;2009&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in Ingegneria industriale&lt;/des&gt;
+
+		&lt;cod&gt;L-9&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;114&quot;&gt;
+
+		&lt;cla_m_id&gt;2010&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in Lettere&lt;/des&gt;
+
+		&lt;cod&gt;L-10&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;115&quot;&gt;
+
+		&lt;cla_m_id&gt;2011&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in Lingue e culture moderne&lt;/des&gt;
+
+		&lt;cod&gt;L-11&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;116&quot;&gt;
+
+		&lt;cla_m_id&gt;2012&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in Mediazione linguistica&lt;/des&gt;
+
+		&lt;cod&gt;L-12&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;117&quot;&gt;
+
+		&lt;cla_m_id&gt;2013&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in Scienze biologiche&lt;/des&gt;
+
+		&lt;cod&gt;L-13&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;118&quot;&gt;
+
+		&lt;cla_m_id&gt;2014&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in Scienze dei servizi giuridici&lt;/des&gt;
+
+		&lt;cod&gt;L-14&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;119&quot;&gt;
+
+		&lt;cla_m_id&gt;2016&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in Scienze dell'amministrazione e dell'organizzazione&lt;/des&gt;
+
+		&lt;cod&gt;L-16&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;120&quot;&gt;
+
+		&lt;cla_m_id&gt;2017&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in Scienze dell'architettura&lt;/des&gt;
+
+		&lt;cod&gt;L-17&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;121&quot;&gt;
+
+		&lt;cla_m_id&gt;2018&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in Scienze dell'economia e della gestione aziendale&lt;/des&gt;
+
+		&lt;cod&gt;L-18&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;122&quot;&gt;
+
+		&lt;cla_m_id&gt;2019&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in Scienze dell'educazione e della formazione&lt;/des&gt;
+
+		&lt;cod&gt;L-19&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;123&quot;&gt;
+
+		&lt;cla_m_id&gt;2020&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in Scienze della comunicazione&lt;/des&gt;
+
+		&lt;cod&gt;L-20&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;124&quot;&gt;
+
+		&lt;cla_m_id&gt;2024&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in Scienze e tecniche psicologiche&lt;/des&gt;
+
+		&lt;cod&gt;L-24&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;125&quot;&gt;
+
+		&lt;cla_m_id&gt;2027&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in Scienze e tecnologie chimiche&lt;/des&gt;
+
+		&lt;cod&gt;L-27&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;126&quot;&gt;
+
+		&lt;cla_m_id&gt;2030&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in Scienze e tecnologie fisiche&lt;/des&gt;
+
+		&lt;cod&gt;L-30&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;127&quot;&gt;
+
+		&lt;cla_m_id&gt;2032&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in Scienze e tecnologie per l'ambiente e la natura&lt;/des&gt;
+
+		&lt;cod&gt;L-32&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;128&quot;&gt;
+
+		&lt;cla_m_id&gt;2033&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in Scienze economiche&lt;/des&gt;
+
+		&lt;cod&gt;L-33&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;129&quot;&gt;
+
+		&lt;cla_m_id&gt;2034&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in Scienze geologiche&lt;/des&gt;
+
+		&lt;cod&gt;L-34&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;130&quot;&gt;
+
+		&lt;cla_m_id&gt;2035&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in Scienze matematiche&lt;/des&gt;
+
+		&lt;cod&gt;L-35&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;131&quot;&gt;
+
+		&lt;cla_m_id&gt;2036&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in Scienze politiche e delle relazioni internazionali&lt;/des&gt;
+
+		&lt;cod&gt;L-36&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;132&quot;&gt;
+
+		&lt;cla_m_id&gt;2039&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in Servizio sociale&lt;/des&gt;
+
+		&lt;cod&gt;L-39&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;133&quot;&gt;
+
+		&lt;cla_m_id&gt;2041&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in Statistica&lt;/des&gt;
+
+		&lt;cod&gt;L-41&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;134&quot;&gt;
+
+		&lt;cla_m_id&gt;2042&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in Storia&lt;/des&gt;
+
+		&lt;cod&gt;L-42&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;135&quot;&gt;
+
+		&lt;cla_m_id&gt;2046&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in Professioni sanitarie, infermieristiche e professione sanitaria ostetrica&lt;/des&gt;
+
+		&lt;cod&gt;L/SNT1&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;136&quot;&gt;
+
+		&lt;cla_m_id&gt;2047&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in Professioni sanitarie della riabilitazione&lt;/des&gt;
+
+		&lt;cod&gt;L/SNT2&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;137&quot;&gt;
+
+		&lt;cla_m_id&gt;2048&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in Professioni sanitarie tecniche&lt;/des&gt;
+
+		&lt;cod&gt;L/SNT3&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;138&quot;&gt;
+
+		&lt;cla_m_id&gt;2049&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;L2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree in Professioni sanitarie della prevenzione&lt;/des&gt;
+
+		&lt;cod&gt;L/SNT4&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;139&quot;&gt;
+
+		&lt;cla_m_id&gt;3001&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LM5&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree magistrali in giurisprudenza&lt;/des&gt;
+
+		&lt;cod&gt;LMG/01&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;140&quot;&gt;
+
+		&lt;cla_m_id&gt;3003&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LM&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree magistrali in Archeologia&lt;/des&gt;
+
+		&lt;cod&gt;LM-2&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;141&quot;&gt;
+
+		&lt;cla_m_id&gt;3005&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LM&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree magistrali in Architettura e ingegneria edile-architettura&lt;/des&gt;
+
+		&lt;cod&gt;LM-4&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;142&quot;&gt;
+
+		&lt;cla_m_id&gt;3007&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LM&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree magistrali in Biologia&lt;/des&gt;
+
+		&lt;cod&gt;LM-6&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;143&quot;&gt;
+
+		&lt;cla_m_id&gt;3010&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LM&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree magistrali in Biotecnologie mediche, veterinarie e farmaceutiche&lt;/des&gt;
+
+		&lt;cod&gt;LM-9&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;144&quot;&gt;
+
+		&lt;cla_m_id&gt;3014&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LM5&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree magistrali in Farmacia e farmacia industriale&lt;/des&gt;
+
+		&lt;cod&gt;LM-13&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;145&quot;&gt;
+
+		&lt;cla_m_id&gt;3015&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LM&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree magistrali in Filologia moderna&lt;/des&gt;
+
+		&lt;cod&gt;LM-14&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;146&quot;&gt;
+
+		&lt;cla_m_id&gt;3016&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LM&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree magistrali in Filologia, letterature e storia dell'antichit&#xE0;&lt;/des&gt;
+
+		&lt;cod&gt;LM-15&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;147&quot;&gt;
+
+		&lt;cla_m_id&gt;3018&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LM&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree magistrali in Fisica&lt;/des&gt;
+
+		&lt;cod&gt;LM-17&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;148&quot;&gt;
+
+		&lt;cla_m_id&gt;3019&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LM&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree magistrali in Informatica&lt;/des&gt;
+
+		&lt;cod&gt;LM-18&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;149&quot;&gt;
+
+		&lt;cla_m_id&gt;3022&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LM&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree magistrali in Ingegneria biomedica&lt;/des&gt;
+
+		&lt;cod&gt;LM-21&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;150&quot;&gt;
+
+		&lt;cla_m_id&gt;3023&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LM&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree magistrali in Ingegneria chimica&lt;/des&gt;
+
+		&lt;cod&gt;LM-22&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;151&quot;&gt;
+
+		&lt;cla_m_id&gt;3024&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LM&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree magistrali in Ingegneria civile&lt;/des&gt;
+
+		&lt;cod&gt;LM-23&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;152&quot;&gt;
+
+		&lt;cla_m_id&gt;3028&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LM&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree magistrali in Ingegneria delle telecomunicazioni&lt;/des&gt;
+
+		&lt;cod&gt;LM-27&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;153&quot;&gt;
+
+		&lt;cla_m_id&gt;3029&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LM&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree magistrali in Ingegneria elettrica&lt;/des&gt;
+
+		&lt;cod&gt;LM-28&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;154&quot;&gt;
+
+		&lt;cla_m_id&gt;3030&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LM&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree magistrali in Ingegneria elettronica&lt;/des&gt;
+
+		&lt;cod&gt;LM-29&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;155&quot;&gt;
+
+		&lt;cla_m_id&gt;3032&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LM&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree magistrali in Ingegneria gestionale&lt;/des&gt;
+
+		&lt;cod&gt;LM-31&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;156&quot;&gt;
+
+		&lt;cla_m_id&gt;3033&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LM&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree magistrali in Ingegneria informatica&lt;/des&gt;
+
+		&lt;cod&gt;LM-32&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;157&quot;&gt;
+
+		&lt;cla_m_id&gt;3034&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LM&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree magistrali in Ingegneria meccanica&lt;/des&gt;
+
+		&lt;cod&gt;LM-33&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;158&quot;&gt;
+
+		&lt;cla_m_id&gt;3035&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LM&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree magistrali in Ingegneria navale&lt;/des&gt;
+
+		&lt;cod&gt;LM-34&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;159&quot;&gt;
+
+		&lt;cla_m_id&gt;3038&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LM&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree magistrali in Lingue e letterature moderne europee e americane&lt;/des&gt;
+
+		&lt;cod&gt;LM-37&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;160&quot;&gt;
+
+		&lt;cla_m_id&gt;3041&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LM&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree magistrali in Matematica&lt;/des&gt;
+
+		&lt;cod&gt;LM-40&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;161&quot;&gt;
+
+		&lt;cla_m_id&gt;3042&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LM6&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree magistrali in Medicina e chirurgia&lt;/des&gt;
+
+		&lt;cod&gt;LM-41&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;162&quot;&gt;
+
+		&lt;cla_m_id&gt;3045&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LM&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree magistrali in Modellistica matematico-fisica per l'ingegneria&lt;/des&gt;
+
+		&lt;cod&gt;LM-44&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;163&quot;&gt;
+
+		&lt;cla_m_id&gt;3047&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LM6&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree magistrali in Odontoiatria e protesi dentaria&lt;/des&gt;
+
+		&lt;cod&gt;LM-46&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;164&quot;&gt;
+
+		&lt;cla_m_id&gt;3052&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LM&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree magistrali in Psicologia&lt;/des&gt;
+
+		&lt;cod&gt;LM-51&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;165&quot;&gt;
+
+		&lt;cla_m_id&gt;3053&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LM&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree magistrali in Relazioni internazionali&lt;/des&gt;
+
+		&lt;cod&gt;LM-52&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;166&quot;&gt;
+
+		&lt;cla_m_id&gt;3054&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LM&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree magistrali in Scienza e ingegneria dei materiali&lt;/des&gt;
+
+		&lt;cod&gt;LM-53&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;167&quot;&gt;
+
+		&lt;cla_m_id&gt;3055&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LM&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree magistrali in Scienze chimiche&lt;/des&gt;
+
+		&lt;cod&gt;LM-54&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;168&quot;&gt;
+
+		&lt;cla_m_id&gt;3057&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LM&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree magistrali in Scienze dell'economia&lt;/des&gt;
+
+		&lt;cod&gt;LM-56&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;169&quot;&gt;
+
+		&lt;cla_m_id&gt;3059&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LM&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree magistrali in Scienze dell'universo&lt;/des&gt;
+
+		&lt;cod&gt;LM-58&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;170&quot;&gt;
+
+		&lt;cla_m_id&gt;3060&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LM&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree magistrali in Scienze della comunicazione pubblica, d'impresa e pubblicit&#xE0;&lt;/des&gt;
+
+		&lt;cod&gt;LM-59&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;171&quot;&gt;
+
+		&lt;cla_m_id&gt;3061&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LM&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree magistrali in Scienze della natura&lt;/des&gt;
+
+		&lt;cod&gt;LM-60&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;172&quot;&gt;
+
+		&lt;cla_m_id&gt;3063&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LM&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree magistrali in Scienze della politica&lt;/des&gt;
+
+		&lt;cod&gt;LM-62&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;173&quot;&gt;
+
+		&lt;cla_m_id&gt;3064&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LM&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree magistrali in Scienze delle pubbliche amministrazioni&lt;/des&gt;
+
+		&lt;cod&gt;LM-63&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;174&quot;&gt;
+
+		&lt;cla_m_id&gt;3075&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LM&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree magistrali in Scienze e tecnologie geologiche&lt;/des&gt;
+
+		&lt;cod&gt;LM-74&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;175&quot;&gt;
+
+		&lt;cla_m_id&gt;3076&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LM&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree magistrali in Scienze e tecnologie per l'ambiente e il territorio&lt;/des&gt;
+
+		&lt;cod&gt;LM-75&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;176&quot;&gt;
+
+		&lt;cla_m_id&gt;3078&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LM&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree magistrali in Scienze economico-aziendali&lt;/des&gt;
+
+		&lt;cod&gt;LM-77&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;177&quot;&gt;
+
+		&lt;cla_m_id&gt;3079&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LM&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree magistrali in Scienze filosofiche&lt;/des&gt;
+
+		&lt;cod&gt;LM-78&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;178&quot;&gt;
+
+		&lt;cla_m_id&gt;3082&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LM&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree magistrali in Scienze per la cooperazione allo sviluppo&lt;/des&gt;
+
+		&lt;cod&gt;LM-81&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;179&quot;&gt;
+
+		&lt;cla_m_id&gt;3084&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LM&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree magistrali in Scienze statistiche attuariali e finanziarie&lt;/des&gt;
+
+		&lt;cod&gt;LM-83&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;180&quot;&gt;
+
+		&lt;cla_m_id&gt;3085&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LM&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree magistrali in Scienze storiche&lt;/des&gt;
+
+		&lt;cod&gt;LM-84&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;181&quot;&gt;
+
+		&lt;cla_m_id&gt;3088&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LM&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree magistrali in Servizio sociale e politiche sociali&lt;/des&gt;
+
+		&lt;cod&gt;LM-87&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;182&quot;&gt;
+
+		&lt;cla_m_id&gt;3089&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LM&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree magistrali in Sociologia e ricerca sociale&lt;/des&gt;
+
+		&lt;cod&gt;LM-88&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;183&quot;&gt;
+
+		&lt;cla_m_id&gt;3090&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LM&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree magistrali in Storia dell'arte&lt;/des&gt;
+
+		&lt;cod&gt;LM-89&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;184&quot;&gt;
+
+		&lt;cla_m_id&gt;3095&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LM&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree magistrali in Traduzione specialistica e interpretariato&lt;/des&gt;
+
+		&lt;cod&gt;LM-94&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;185&quot;&gt;
+
+		&lt;cla_m_id&gt;3110&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LM&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree magistrali in Scienze riabilitative delle professioni sanitarie&lt;/des&gt;
+
+		&lt;cod&gt;LM/SNT2&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;186&quot;&gt;
+
+		&lt;cla_m_id&gt;3112&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LM&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree magistrali in Scienze delle professioni sanitarie della prevenzione&lt;/des&gt;
+
+		&lt;cod&gt;LM/SNT4&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;187&quot;&gt;
+
+		&lt;cla_m_id&gt;3119&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;LM5&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle lauree magistrali in Architettura e ingegneria edile-architettura (quinquennale)&lt;/des&gt;
+
+		&lt;cod&gt;LM-4 c.u.&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;188&quot;&gt;
+
+		&lt;cla_m_id&gt;5001&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;SP5&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe Medicina clinica generale&lt;/des&gt;
+
+		&lt;cod&gt;SAS-5001&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;189&quot;&gt;
+
+		&lt;cla_m_id&gt;5002&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;SP5&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe Medicina specialistica&lt;/des&gt;
+
+		&lt;cod&gt;SAS-5002&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;190&quot;&gt;
+
+		&lt;cla_m_id&gt;5003&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;SP5&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe Neuroscienze e scienze cliniche del comportamento&lt;/des&gt;
+
+		&lt;cod&gt;SAS-5003&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;191&quot;&gt;
+
+		&lt;cla_m_id&gt;5004&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;SP5&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe Medicina clinica dell'et&#xE0; evolutiva&lt;/des&gt;
+
+		&lt;cod&gt;SAS-5004&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;192&quot;&gt;
+
+		&lt;cla_m_id&gt;5005&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;SP5&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle Chirurgie generali&lt;/des&gt;
+
+		&lt;cod&gt;SAS-5005&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;193&quot;&gt;
+
+		&lt;cla_m_id&gt;5006&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;SP5&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle Chirurgie specialistiche&lt;/des&gt;
+
+		&lt;cod&gt;SAS-5006&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;194&quot;&gt;
+
+		&lt;cla_m_id&gt;5007&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;SP5&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle Chirurgie del distretto testa e collo&lt;/des&gt;
+
+		&lt;cod&gt;SAS-5007&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;195&quot;&gt;
+
+		&lt;cla_m_id&gt;5008&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;SP5&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle Chirurgie cardio-toraco-vascolari&lt;/des&gt;
+
+		&lt;cod&gt;SAS-5008&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;196&quot;&gt;
+
+		&lt;cla_m_id&gt;5010&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;SP5&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe della diagnostica per immagini e radioterapia&lt;/des&gt;
+
+		&lt;cod&gt;SAS-5010&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;197&quot;&gt;
+
+		&lt;cla_m_id&gt;5011&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;SP5&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe dei servizi clinici specialistici&lt;/des&gt;
+
+		&lt;cod&gt;SAS-5011&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;198&quot;&gt;
+
+		&lt;cla_m_id&gt;5014&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;SP5&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe della sanit&#xE0; pubblica&lt;/des&gt;
+
+		&lt;cod&gt;SAS-5014&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;199&quot;&gt;
+
+		&lt;cla_m_id&gt;5065&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;SP6&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle Chirurgie generali&lt;/des&gt;
+
+		&lt;cod&gt;SAS-5005-6&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;200&quot;&gt;
+
+		&lt;cla_m_id&gt;5201&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;SP2&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Beni archeologici&lt;/des&gt;
+
+		&lt;cod&gt;SAB-5201&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;201&quot;&gt;
+
+		&lt;cla_m_id&gt;5301&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;SP5&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Area psicologica&lt;/des&gt;
+
+		&lt;cod&gt;SAP-5301&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;202&quot;&gt;
+
+		&lt;cla_m_id&gt;5501&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;SP5&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe della Medicina clinica generale e specialistica&lt;/des&gt;
+
+		&lt;cod&gt;SAS-5501&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;203&quot;&gt;
+
+		&lt;cla_m_id&gt;5503&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;SP4&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle Neuroscienze e scienze cliniche del comportamento&lt;/des&gt;
+
+		&lt;cod&gt;SAS-5503&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;204&quot;&gt;
+
+		&lt;cla_m_id&gt;5504&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;SP5&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe della Medicina clinica dell'et&#xE0; evolutiva&lt;/des&gt;
+
+		&lt;cod&gt;SAS-5504&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;205&quot;&gt;
+
+		&lt;cla_m_id&gt;5505&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;SP5&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle Chirurgie generali e specialistiche&lt;/des&gt;
+
+		&lt;cod&gt;SAS-5505&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;206&quot;&gt;
+
+		&lt;cla_m_id&gt;5510&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;SP4&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe della diagnostica per immagini e radioterapia&lt;/des&gt;
+
+		&lt;cod&gt;SAS-5510&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;207&quot;&gt;
+
+		&lt;cla_m_id&gt;5511&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;SP5&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe dei servizi clinici specialistici&lt;/des&gt;
+
+		&lt;cod&gt;SAS-5511&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;208&quot;&gt;
+
+		&lt;cla_m_id&gt;5512&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;SP4&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe dei servizi clinici biomedici&lt;/des&gt;
+
+		&lt;cod&gt;SAS-5512&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;209&quot;&gt;
+
+		&lt;cla_m_id&gt;5513&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;SP3&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle specializzazioni in odontoiatria&lt;/des&gt;
+
+		&lt;cod&gt;SAS-5513&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;210&quot;&gt;
+
+		&lt;cla_m_id&gt;5514&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;SP4&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe della sanit&#xE0; pubblica&lt;/des&gt;
+
+		&lt;cod&gt;SAS-5514&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;211&quot;&gt;
+
+		&lt;cla_m_id&gt;5517&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;SP4&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe Medicina clinica generale e specialistica&lt;/des&gt;
+
+		&lt;cod&gt;SAS-5517&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;212&quot;&gt;
+
+		&lt;cla_m_id&gt;5518&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;SP4&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe delle Chirurgie del distretto testa e collo&lt;/des&gt;
+
+		&lt;cod&gt;SAS-5518&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;213&quot;&gt;
+
+		&lt;cla_m_id&gt;5522&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;SP4&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;Classe dei servizi clinici specialistici biomedici (non medici)&lt;/des&gt;
+
+		&lt;cod&gt;SAS-5512.&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;214&quot;&gt;
+
+		&lt;cla_m_id&gt;6004&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;TFA&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;ITALIANO, STORIA  E GEOGRAFIA NELLA SCUOLA SECONDARIA DI I GRADO&lt;/des&gt;
+
+		&lt;cod&gt;A043&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;215&quot;&gt;
+
+		&lt;cla_m_id&gt;6005&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;TFA&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;MATEMATICHE E SCIENZE NELLA SCUOLA SECONDARIA DI I GRADO&lt;/des&gt;
+
+		&lt;cod&gt;A059&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;216&quot;&gt;
+
+		&lt;cla_m_id&gt;6014&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;TFA&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;CHIMICA E TECNOLOGIE CHIMICHE&lt;/des&gt;
+
+		&lt;cod&gt;A013&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;217&quot;&gt;
+
+		&lt;cla_m_id&gt;6016&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;TFA&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;DISCIPLINE ECONOMICO-AZIENDALI&lt;/des&gt;
+
+		&lt;cod&gt;A017&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;218&quot;&gt;
+
+		&lt;cla_m_id&gt;6017&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;TFA&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;DISCIPLINE GIURIDICHE ED ECONOMICHE&lt;/des&gt;
+
+		&lt;cod&gt;A019&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;219&quot;&gt;
+
+		&lt;cla_m_id&gt;6022&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;TFA&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;FILOSOFIA, PSICOLOGIA E SCIENZE DELL'EDUCAZIONE&lt;/des&gt;
+
+		&lt;cod&gt;A036&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;220&quot;&gt;
+
+		&lt;cla_m_id&gt;6023&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;TFA&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;FILOSOFIA E STORIA&lt;/des&gt;
+
+		&lt;cod&gt;A037&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;221&quot;&gt;
+
+		&lt;cla_m_id&gt;6025&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;TFA&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;GEOGRAFIA&lt;/des&gt;
+
+		&lt;cod&gt;A039&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;222&quot;&gt;
+
+		&lt;cla_m_id&gt;6029&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;TFA&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;MATEMATICA E FISICA&lt;/des&gt;
+
+		&lt;cod&gt;A049&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;223&quot;&gt;
+
+		&lt;cla_m_id&gt;6030&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;TFA&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;MATERIE LETTERARIE NEGLI ISTITUTI DI ISTRUZIONE SECONDARIA DI II GRADO&lt;/des&gt;
+
+		&lt;cod&gt;A050&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;224&quot;&gt;
+
+		&lt;cla_m_id&gt;6031&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;TFA&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;MATERIE LETTERARIE E LATINO NEI LICEI E NELL'ISTITUTO MAGISTRALE&lt;/des&gt;
+
+		&lt;cod&gt;A051&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;225&quot;&gt;
+
+		&lt;cla_m_id&gt;6032&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;TFA&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;MATERIE LETTERARIE, LATINO E GRECO NEL LICEO CLASSICO&lt;/des&gt;
+
+		&lt;cod&gt;A052&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;226&quot;&gt;
+
+		&lt;cla_m_id&gt;6033&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;TFA&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;SCIENZA DEGLI ALIMENTI&lt;/des&gt;
+
+		&lt;cod&gt;A057&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;227&quot;&gt;
+
+		&lt;cla_m_id&gt;6035&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;TFA&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;SCIENZE NATURALI, CHIMICA E GEOGRAFIA, MICROBIOLOGIA&lt;/des&gt;
+
+		&lt;cod&gt;A060&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;228&quot;&gt;
+
+		&lt;cla_m_id&gt;6036&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;TFA&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;STORIA DELL'ARTE&lt;/des&gt;
+
+		&lt;cod&gt;A061&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;229&quot;&gt;
+
+		&lt;cla_m_id&gt;6048&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;TFA&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;MATERIE LETTERARIE NEGLI ISTITUTI DI II GRADO DI LINGUA SLOVENA&lt;/des&gt;
+
+		&lt;cod&gt;A082&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;230&quot;&gt;
+
+		&lt;cla_m_id&gt;6072&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;TFA&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;CHIMICA AGRARIA&lt;/des&gt;
+
+		&lt;cod&gt;A012&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;231&quot;&gt;
+
+		&lt;cla_m_id&gt;6085&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;TFA&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;IGIENE, ANATOMIA, FISIOLOGIA, PATOLOGIA GENERALE E DELL'APPARATO MASTICATORIO&lt;/des&gt;
+
+		&lt;cod&gt;A040&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;232&quot;&gt;
+
+		&lt;cla_m_id&gt;6509&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;TFA&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;A043,A050: ITALIANO, STORIA  E GEOGRAFIA NELLA SCUOLA SECONDARIA DI I GRADO, MATERIE LETTERARIE NEGLI ISTITUTI DI ISTRUZIONE SECONDARIA DI II GRADO&lt;/des&gt;
+
+		&lt;cod&gt;AC05&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;233&quot;&gt;
+
+		&lt;cla_m_id&gt;7005&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;PAS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;MATEMATICHE E SCIENZE NELLA SCUOLA SECONDARIA DI I GRADO&lt;/des&gt;
+
+		&lt;cod&gt;A059-PAS&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;234&quot;&gt;
+
+		&lt;cla_m_id&gt;7008&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;PAS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;ITALIANO NELLA SCUOLA MEDIA CON LINGUA DI INSEGNAMENTO SLOVENA&lt;/des&gt;
+
+		&lt;cod&gt;A080-PAS&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;235&quot;&gt;
+
+		&lt;cla_m_id&gt;7009&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;PAS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;SLOVENO,STORIA ED EDCIVICA E GEOGRAFIA NELLA SCUOLA MEDIA CON LINGUA SLOVENA&lt;/des&gt;
+
+		&lt;cod&gt;A085-PAS&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;236&quot;&gt;
+
+		&lt;cla_m_id&gt;7014&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;PAS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;CHIMICA E TECNOLOGIE CHIMICHE&lt;/des&gt;
+
+		&lt;cod&gt;A013-PAS&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;237&quot;&gt;
+
+		&lt;cla_m_id&gt;7016&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;PAS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;DISCIPLINE ECONOMICO-AZIENDALI&lt;/des&gt;
+
+		&lt;cod&gt;A017-PAS&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;238&quot;&gt;
+
+		&lt;cla_m_id&gt;7017&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;PAS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;DISCIPLINE GIURIDICHE ED ECONOMICHE&lt;/des&gt;
+
+		&lt;cod&gt;A019-PAS&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;239&quot;&gt;
+
+		&lt;cla_m_id&gt;7022&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;PAS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;FILOSOFIA, PSICOLOGIA E SCIENZE DELL'EDUCAZIONE&lt;/des&gt;
+
+		&lt;cod&gt;A036-PAS&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;240&quot;&gt;
+
+		&lt;cla_m_id&gt;7023&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;PAS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;FILOSOFIA E STORIA&lt;/des&gt;
+
+		&lt;cod&gt;A037-PAS&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;241&quot;&gt;
+
+		&lt;cla_m_id&gt;7025&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;PAS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;GEOGRAFIA&lt;/des&gt;
+
+		&lt;cod&gt;A039-PAS&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;242&quot;&gt;
+
+		&lt;cla_m_id&gt;7029&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;PAS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;MATEMATICA E FISICA&lt;/des&gt;
+
+		&lt;cod&gt;A049-PAS&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;243&quot;&gt;
+
+		&lt;cla_m_id&gt;7030&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;PAS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;MATERIE LETTERARIE NEGLI ISTITUTI DI ISTRUZIONE SECONDARIA DI II GRADO&lt;/des&gt;
+
+		&lt;cod&gt;A050-PAS&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;244&quot;&gt;
+
+		&lt;cla_m_id&gt;7031&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;PAS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;MATERIE LETTERARIE E LATINO NEI LICEI E NELL'ISTITUTO MAGISTRALE&lt;/des&gt;
+
+		&lt;cod&gt;A051-PAS&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;245&quot;&gt;
+
+		&lt;cla_m_id&gt;7032&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;PAS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;MATERIE LETTERARIE, LATINO E GRECO NEL LICEO CLASSICO&lt;/des&gt;
+
+		&lt;cod&gt;A052-PAS&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;246&quot;&gt;
+
+		&lt;cla_m_id&gt;7033&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;PAS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;SCIENZA DEGLI ALIMENTI&lt;/des&gt;
+
+		&lt;cod&gt;A057-PAS&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;247&quot;&gt;
+
+		&lt;cla_m_id&gt;7035&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;PAS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;SCIENZE NATURALI, CHIMICA E GEOGRAFIA, MICROBIOLOGIA&lt;/des&gt;
+
+		&lt;cod&gt;A060-PAS&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;248&quot;&gt;
+
+		&lt;cla_m_id&gt;7048&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;PAS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;MATERIE LETTERARIE NEGLI ISTITUTI DI II GRADO DI LINGUA SLOVENA&lt;/des&gt;
+
+		&lt;cod&gt;A082-PAS&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;249&quot;&gt;
+
+		&lt;cla_m_id&gt;7072&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;PAS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;CHIMICA AGRARIA&lt;/des&gt;
+
+		&lt;cod&gt;A012-PAS&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;250&quot;&gt;
+
+		&lt;cla_m_id&gt;7085&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;PAS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;IGIENE, ANATOMIA, FISIOLOGIA, PATOLOGIA GENERALE E DELL'APPARATO MASTICATORIO&lt;/des&gt;
+
+		&lt;cod&gt;A040-PAS&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;251&quot;&gt;
+
+		&lt;cla_m_id&gt;7146&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;PAS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;LABORATORIO DI CHIMICA E CHIMICA INDUSTRIALE&lt;/des&gt;
+
+		&lt;cod&gt;C240-PAS&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;252&quot;&gt;
+
+		&lt;cla_m_id&gt;7157&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;PAS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;LABORATORIO DI TECNICA MICROBIOLOGICA&lt;/des&gt;
+
+		&lt;cod&gt;C350-PAS&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+	&lt;Row Num=&quot;253&quot;&gt;
+
+		&lt;cla_m_id&gt;7422&lt;/cla_m_id&gt;
+
+		&lt;tipo_corso_cod&gt;PAS&lt;/tipo_corso_cod&gt;
+
+		&lt;des&gt;LINGUA STRANIERA (SLOVENO) &lt;/des&gt;
+
+		&lt;cod&gt;A845-PAS&lt;/cod&gt;
+
+	&lt;/Row&gt;
+
+&lt;/DataSet&gt;
+
+&lt;/WS&gt;
+</xml></ns1:fn_retrieve_xmlResponse><multiRef id="id0" soapenc:root="0" soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="xsd:int" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">1</multiRef></soapenv:Body></soapenv:Envelope>

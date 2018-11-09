@@ -1,0 +1,43 @@
+<% include _header %>
+<h1>Welcome to Progetto AMO_TS</h1>
+<div class="panel panel-default"></div>
+<div class="panel-heading"></div>
+<p class="panel-heading"> <%= message %> </p>
+
+
+    <table border="0"   style="width:30%"cellpadding="20">
+        <tr>
+        
+                <td> 
+                    <form name="f1"  method="POST"  action="login" >
+                        <table border="0" cellpadding="5">
+                        
+                        <tr><td>Username: </td><td><input type="text" name="username"></td>
+                        </tr>
+                        <tr>
+                        <td>Password: </td><td><input type="password" name="pwd"></td>
+
+                        </tr>
+                    
+                        <tr>
+                            <td  padding="5"><input type="submit" value="login"></form></td>
+                            <td padding="5">
+                                <form  method="POST" name="f2" action="logout">
+                                <input type="submit" value="logout"></form>
+                            </td>
+                        </tr>
+                        </table>
+               
+                </td>
+                
+        </tr>
+       
+
+    </table>
+
+
+   <!--  <td><input type="text" name="username"></td>>
+            <td><input type="password" name="pwd"></td>> colspan="2" align="center"-->
+
+
+<% include footer %>
