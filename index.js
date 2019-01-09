@@ -12,10 +12,11 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(express.static(__dirname));
+app.use(express.static(__dirname+ '/public')); //modificato qui 08/01/2019
 
 
-const url = 'https://units.esse3.pp.cineca.it/services/ESSE3WS?WSDL';
+//const url = 'https://units.esse3.pp.cineca.it/services/ESSE3WS?WSDL';
+const url='https://units.esse3.pp.cineca.it/e3rest/api/login';
 var sessioneIDS3='';
 var user='';
 var pwd='';
@@ -65,7 +66,22 @@ app.get('/', function(req, res, next) {
       res.render("index", {  message:" Benvenuto nella pagina di test "});
    
   });
-
+  app.get('/chat', function(req, res, next) {
+    
+    /* res.setHeader('Content-Type', 'text/html')
+     res.write("sono nella root dell'applicativo di test  ");*/
+    // res.render("index", {  message:" Benvenuto nella pagina di test "});
+    res.sendFile(__dirname +'/public/index.html');
+  
+ });
+//modifica del 14/12/2018
+app.get('/getlogin', function(req, res, next) {
+    
+    /* res.setHeader('Content-Type', 'text/html')
+     res.write("sono nella root dell'applicativo di test  ");*/
+     res.render("index", {  message:" Benvenuto nella pagina di test "});
+  
+ });
 
   app.post("/login", function (req,res){
 
