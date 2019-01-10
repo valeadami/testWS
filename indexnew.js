@@ -122,9 +122,53 @@ app.get('/', function(req, res, next) {
  qui ci sarà il codice per gestire app DF con actions
 
   */
-
-  //app.post('/fulfillment', appDFActions);
+ function welcome (agent) {
+    agent.add(`Welcome to Express.JS webhook! `);
+    console.log('sono nel welcome');
+  }
   
+  function fallback (agent) {
+    agent.add(`I didn't understand from server`);
+   console.log('sono nel fallback');
+  }
+  function anytext (agent) {
+    agent.add(`sono in anytext`);
+   console.log('sono in anytext');
+  }
+ function WebhookProcessing(req, res) {
+    const agent = new WebhookClient({request: req, response: res});
+    //10/01/2019
+    //copiato codice da progetto api
+    console.log('------sono su TestWS: ----- la richiesta proviene da '+ agent.requestSource);
+    //******************************************* */
+    //recupero la sessionId della conversazione
+    
+    agent.sessionId=req.body.session.split('/').pop();
+  //assegno all'agente il parametro di ricerca da invare sotto forma di searchText a Panloquacity
+    agent.parameters['searchText']=req.body.queryResult.parameters.searchText;
+    console.info(`agent set ` + agent.sessionId +` parameters ` + agent.parameters.searchText);
+  
+    
+    let intentMap = new Map();
+    
+    intentMap.set('Welcome', welcome); //la funzione callAva sostiutisce la funzione welcome 
+    intentMap.set('AnyText', anytext); // AnyText sostituisce 'qualunquetesto'
+    intentMap.set('Fallback', fallback); //modifica del 22/11/2018 per gestire la fine della conversazione
+    //intentMap.set('CloseConversation', callAVA);
+    
+    agent.handleRequest(intentMap);
+  }
+  
+  //app.post('/fulfillment', appDFActions);
+  app.post("/fulfillment", function (req,res){
+
+    //console.log('Dialogflow Request headers: ' + JSON.stringify(req.headers));
+    //console.log('DIALOGFLOW Request body: ' + JSON.stringify(req.body));
+    //
+    WebhookProcessing(req, res); 
+  
+  
+  });
 app.listen(process.env.PORT || 3000, function() {
     console.log("App started on port " + process.env.PORT );
   });
