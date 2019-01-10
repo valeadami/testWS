@@ -108,11 +108,76 @@ function test() {
 
 }
 //test di async callEsseTre
-async function main() {
+/*async function main() {
     var data=await callEsseTre();
     return data;
 
 }
+*/
+function main()
+{
+   // var img=["IMG=https://it.wikipedia.org/wiki/Paguridae#/media/File:Elassochirus_gilli_1.jpg"];
+   var img=["STOP","IMG=https://upload.wikimedia.org/wikipedia/commons/a/ab/House_mouse.jpg"]; // ["STOP"]; 
+   //["STOP","IMG=https://upload.wikimedia.org/wikipedia/commons/a/ab/House_mouse.jpg"]
+   var test=getComandi(img);
+
+
+}
+/*
+function getComandi(arComandi)
+ {
+
+   var comandi=arComandi;
+   var temp;
+   if (comandi.length>0){
+       //prosegui con il parsing
+       //caso 1: ho solo un comando, ad esempio lo stop->prosegui con il parsing
+       switch (comandi.length){
+         case 1:
+         //07/01/2019: ora il comando può contenere immagine, quindi verifica se presente =
+           
+           //comandi=arComandi;
+           temp=comandi[0].toString();
+           //è una stringa? Se si contiene il carattere "="
+           var pos = temp.indexOf("=");
+           if (pos >- 1) {
+
+            //ho una stringa, quindi splitto per "="
+            temp=temp.split("=");
+            console.log('valore di temp[1]= ' +temp[1]);
+            arComandi[0]=temp[1];
+            comandi=arComandi;
+           }
+           break;
+
+         case 2:
+         //caso 2: ho due comandi, stop e img=path image, quindi devo scomporre comandi[1] 
+            temp=arComandi[1].toString();
+           //temp=img=https.....
+           //splitto temp in un array con due elementi divisi da uguale
+           temp=temp.split("=");
+           console.log('valore di temp[1]= ' +temp[1]);
+           arComandi[1]=temp[1];
+           comandi=arComandi;
+
+           //scompongo arComandi[1]
+           break;
+
+         default:
+           //
+           console.log('sono in default');
+
+       }
+      return comandi; //ritorno array come mi serve STOP oppure STOP, PATH img
+     
+   } else {
+     console.log('non ci sono comandi')
+
+     //non ci sono comandi quindi non fare nulla
+     return undefined;
+   }
+  
+ } */
 //1). mio 
 /*
 function initialize() {
@@ -244,5 +309,5 @@ function main() {
 */
 //main();
 //test();
-exports.main=main;
-//exports.mainMio=mainMio; //perchè se uso Test mi dà errore Cannot read property 'then' of undefined  in quanto Test non torna una promise
+//exports.main=main;
+exports.mainMio=mainMio; //perchè se uso Test mi dà errore Cannot read property 'then' of undefined  in quanto Test non torna una promise
