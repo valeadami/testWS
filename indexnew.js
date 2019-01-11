@@ -256,7 +256,7 @@ function callAVA(agent) {
        
       }).catch((error) => {
      
-        agent.add({ 'fulfillmentText': 'errore '+ error});
+        agent.add('errore '+ error);
       
      });
  
