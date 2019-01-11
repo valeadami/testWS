@@ -33,7 +33,7 @@ var prm=require('./testPromise.js');
 
 
 var app = express();
-
+var bot='HEADdemo';
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -246,7 +246,7 @@ function callAVA(agent) {
     var str= utf8.encode(agent.parameters.searchText); //req.body.queryResult.parameters.searchText; //req.body.searchText;
     if (str) {
       strRicerca=querystring.escape(str); //02/12/2018: questo rimane, escape della stringa ci vuole cmq!
-      options.path+=strRicerca+'&user=&pwd=&?ava=HEADdemo';
+      options.path+=strRicerca+'&user=&pwd=&?ava='+bot;
       console.log('options.path da passare a plq: '+ options.path);
     }  
     
@@ -254,7 +254,12 @@ function callAVA(agent) {
 
         agent.add('il comando da Plq è '+ cmd);
        
-      })
+      }).catch((error) => {
+     
+        agent.add({ 'fulfillmentText': 'errore '+ error});
+      
+     });
+ 
       resolve(agent);
   });
  
@@ -392,8 +397,14 @@ function scriviSessione(path, strSessione, strValore) {
                   //18/12/2018  02/01/2019
                   let comandi=[];
                   comandi=getComandi(c.output[0].commands);
-                  resolve(comandi);
-                  
+                  if (typeof comandi!=='undefined' && comandi.length>=1) {
+                    console.log('ho almeno un comando, quindi prosegui con l\' azione ' + comandi[0]);
+          
+                  }else {
+                    console.log('non ho comandi');
+                  }
+                  resolve(agent);
+
                 
           });
           res.on('end', () => {
