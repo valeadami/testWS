@@ -249,14 +249,13 @@ function callAVA(agent) {
       options.path+=strRicerca+'&user=&pwd=&?ava=HEADdemo';
       console.log('options.path da passare a plq: '+ options.path);
     }  
-    agent.add('porco dio');
-    resolve(agent);
-    /*getPlq(options.path).then((cmd)=>{
+    
+    getPlq(options).then((cmd)=>{
 
         agent.add('il comando da Plq è '+ cmd);
        
       })
-      resolve(agent);*/
+      resolve(agent);
   });
  
   } 
@@ -346,7 +345,7 @@ function scriviSessione(path, strSessione, strValore) {
         return new Promise((resolve, reject) => {
       
     
-        console.log('dentro getPLQ ');
+        console.log('dentro getPLQ con options '+ JSON.stringify(options));
        
         var ss=leggiSessione(__dirname +'/sessions/', sessionId);
         if (ss===''){
