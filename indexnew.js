@@ -246,16 +246,19 @@ function callAVA(agent) {
     var str= utf8.encode(agent.parameters.searchText); //req.body.queryResult.parameters.searchText; //req.body.searchText;
     if (str) {
       strRicerca=querystring.escape(str); //02/12/2018: questo rimane, escape della stringa ci vuole cmq!
-      options.path+=strRicerca+'&user=&pwd=&ava='+bot;
+      options.path+=strRicerca+'&user=&pwd=&?ava=HEADdemo';
       console.log('options.path da passare a plq: '+ options.path);
     }  
-    getPlq(options.path).then((cmd)=>{
+    agent.add('porco dio');
+    resolve(agent);
+    /*getPlq(options.path).then((cmd)=>{
 
         agent.add('il comando da Plq è '+ cmd);
        
       })
-      resolve(agent);
+      resolve(agent);*/
   });
+ 
   } 
   //fine callAva attuale
 
