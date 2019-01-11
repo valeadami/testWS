@@ -175,7 +175,7 @@ app.get('/', function(req, res, next) {
     let intentMap = new Map();
     
     intentMap.set('Welcome', welcome); //la funzione callAva sostiutisce la funzione welcome 
-    intentMap.set('AnyText', anytext); // AnyText sostituisce 'qualunquetesto'
+    intentMap.set('AnyText', callAVA); // anytext AnyText sostituisce 'qualunquetesto'
     intentMap.set('Fallback', fallback); //modifica del 22/11/2018 per gestire la fine della conversazione
     //intentMap.set('CloseConversation', callAVA);
     
