@@ -428,16 +428,35 @@ function callAVANEW(agent) {
     }  
     //così funziona 
     //getPlq(agent, options).then((agent)=>{
-      //ora torno i comandi come stringhe
+      //ora torno i comandi come stringhe OK FUNGE!!!
+
       getPlq(agent, options).then((comandi)=>{
      //se aggiungi più messaggi, torna un fulfillment messages, altrimenti fulfillment-text
       //agent.add('ho il comando da getPLQ');
-      var tmp=comandi.split(',');
+      
+      //var tmp=comandi.split(','); -> questo sarà da fare per multi comando
       console.log('questi sono i valori di tmp '+ tmp[0]);
-      /*switch (tmp[0]){
-
-
-      }*/
+      var cmd=tmp[0];
+      switch (cmd) {
+        case 'getLibretto':
+          console.log('sono nel getLibretto');
+          break;
+        case 'STOP':
+         console.log('sono nello stop');
+          break;
+        case 'multi':
+          console.log('sono nello multi');
+          break;
+        case 'paguro':
+          console.log('sono nel paguro');
+          break;
+        case 'canguro':
+          console.log('sono nel canguro');
+          break;
+        default:
+          console.log('sono nel getLibretto');
+          break;
+      }
       agent.add('il comando è '+ tmp[0]);
       resolve(agent);
        
