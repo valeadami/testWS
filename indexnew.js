@@ -425,7 +425,7 @@ function callAVANEW(agent) {
       console.log('options.path da passare a plq: '+ options.path);
     }  
     
-    getPlq(options, strRicerca);  /*.then((agent)=>{
+    getPlq(options);  /*.then((agent)=>{
      
       agent.add('il comando da Plq è '+ cmd);
       
@@ -449,7 +449,7 @@ app.listen(process.env.PORT || 3000, function() {
 
 
     //11/01/2019
-    function getPlq(options, strRicerca) { 
+    function getPlq(options) { 
         return new Promise((resolve, reject) => {
       
     
@@ -459,7 +459,7 @@ app.listen(process.env.PORT || 3000, function() {
         let data = '';
         let strOutput='';
         
-        options.path+=strRicerca+'&user=&pwd=&?ava='+bot;
+        //options.path+=strRicerca+'&user=&pwd=&?ava='+bot;
         
         const req = https.request(options, (res) => {
           //console.log("DENTRO CALL AVA " + sess);  
