@@ -426,10 +426,19 @@ function callAVANEW(agent) {
     
       console.log('options.path da passare a plq: '+ options.path);
     }  
-    
-    getPlq(agent, options).then((agent)=>{
-     
+    //così funziona 
+    //getPlq(agent, options).then((agent)=>{
+      //ora torno i comandi come stringhe
+      getPlq(agent, options).then((comandi)=>{
+     //se aggiungi più messaggi, torna un fulfillment messages, altrimenti fulfillment-text
       //agent.add('ho il comando da getPLQ');
+      var tmp=comandi.spl(',');
+      console.log('questi sono i valori di tmp '+ tmp[0]);
+      /*switch (tmp[0]){
+
+
+      }*/
+      agent.add('il comando è '+ tmp[0]);
       resolve(agent);
        
       }).catch((error) => {
@@ -496,20 +505,20 @@ app.listen(process.env.PORT || 3000, function() {
                   comandi=getComandi(c.output[0].commands);
                  if (typeof comandi!=='undefined' && comandi.length>=1) {
                     console.log('ho almeno un comando, quindi prosegui con l\' azione ' + comandi[0]);
-                    agent.add(comandi.toString()); // ok, anche comandi[0] va bene
-                   
+                   // agent.add(comandi.toString()); // ok, anche comandi[0] va bene
+                   resolve(comandi.toString());
                    
                  } else{
-                    agent.add('NO');
-      
+                    //agent.add('NO');
+                    comandi=['NO'];
                  }
                
               
                 /**********fino qua gestione comandi 18/12/2018  */   
        
-                //agent.add(comandi); //NEW
-               
-                resolve(agent);
+                
+               //così funziona, resolve(agent);
+                resolve(comandi);
                  
                
           });
