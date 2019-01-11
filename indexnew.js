@@ -234,7 +234,81 @@ app.get('/', function(req, res, next) {
       });  //fine request
    });
   } 
+  /**** FUNZIONI A SUPPORTO copiate da progetto api */
+
+function scriviSessione(path, strSessione, strValore) {
   
+  fs.appendFile(path + strSessione,strValore, function (err) {
+    if (err) {
+      
+      throw err;
+    
+    } else {
+    console.log('DENTRO SCRIVI SESSIONE: SALVATO FILE '+ path + strSessione);
+    
+    }
+     
+  });
+ 
+} 
+
+function leggiSessione(path, strSessione){
+  var contents='';
+  try {
+    fs.accessSync(__dirname+ '/sessions/'+ strSessione);
+    contents = fs.readFileSync(__dirname+'/sessions/'+ strSessione, 'utf8');
+    console.log('DENTRO LEGGI SESSIIONE ' +contents);
+  
+
+  }catch (err) {
+    if (err.code==='ENOENT')
+    console.log('DENTRO LEGGI SESSIONE :il file non esiste...')
+   
+  }
+  return contents;
+
+} 
+ // 18/12/2018
+ function getComandi(arComandi)
+  {
+
+    var comandi=arComandi;
+    if (comandi.length>0){
+        //prosegui con il parsing
+        //caso 1: ho solo un comando, ad esempio lo stop->prosegui con il parsing
+        switch (comandi.length){
+          case 1:
+            comandi=arComandi;
+            break;
+
+          case 2:
+          //caso 2: ho due comandi, stop e img=path image, quindi devo scomporre comandi[1] 
+            var temp=arComandi[1].toString();
+            //temp=img=https.....
+            //splitto temp in un array con due elementi divisi da uguale
+            temp=temp.split("=");
+            console.log('valore di temp[1]= ' +temp[1]);
+            arComandi[1]=temp[1];
+            comandi=arComandi;
+
+            //scompongo arComandi[1]
+            break;
+
+          default:
+            //
+            console.log('sono in default');
+
+        }
+       return comandi; //ritorno array come mi serve STOP oppure STOP, PATH img
+      
+    } else {
+      console.log('non ci sono comandi')
+
+      //non ci sono comandi quindi non fare nulla
+      return undefined;
+    }
+   
+  } 
 //callAva attuale al 10/01/2019
 function callAVA(agent) {
   return new Promise((resolve, reject) => {
@@ -372,81 +446,7 @@ app.listen(process.env.PORT || 3000, function() {
     console.log("App started on port " + process.env.PORT );
   });
 
-/**** FUNZIONI A SUPPORTO copiate da progetto api */
 
-function scriviSessione(path, strSessione, strValore) {
-  
-    fs.appendFile(path + strSessione,strValore, function (err) {
-      if (err) {
-        
-        throw err;
-      
-      } else {
-      console.log('DENTRO SCRIVI SESSIONE: SALVATO FILE '+ path + strSessione);
-      
-      }
-       
-    });
-   
-  } 
-  
-  function leggiSessione(path, strSessione){
-    var contents='';
-    try {
-      fs.accessSync(__dirname+ '/sessions/'+ strSessione);
-      contents = fs.readFileSync(__dirname+'/sessions/'+ strSessione, 'utf8');
-      console.log('DENTRO LEGGI SESSIIONE ' +contents);
-    
-  
-    }catch (err) {
-      if (err.code==='ENOENT')
-      console.log('DENTRO LEGGI SESSIONE :il file non esiste...')
-     
-    }
-    return contents;
-  
-  } 
-   // 18/12/2018
-   function getComandi(arComandi)
-    {
-  
-      var comandi=arComandi;
-      if (comandi.length>0){
-          //prosegui con il parsing
-          //caso 1: ho solo un comando, ad esempio lo stop->prosegui con il parsing
-          switch (comandi.length){
-            case 1:
-              comandi=arComandi;
-              break;
-  
-            case 2:
-            //caso 2: ho due comandi, stop e img=path image, quindi devo scomporre comandi[1] 
-              var temp=arComandi[1].toString();
-              //temp=img=https.....
-              //splitto temp in un array con due elementi divisi da uguale
-              temp=temp.split("=");
-              console.log('valore di temp[1]= ' +temp[1]);
-              arComandi[1]=temp[1];
-              comandi=arComandi;
-  
-              //scompongo arComandi[1]
-              break;
-  
-            default:
-              //
-              console.log('sono in default');
-  
-          }
-         return comandi; //ritorno array come mi serve STOP oppure STOP, PATH img
-        
-      } else {
-        console.log('non ci sono comandi')
-  
-        //non ci sono comandi quindi non fare nulla
-        return undefined;
-      }
-     
-    } 
     //11/01/2019
     function getPlq(options) { 
         return new Promise((resolve, reject) => {
