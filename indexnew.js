@@ -427,19 +427,19 @@ function callAVANEW(agent) {
       console.log('options.path da passare a plq: '+ options.path);
     }  
     
-    getPlq(options);  /*.then((agent)=>{
+    getPlq(options).then((agent)=>{
      
-      agent.add('il comando da Plq è '+ cmd);
-      
+      agent.add('ho il comando da getPLQ');
+      resolve(agent);
        
       }).catch((error) => {
      
-   
+        console.log('errore '+ error);
       
      });  
-      */
+      
  
-      //resolve(agent);
+    
   });
  
   } 
