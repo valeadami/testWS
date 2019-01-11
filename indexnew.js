@@ -427,7 +427,7 @@ function callAVANEW(agent) {
       console.log('options.path da passare a plq: '+ options.path);
     }  
     
-    getPlq(options).then((agent)=>{
+    getPlq(agent, options).then((agent)=>{
      
       agent.add('ho il comando da getPLQ');
       resolve(agent);
@@ -451,7 +451,7 @@ app.listen(process.env.PORT || 3000, function() {
 
 
     //11/01/2019
-    function getPlq(options) { 
+    function getPlq(agent, options) { 
         return new Promise((resolve, reject) => {
       
     
