@@ -370,11 +370,11 @@ function callAVA(agent) {
             comandi=getComandi(c.output[0].commands);
            if (typeof comandi!=='undefined' && comandi.length>=1) {
               console.log('ho almeno un comando, quindi prosegui con l\' azione ' + comandi[0]);
-              agent.add(comandi.toString()); // ok, anche comandi[0] va bene
+           //   agent.add(comandi.toString()); // ok, anche comandi[0] va bene
              
              
            } else{
-            agent.add('NO');
+            //agent.add('NO');
 
            }
          
@@ -382,6 +382,7 @@ function callAVA(agent) {
           /**********fino qua gestione comandi 18/12/2018  */   
  
           //agent.add(comandi); //NEW
+          agent.add(strOutput);
           resolve(agent);
            
          
