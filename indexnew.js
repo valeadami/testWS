@@ -8,7 +8,8 @@ const request = require('request')
 const querystring = require('querystring');
 const parseurl = require('parseurl');
 const path = require("path");
-const http = require('http');
+const https = require('https');
+var fs = require("fs");
 
 /*** DIALOGFLOW FULFILLMENT */
 const {WebhookClient} = require('dialogflow-fulfillment');
@@ -55,6 +56,28 @@ app.use(function (req, res, next) {
   
     next();
   })
+  postData = querystring.stringify({
+    'searchText': 'ciao',
+    'user':'',
+    'pwd':'',
+    'ava':'FarmaInfoBot'
+    
+  });
+  //questo diventerà un modulo con la conessione a PLQ
+   const options = {
+     //modifica del 12/11/2018 : cambiato porta per supportare HTTPS
+     
+    hostname: '86.107.98.69', 
+    /*port: 8080,*/
+    port: 8443,
+    rejectUnauthorized: false, 
+    path: '/AVA/rest/searchService/search_2?searchText=', 
+    method: 'POST', 
+    headers: {
+      'Content-Type': 'application/json', 
+      'Cookie':'' // +avaSession 
+    }
+  };
   app.get('/login', function(req, res, next) {
      
       prm.mainMio().then((body)=> {
@@ -169,7 +192,229 @@ app.get('/', function(req, res, next) {
   
   
   });
+  
+  function doLogin(cmd) {
+    return new Promise((resolve, reject) => {
+      
+        console.log('+++++++++++ sono in doLogin e il comando =' + cmd);
+        var strUrlLogin='https://units.esse3.pp.cineca.it/e3rest/api/login';
+         var options = { 
+          method: 'GET',
+          url: strUrlLogin,
+          headers: 
+              { 
+                  'cache-control': 'no-cache',
+                  'Content-Type': 'application/json',
+                  'Authorization': 'Basic czI2MDg1NjpRM1ZSQUFRUA=='
+              },
+          json: true 
+      };
+      let str = '';
+     request(options, function (error, response, body) {
+      if (error) throw new Error(error);
+          
+      
+          if (response.statusCode==200){
+              console.log('HO RISPOSTA DA ESSETRE!')
+  
+              //per debug
+              //var str=JSON.stringify(body);
+              str=JSON.stringify(body.user.codFis);
+              console.log('\n\nQUESTO IL BODY dello studente con CF' +str);
+             resolve(str);
+            // return str;
+          } else {
+  
+              //LOGIN FAILED
+          
+              console.log('response.statusCode ' + response.statusCode);
+              console.log('login failed');
+    
+          }
+      });  //fine request
+   });
+  } 
+//callAva attuale al 10/01/2019
+function callAVA(agent) { 
+    return new Promise((resolve, reject) => {
+  
+    let strRicerca='';
+    let out='';
+    let sessionId = agent.sessionId /*.split('/').pop()*/;
+    console.log('dentro call ava il mio session id '+sessionId);
+//questo lo tengo perchè mi serve per recuperare la stringa dall'agente
+    var str= utf8.encode(agent.parameters.searchText); //req.body.queryResult.parameters.searchText; //req.body.searchText;
+    if (str) {
+      strRicerca=querystring.escape(str); //02/12/2018: questo rimane, escape della stringa ci vuole cmq!
+      options.path+=strRicerca+'&user=&pwd=&ava='+bot;
+      console.log('options.path da passare a plq: '+ options.path);
+    }  
+    getPlq(options.path).then((cmd)=>{
+
+        agent.add('il comando da Plq è '+ cmd);
+       
+      })
+      resolve(agent);
+  });
+  } 
+  //fine callAva attuale
+
 app.listen(process.env.PORT || 3000, function() {
     console.log("App started on port " + process.env.PORT );
   });
 
+/**** FUNZIONI A SUPPORTO copiate da progetto api */
+
+function scriviSessione(path, strSessione, strValore) {
+  
+    fs.appendFile(path + strSessione,strValore, function (err) {
+      if (err) {
+        
+        throw err;
+      
+      } else {
+      console.log('DENTRO SCRIVI SESSIONE: SALVATO FILE '+ path + strSessione);
+      
+      }
+       
+    });
+   
+  } 
+  
+  function leggiSessione(path, strSessione){
+    var contents='';
+    try {
+      fs.accessSync(__dirname+ '/sessions/'+ strSessione);
+      contents = fs.readFileSync(__dirname+'/sessions/'+ strSessione, 'utf8');
+      console.log('DENTRO LEGGI SESSIIONE ' +contents);
+    
+  
+    }catch (err) {
+      if (err.code==='ENOENT')
+      console.log('DENTRO LEGGI SESSIONE :il file non esiste...')
+     
+    }
+    return contents;
+  
+  } 
+   // 18/12/2018
+   function getComandi(arComandi)
+    {
+  
+      var comandi=arComandi;
+      if (comandi.length>0){
+          //prosegui con il parsing
+          //caso 1: ho solo un comando, ad esempio lo stop->prosegui con il parsing
+          switch (comandi.length){
+            case 1:
+              comandi=arComandi;
+              break;
+  
+            case 2:
+            //caso 2: ho due comandi, stop e img=path image, quindi devo scomporre comandi[1] 
+              var temp=arComandi[1].toString();
+              //temp=img=https.....
+              //splitto temp in un array con due elementi divisi da uguale
+              temp=temp.split("=");
+              console.log('valore di temp[1]= ' +temp[1]);
+              arComandi[1]=temp[1];
+              comandi=arComandi;
+  
+              //scompongo arComandi[1]
+              break;
+  
+            default:
+              //
+              console.log('sono in default');
+  
+          }
+         return comandi; //ritorno array come mi serve STOP oppure STOP, PATH img
+        
+      } else {
+        console.log('non ci sono comandi')
+  
+        //non ci sono comandi quindi non fare nulla
+        return undefined;
+      }
+     
+    } 
+    //11/01/2019
+    function getPlq(options) { 
+        return new Promise((resolve, reject) => {
+      
+    
+        console.log('dentro getPLQ ');
+       
+        var ss=leggiSessione(__dirname +'/sessions/', sessionId);
+        if (ss===''){
+          options.headers.Cookie='JSESSIONID=';
+          console.log('DENTRO CALL AVA: SESSIONE VUOTA');
+        }else {
+          options.headers.Cookie='JSESSIONID='+ss;
+          console.log('DENTRO CALL AVA:  HO LA SESSIONE + JSESSIONID');
+        }
+      
+        let data = '';
+        let strOutput='';
+         
+        
+      
+          const req = https.request(options, (res) => {
+          //console.log("DENTRO CALL AVA " + sess);   
+          console.log('________valore di options.cookie INIZIO ' + options.headers.Cookie);
+          console.log(`STATUS DELLA RISPOSTA: ${res.statusCode}`);
+          console.log(`HEADERS DELLA RISPOSTA: ${JSON.stringify(res.headers)}`);
+          console.log('..............RES HEADER ' + res.headers["set-cookie"] );
+         
+          if (res.headers["set-cookie"]){
+      
+            var x = res.headers["set-cookie"].toString();
+            var arr=x.split(';')
+            var y=arr[0].split('=');
+            
+           // scriviSessione(__dirname+'/sessions/',sess, y[1]); 
+           
+           scriviSessione(__dirname+'/sessions/',sessionId, y[1]); 
+          } 
+          res.setEncoding('utf8');
+          res.on('data', (chunk) => {
+           console.log(`BODY: ${chunk}`);
+           data += chunk;
+         
+           let c=JSON.parse(data);
+                  strOutput=c.output[0].output; 
+                 
+                  strOutput=strOutput.replace(/(<\/p>|<p>|<b>|<\/b>|<br>|<\/br>|<strong>|<\/strong>|<div>|<\/div>|<ul>|<li>|<\/ul>|<\/li>|&nbsp;|)/gi, '');
+              
+                  //resolve(strOutput); <--- OLD 
+                  //18/12/2018  02/01/2019
+                  let comandi=[];
+                  comandi=getComandi(c.output[0].commands);
+                  resolve(comandi);
+                  
+                
+          });
+          res.on('end', () => {
+            console.log('No more data in response.');
+            
+                 
+                  options.path='/AVA/rest/searchService/search_2?searchText=';
+                  
+                  console.log('valore di options.path FINE ' +  options.path);
+      
+          });
+        });
+        
+        req.on('error', (e) => {
+          console.error(`problem with request: ${e.message}`);
+          strOutput="si è verificato errore " + e.message;
+         
+        });
+        
+        // write data to request body
+        
+        req.write(postData);
+        req.end();
+        
+      });
+      } 
