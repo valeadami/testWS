@@ -327,7 +327,7 @@ function callAVA(agent) {
  
    let data = '';
     let strOutput='';
-    //var ss=leggiSessione(__dirname +'/sessions/', sess);
+   /*
     var ss=leggiSessione(__dirname +'/sessions/', sessionId);
     if (ss===''){
       options.headers.Cookie='JSESSIONID=';
@@ -336,7 +336,7 @@ function callAVA(agent) {
       options.headers.Cookie='JSESSIONID='+ss;
       console.log('DENTRO CALL AVA:  HO LA SESSIONE + JSESSIONID');
     }
- 
+ */
     const req = https.request(options, (res) => {
     //console.log("DENTRO CALL AVA " + sess);  
     console.log('________valore di options.cookie INIZIO ' + options.headers.Cookie);
@@ -350,9 +350,9 @@ function callAVA(agent) {
       var arr=x.split(';')
       var y=arr[0].split('=');
      
-     // scriviSessione(__dirname+'/sessions/',sess, y[1]);
     
-     scriviSessione(__dirname+'/sessions/',sessionId, y[1]);
+    
+     //scriviSessione(__dirname+'/sessions/',sessionId, y[1]);
     }
     res.setEncoding('utf8');
     res.on('data', (chunk) => {
@@ -370,11 +370,11 @@ function callAVA(agent) {
             comandi=getComandi(c.output[0].commands);
            if (typeof comandi!=='undefined' && comandi.length>=1) {
               console.log('ho almeno un comando, quindi prosegui con l\' azione ' + comandi[0]);
-           //   agent.add(comandi.toString()); // ok, anche comandi[0] va bene
+              agent.add(comandi.toString()); // ok, anche comandi[0] va bene
              
              
            } else{
-            //agent.add('NO');
+              agent.add('NO');
 
            }
          
@@ -382,7 +382,7 @@ function callAVA(agent) {
           /**********fino qua gestione comandi 18/12/2018  */   
  
           //agent.add(comandi); //NEW
-          agent.add(strOutput);
+         
           resolve(agent);
            
          
