@@ -429,7 +429,7 @@ function callAVANEW(agent) {
     
     getPlq(agent, options).then((agent)=>{
      
-      agent.add('ho il comando da getPLQ');
+      //agent.add('ho il comando da getPLQ');
       resolve(agent);
        
       }).catch((error) => {
