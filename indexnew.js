@@ -297,8 +297,9 @@ function callAVA(agent) {
            if (typeof comandi!=='undefined' && comandi.length>=1) {
               console.log('ho almeno un comando, quindi prosegui con l\' azione ' + comandi[0]);
               //agent.add(comandi.toString()); // ok, anche comandi[0] va bene
-              agent.add({ 'cmd': comandi[0], 
-              'strOutput':+strOutput});
+              var dati={ 'cmd': comandi[0], 
+              'strOutput':+strOutput};
+              agent.add(JSON.stringify(dati));
            } else{
             agent.add('non ci sono comandi');
 
