@@ -250,10 +250,10 @@ function callAVA(agent) {
       console.log('options.path da passare a plq: '+ options.path);
     }  
     
-    getPlq(options).then((cmd)=>{
+    getPlq(options).then((agent)=>{
 
       // agent.add('il comando da Plq è '+ cmd);
-      console.log('comandi '+ cmd);
+      console.log('comandi '+ agent.fulfillmentText);
        
       }).catch((error) => {
      
@@ -404,7 +404,8 @@ function scriviSessione(path, strSessione, strValore) {
                   }else {
                     console.log('non ho comandi');
                   }
-                  resolve(comandi);
+                  agent.add(comandi[0]);
+                  resolve(agent);
 
                 
           });
