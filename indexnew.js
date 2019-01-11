@@ -175,7 +175,7 @@ app.get('/', function(req, res, next) {
     let intentMap = new Map();
     
     intentMap.set('Welcome', welcome); //la funzione callAva sostiutisce la funzione welcome 
-    intentMap.set('AnyText', getPlq); // callAVA anytext AnyText sostituisce 'qualunquetesto'
+    intentMap.set('AnyText', callAVA); // callAVA anytext AnyText sostituisce 'qualunquetesto'
     intentMap.set('Fallback', fallback); //modifica del 22/11/2018 per gestire la fine della conversazione
     //intentMap.set('CloseConversation', callAVA);
     
@@ -234,8 +234,140 @@ app.get('/', function(req, res, next) {
       });  //fine request
    });
   } 
+  
 //callAva attuale al 10/01/2019
-function callAVA(agent) { 
+function callAVA(agent) {
+  return new Promise((resolve, reject) => {
+ 
+  let strRicerca='';
+  let out='';
+  let sessionId = agent.sessionId /*.split('/').pop()*/;
+  console.log('dentro call ava il mio session id '+sessionId);
+  //modifica del 02/12/2018 per bug utf8
+  // faccio encoding in utf8-> utf8.encode()
+  var str= utf8.encode(agent.parameters.searchText); //req.body.queryResult.parameters.searchText; //req.body.searchText;
+  if (str) {
+    strRicerca=querystring.escape(str); //02/12/2018: questo rimane, escape della stringa ci vuole cmq!
+    options.path+=strRicerca+'&user=&pwd=&ava='+bot;
+  }
+ 
+   let data = '';
+    let strOutput='';
+    //var ss=leggiSessione(__dirname +'/sessions/', sess);
+    var ss=leggiSessione(__dirname +'/sessions/', sessionId);
+    if (ss===''){
+      options.headers.Cookie='JSESSIONID=';
+      console.log('DENTRO CALL AVA: SESSIONE VUOTA');
+    }else {
+      options.headers.Cookie='JSESSIONID='+ss;
+      console.log('DENTRO CALL AVA:  HO LA SESSIONE + JSESSIONID');
+    }
+ 
+    const req = https.request(options, (res) => {
+    //console.log("DENTRO CALL AVA " + sess);  
+    console.log('________valore di options.cookie INIZIO ' + options.headers.Cookie);
+    console.log(`STATUS DELLA RISPOSTA: ${res.statusCode}`);
+    console.log(`HEADERS DELLA RISPOSTA: ${JSON.stringify(res.headers)}`);
+    console.log('..............RES HEADER ' + res.headers["set-cookie"] );
+  
+    if (res.headers["set-cookie"]){
+ 
+      var x = res.headers["set-cookie"].toString();
+      var arr=x.split(';')
+      var y=arr[0].split('=');
+     
+     // scriviSessione(__dirname+'/sessions/',sess, y[1]);
+    
+     scriviSessione(__dirname+'/sessions/',sessionId, y[1]);
+    }
+    res.setEncoding('utf8');
+    res.on('data', (chunk) => {
+     console.log(`BODY: ${chunk}`);
+     data += chunk;
+  
+     let c=JSON.parse(data);
+            strOutput=c.output[0].output;
+          
+            strOutput=strOutput.replace(/(<\/p>|<p>|<b>|<\/b>|<br>|<\/br>|<strong>|<\/strong>|<div>|<\/div>|<ul>|<li>|<\/ul>|<\/li>|&nbsp;|)/gi, '');
+       
+            //resolve(strOutput); <--- OLD
+            //18/12/2018  02/01/2019
+            let comandi=[];
+            comandi=getComandi(c.output[0].commands);
+           if (typeof comandi!=='undefined' && comandi.length>=1) {
+              console.log('ho almeno un comando, quindi prosegui con l\' azione ' + comandi[0]);
+           
+                if (comandi[0]=="STOP"){
+                    console.log('++++++++++++ stoppo la conversazione')
+                    //03/01/2019
+                    //verifico che posso gestire la chiusura della conversazone
+                    if (agent.requestSource=="ACTIONS_ON_GOOGLE"){
+                     
+                      //agent.requestSource = agent.ACTIONS_ON_GOOGLE
+ 
+                      let conv = agent.conv();
+           
+                      console.log(' ---- la conversazione PRIMA ----- ' + JSON.stringify(conv));
+                     
+                      conv.close(strOutput);
+                      console.log(' ---- la conversazione DOPO CHIUSURA ----- ' + JSON.stringify(conv));
+                     
+                      agent.add(conv);
+                      //altrimenti ritorna la strOutput
+                    }else{
+                      agent.add(strOutput);
+                    }
+                   
+                } else { //07/01/2019
+                  console.log('+++++++++ ho solo link immagine')
+                  //02/01/2019
+                  agent.add(strOutput); //ritorno la stringa di output non il link img
+ 
+                }
+                if (typeof comandi[1] !== 'undefined' && comandi[0]=="STOP"){
+                    console.log('+++++++++ stoppo la conversazione e mando link immagine')
+                    //02/01/2019
+                    agent.add(strOutput); //NEW
+                }
+            } else {
+               //02/01/2019
+              agent.add(strOutput); //NEW
+              console.log('non ci sono comandi, prosegui');
+            }
+     
+         
+        
+          /**********fino qua gestione comandi 18/12/2018  */   
+ 
+          //agent.add(strOutput); //NEW
+          resolve(agent);
+           
+         
+    });
+    res.on('end', () => {
+      console.log('No more data in response.');
+     
+          
+            options.path='/AVA/rest/searchService/search_2?searchText=';
+           
+            console.log('valore di options.path FINE ' +  options.path);
+ 
+    });
+  });
+   req.on('error', (e) => {
+    console.error(`problem with request: ${e.message}`);
+    strOutput="si è verificato errore " + e.message;
+  
+  });
+   // write data to request body
+   req.write(postData);
+  req.end();
+  });
+ }
+ 
+
+//mia nuova che non funziona 
+function callAVANEW(agent) { 
     return new Promise((resolve, reject) => {
   
     let strRicerca='';
