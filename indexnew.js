@@ -9,7 +9,7 @@ const querystring = require('querystring');
 const parseurl = require('parseurl');
 const path = require("path");
 const https = require('https');
-var fs = require("fs");
+
 
 /*** DIALOGFLOW FULFILLMENT */
 const {WebhookClient} = require('dialogflow-fulfillment');
