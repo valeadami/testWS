@@ -252,11 +252,13 @@ function callAVA(agent) {
     
     getPlq(options).then((cmd)=>{
 
-        agent.add('il comando da Plq è '+ cmd);
+      // agent.add('il comando da Plq è '+ cmd);
+      console.log('comandi '+ cmd);
        
       }).catch((error) => {
      
-        agent.add('errore '+ error);
+      //  agent.add('errore '+ error);
+      console.log('errore '+ error);
       
      });
  
