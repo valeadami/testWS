@@ -175,7 +175,7 @@ app.get('/', function(req, res, next) {
     let intentMap = new Map();
     
     intentMap.set('Welcome', welcome); //la funzione callAva sostiutisce la funzione welcome 
-    intentMap.set('AnyText', callAVA); // callAVA anytext AnyText sostituisce 'qualunquetesto'
+    intentMap.set('AnyText', callAVANEW); // callAVA anytext AnyText sostituisce 'qualunquetesto'
     intentMap.set('Fallback', fallback); //modifica del 22/11/2018 per gestire la fine della conversazione
     //intentMap.set('CloseConversation', callAVA);
     
@@ -414,7 +414,7 @@ function callAVANEW(agent) {
     return new Promise((resolve, reject) => {
   
     let strRicerca='';
-    let out='';
+    
     let sessionId = agent.sessionId /*.split('/').pop()*/;
     console.log('dentro call ava il mio session id '+sessionId);
 //questo lo tengo perchè mi serve per recuperare la stringa dall'agente
@@ -425,19 +425,19 @@ function callAVANEW(agent) {
       console.log('options.path da passare a plq: '+ options.path);
     }  
     
-    getPlq(options).then((agent)=>{
+    getPlq(options, strRicerca);  /*.then((agent)=>{
      
-      // agent.add('il comando da Plq è '+ cmd);
-      console.log('comandi '+ agent.fulfillmentText);
+      agent.add('il comando da Plq è '+ cmd);
+      
        
       }).catch((error) => {
      
-      //  agent.add('errore '+ error);
-      console.log('errore '+ error);
+   
       
-     });
+     });  
+      */
  
-      resolve(agent);
+      //resolve(agent);
   });
  
   } 
@@ -449,89 +449,85 @@ app.listen(process.env.PORT || 3000, function() {
 
 
     //11/01/2019
-    function getPlq(options) { 
+    function getPlq(options, strRicerca) { 
         return new Promise((resolve, reject) => {
       
     
         console.log('dentro getPLQ con options ');
        
-       /* var ss=leggiSessione(__dirname +'/sessions/', sessionId);
-        if (ss===''){
-          options.headers.Cookie='JSESSIONID=';
-          console.log('DENTRO CALL AVA: SESSIONE VUOTA');
-        }else {
-          options.headers.Cookie='JSESSIONID='+ss;
-          console.log('DENTRO CALL AVA:  HO LA SESSIONE + JSESSIONID');
-        }
-      */
+      
         let data = '';
         let strOutput='';
-        let strRicerca='esami%20sostenuti';
+        
         options.path+=strRicerca+'&user=&pwd=&?ava='+bot;
         
-      
-          const req = https.request(options, (res) => {
-          //console.log("DENTRO CALL AVA " + sess);   
+        const req = https.request(options, (res) => {
+          //console.log("DENTRO CALL AVA " + sess);  
           console.log('________valore di options.cookie INIZIO ' + options.headers.Cookie);
           console.log(`STATUS DELLA RISPOSTA: ${res.statusCode}`);
           console.log(`HEADERS DELLA RISPOSTA: ${JSON.stringify(res.headers)}`);
           console.log('..............RES HEADER ' + res.headers["set-cookie"] );
-         
+        
           if (res.headers["set-cookie"]){
-      
+       
             var x = res.headers["set-cookie"].toString();
             var arr=x.split(';')
             var y=arr[0].split('=');
-          
            
-           //scriviSessione(__dirname+'/sessions/',sessionId, y[1]); 
-          } 
+          
+          
+           //scriviSessione(__dirname+'/sessions/',sessionId, y[1]);
+          }
           res.setEncoding('utf8');
           res.on('data', (chunk) => {
            console.log(`BODY: ${chunk}`);
            data += chunk;
-         
+        
            let c=JSON.parse(data);
-                  strOutput=c.output[0].output; 
-                 
+                  strOutput=c.output[0].output;
+                
                   strOutput=strOutput.replace(/(<\/p>|<p>|<b>|<\/b>|<br>|<\/br>|<strong>|<\/strong>|<div>|<\/div>|<ul>|<li>|<\/ul>|<\/li>|&nbsp;|)/gi, '');
-              
-                  //resolve(strOutput); <--- OLD 
+             
+                  //resolve(strOutput); <--- OLD
                   //18/12/2018  02/01/2019
                   let comandi=[];
                   comandi=getComandi(c.output[0].commands);
-                  if (typeof comandi!=='undefined' && comandi.length>=1) {
+                 if (typeof comandi!=='undefined' && comandi.length>=1) {
                     console.log('ho almeno un comando, quindi prosegui con l\' azione ' + comandi[0]);
-          
-                  }else {
-                    console.log('non ho comandi');
-                  }
-                  agent.add(comandi[0]);
-                  resolve(agent);
-
-                
+                    agent.add(comandi.toString()); // ok, anche comandi[0] va bene
+                   
+                   
+                 } else{
+                    agent.add('NO');
+      
+                 }
+               
+              
+                /**********fino qua gestione comandi 18/12/2018  */   
+       
+                //agent.add(comandi); //NEW
+               
+                resolve(agent);
+                 
+               
           });
           res.on('end', () => {
             console.log('No more data in response.');
-            
-                 
+           
+                
                   options.path='/AVA/rest/searchService/search_2?searchText=';
-                  
+                 
                   console.log('valore di options.path FINE ' +  options.path);
-      
+       
           });
         });
-        
-        req.on('error', (e) => {
+         req.on('error', (e) => {
           console.error(`problem with request: ${e.message}`);
           strOutput="si è verificato errore " + e.message;
-         
+        
         });
-        
-        // write data to request body
-        
-        req.write(postData);
+         // write data to request body
+         req.write(postData);
         req.end();
-        
-      });
+        });
       } 
