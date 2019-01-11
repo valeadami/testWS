@@ -453,7 +453,7 @@ app.listen(process.env.PORT || 3000, function() {
         return new Promise((resolve, reject) => {
       
     
-        console.log('dentro getPLQ con options ');
+        console.log('dentro getPLQ con options path '+ options.path + ', hostname ' + options.hostname);
        
       
         let data = '';
