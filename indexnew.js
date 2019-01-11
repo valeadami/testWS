@@ -352,7 +352,7 @@ function scriviSessione(path, strSessione, strValore) {
         return new Promise((resolve, reject) => {
       
     
-        console.log('dentro getPLQ con options '+ JSON.stringify(options));
+        console.log('dentro getPLQ con options ');
        
        /* var ss=leggiSessione(__dirname +'/sessions/', sessionId);
         if (ss===''){
@@ -365,7 +365,8 @@ function scriviSessione(path, strSessione, strValore) {
       */
         let data = '';
         let strOutput='';
-         
+        let strRicerca='esami%20sostenuti';
+        options.path+=strRicerca+'&user=&pwd=&?ava='+bot;
         
       
           const req = https.request(options, (res) => {
