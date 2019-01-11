@@ -296,50 +296,16 @@ function callAVA(agent) {
             comandi=getComandi(c.output[0].commands);
            if (typeof comandi!=='undefined' && comandi.length>=1) {
               console.log('ho almeno un comando, quindi prosegui con l\' azione ' + comandi[0]);
-           
-                if (comandi[0]=="STOP"){
-                    console.log('++++++++++++ stoppo la conversazione')
-                    //03/01/2019
-                    //verifico che posso gestire la chiusura della conversazone
-                    if (agent.requestSource=="ACTIONS_ON_GOOGLE"){
-                     
-                      //agent.requestSource = agent.ACTIONS_ON_GOOGLE
- 
-                      let conv = agent.conv();
-           
-                      console.log(' ---- la conversazione PRIMA ----- ' + JSON.stringify(conv));
-                     
-                      conv.close(strOutput);
-                      console.log(' ---- la conversazione DOPO CHIUSURA ----- ' + JSON.stringify(conv));
-                     
-                      agent.add(conv);
-                      //altrimenti ritorna la strOutput
-                    }else{
-                      agent.add(strOutput);
-                    }
-                   
-                } else { //07/01/2019
-                  console.log('+++++++++ ho solo link immagine')
-                  //02/01/2019
-                  agent.add(strOutput); //ritorno la stringa di output non il link img
- 
-                }
-                if (typeof comandi[1] !== 'undefined' && comandi[0]=="STOP"){
-                    console.log('+++++++++ stoppo la conversazione e mando link immagine')
-                    //02/01/2019
-                    agent.add(strOutput); //NEW
-                }
-            } else {
-               //02/01/2019
-              agent.add(strOutput); //NEW
-              console.log('non ci sono comandi, prosegui');
-            }
-     
+              agent.add(comandi);
+           } else{
+            agent.add('non ci sono comandi');
+
+           }
          
         
           /**********fino qua gestione comandi 18/12/2018  */   
  
-          //agent.add(strOutput); //NEW
+          //agent.add(comandi); //NEW
           resolve(agent);
            
          
