@@ -352,7 +352,7 @@ function scriviSessione(path, strSessione, strValore) {
     
         console.log('dentro getPLQ con options '+ JSON.stringify(options));
        
-        var ss=leggiSessione(__dirname +'/sessions/', sessionId);
+       /* var ss=leggiSessione(__dirname +'/sessions/', sessionId);
         if (ss===''){
           options.headers.Cookie='JSESSIONID=';
           console.log('DENTRO CALL AVA: SESSIONE VUOTA');
@@ -360,7 +360,7 @@ function scriviSessione(path, strSessione, strValore) {
           options.headers.Cookie='JSESSIONID='+ss;
           console.log('DENTRO CALL AVA:  HO LA SESSIONE + JSESSIONID');
         }
-      
+      */
         let data = '';
         let strOutput='';
          
@@ -378,10 +378,9 @@ function scriviSessione(path, strSessione, strValore) {
             var x = res.headers["set-cookie"].toString();
             var arr=x.split(';')
             var y=arr[0].split('=');
-            
-           // scriviSessione(__dirname+'/sessions/',sess, y[1]); 
+          
            
-           scriviSessione(__dirname+'/sessions/',sessionId, y[1]); 
+           //scriviSessione(__dirname+'/sessions/',sessionId, y[1]); 
           } 
           res.setEncoding('utf8');
           res.on('data', (chunk) => {
@@ -403,7 +402,7 @@ function scriviSessione(path, strSessione, strValore) {
                   }else {
                     console.log('non ho comandi');
                   }
-                  resolve(agent);
+                  resolve(comandi);
 
                 
           });
