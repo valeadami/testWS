@@ -432,7 +432,7 @@ function callAVANEW(agent) {
       getPlq(agent, options).then((comandi)=>{
      //se aggiungi più messaggi, torna un fulfillment messages, altrimenti fulfillment-text
       //agent.add('ho il comando da getPLQ');
-      var tmp=comandi.spl(',');
+      var tmp=comandi.split(',');
       console.log('questi sono i valori di tmp '+ tmp[0]);
       /*switch (tmp[0]){
 
