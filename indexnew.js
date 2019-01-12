@@ -443,7 +443,9 @@ function callAVANEW(agent) {
             case 'getLibretto':
               console.log('sono nel getLibretto');
               //ci sarà una funzione eseguioperazione(cmd)
-              doLogin(cmd);
+              doLogin(cmd).then((str)=>{
+                agent.add('il comando da getLibretto= '+ str);
+              });
               break;
             case 'STOP':
             console.log('sono nello stop');
@@ -467,6 +469,7 @@ function callAVANEW(agent) {
     }
       agent.add('il comando è '+ cmd);
       resolve(agent);
+     
        
       }).catch((error) => {
      
