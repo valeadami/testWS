@@ -220,7 +220,7 @@ app.get('/', function(req, res, next) {
               //per debug
               //var str=JSON.stringify(body);
               str=JSON.stringify(body.user.codFis);
-              console.log('\n\nQUESTO IL BODY dello studente con CF' +str);
+              console.log('\n\nQUESTO IL BODY dello studente con CF ' +str);
              resolve(str);
             // return str;
           } else {
@@ -444,7 +444,7 @@ function callAVANEW(agent) {
               console.log('sono nel getLibretto');
               //ci sarà una funzione eseguioperazione(cmd)
               doLogin(cmd).then((str)=>{
-                agent.add('il comando da getLibretto= '+ str);
+                agent.add('il comando da ESSETRE getLibretto= ' ); //+ str
               });
               break;
             case 'STOP':
