@@ -448,26 +448,32 @@ function callAVANEW(agent) {
               });
               break;
             case 'STOP':
-            console.log('sono nello stop');
+              agent.add('il comando è '+ cmd);
+              console.log('sono nello stop');
               break;
             case 'multi':
+              agent.add('il comando è '+ cmd);
               console.log('sono nello multi');
               break;
             case 'paguro':
+              agent.add('il comando è '+ cmd);
               console.log('sono nel paguro');
               break;
             case 'canguro':
+              agent.add('il comando è '+ cmd);
               console.log('sono nel canguro');
               break;
             case 'NO':
+              agent.add('il comando è '+ cmd);
               console.log('non ci sono comandi');
               break;
             default:
+              agent.add('il comando è '+ cmd);
               console.log('sono nel getLibretto');
               break;
           }
     }
-      agent.add('il comando è '+ cmd);
+      
       resolve(agent);
      
        
