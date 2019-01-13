@@ -195,10 +195,10 @@ app.get('/', function(req, res, next) {
   });
   //provo a modificare 13/01/2019 
   //cmd tolgo cmd
-  function doLogin(agent) {
+  function doLogin() {
     return new Promise((resolve, reject) => {
       
-        console.log('+++++++++++ sono in doLogin e il comando =') ;//+ cmd)
+        console.log('+++++++++++ sono in doLogin e il comando =' ) ;//+ cmd)
         var strUrlLogin='https://units.esse3.pp.cineca.it/e3rest/api/login';
          var options = { 
           method: 'GET',
@@ -224,7 +224,7 @@ app.get('/', function(req, res, next) {
               str=JSON.stringify(body.user.codFis);
               console.log('\n\nQUESTO IL BODY dello studente con CF ' +str);
               //aggiunta del 13/01/2019
-              agent.add('da doLogin '+ str);
+              //agent.add('da doLogin '+ str);
               //resolve(str);
               resolve(str);
              
@@ -449,7 +449,7 @@ function callAVANEW(agent) {
         //se aggiungi più messaggi, torna un fulfillment messages, altrimenti fulfillment-text
          //agent.add('ho il comando da getPLQ');
       var promise1=getPlq(agent,options); 
-      var promise2=doLogin(agent);//se passi promise1 passi la stringa???
+      var promise2=doLogin();//se passi promise1 passi la stringa???
       
       Promise.all([promise1,promise2]).then(function(values) {
         console.log(values);
