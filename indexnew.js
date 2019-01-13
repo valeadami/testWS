@@ -454,6 +454,7 @@ function callAVANEW(agent) {
       Promise.all([promise1,promise2]).then(function(values) {
         console.log(values);
         agent.add(values);
+        resolve(agent);
      });
      // getPlq(agent, options).then((comandi)=>{
       
@@ -489,7 +490,7 @@ function callAVANEW(agent) {
           }
     }
       */
-      resolve(agent);
+      
      
        
       }).catch((error) => {
