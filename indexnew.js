@@ -194,7 +194,7 @@ app.get('/', function(req, res, next) {
   });
   //provo a modificare 13/01/2019 
   //aggiungo agent
-  function doLogin(cmd, agent) {
+  function doLogin(cmd) {
     return new Promise((resolve, reject) => {
       
         console.log('+++++++++++ sono in doLogin e il comando =' + cmd);
@@ -224,7 +224,7 @@ app.get('/', function(req, res, next) {
               console.log('\n\nQUESTO IL BODY dello studente con CF ' +str);
               //aggiunta del 13/01/2019
               agent.add('QUESTO IL BODY dello studente con CF ' +str);
-              resolve(agent);
+              resolve(str);
              //resolve(str);
             // return str;
           } else {
@@ -454,10 +454,10 @@ function callAVANEW(agent) {
             case 'STOP':
               //agent.add('il comando è '+ cmd);
               //var strRitorno='';
-              doLogin(cmd,agent).then((agent)=>{
+              doLogin(cmd,agent).then((str)=>{
                 //+ str
                 agent.add('...questo è aggiunto dopo essetre');
-                console.log('la stringa di ritorno da doLogin in case = ');
+                console.log('la stringa di ritorno da doLogin in case = '+str);
               });
               //agent.add('parola MULTI comando STOP | da ESSETRE doLogin= ' +strRitorno); 
               console.log('sono nello stop passo la parola multi comando stop | da ESSETRE doLogin');
