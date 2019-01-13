@@ -33,7 +33,7 @@ var prm=require('./testPromise.js');
 
 
 var app = express();
-var bot='HEADdemo';
+var bot='FarmaInfoBot'; //HEADdemo
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -448,7 +448,11 @@ function callAVANEW(agent) {
               });
               break;
             case 'STOP':
-              agent.add('il comando è '+ cmd);
+              //agent.add('il comando è '+ cmd);
+              //torno su farmainfobot... 
+              doLogin(cmd).then((str)=>{
+                agent.add('STOP comando | da ESSETRE getLibretto= ' ); //+ str
+              });
               console.log('sono nello stop');
               break;
             case 'multi':
