@@ -226,7 +226,7 @@ app.get('/', function(req, res, next) {
               //aggiunta del 13/01/2019
               agent.add('da doLogin '+ str);
               //resolve(str);
-              resolve(agent);
+              resolve(str);
              
             // return str;
           } else {
