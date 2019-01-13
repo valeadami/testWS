@@ -449,11 +449,10 @@ function callAVANEW(agent) {
          //agent.add('ho il comando da getPLQ');
       var promise1=getPlq(agent,options); 
       var promise2=doLogin();//se passi promise1 passi la stringa???
-      var promise3=responseAgent(agent);
-
-      Promise.all([promise1,promise2,promise3]).then(function(values) {
+      
+      Promise.all([promise1,promise2]).then(function(values) {
         console.log(values);
-        //agent.add(values);
+        agent.add(values);
      });
      // getPlq(agent, options).then((comandi)=>{
       
