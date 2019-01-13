@@ -198,7 +198,7 @@ app.get('/', function(req, res, next) {
   function doLogin() {
     return new Promise((resolve, reject) => {
       
-        console.log('+++++++++++ sono in doLogin e il comando =' + cmd);
+        console.log('+++++++++++ sono in doLogin e il comando =') ;//+ cmd)
         var strUrlLogin='https://units.esse3.pp.cineca.it/e3rest/api/login';
          var options = { 
           method: 'GET',
