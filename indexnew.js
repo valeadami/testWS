@@ -192,8 +192,9 @@ app.get('/', function(req, res, next) {
   
   
   });
-  
-  function doLogin(cmd) {
+  //provo a modificare 13/01/2019 
+  //aggiungo agent
+  function doLogin(cmd, agent) {
     return new Promise((resolve, reject) => {
       
         console.log('+++++++++++ sono in doLogin e il comando =' + cmd);
@@ -221,7 +222,10 @@ app.get('/', function(req, res, next) {
               //var str=JSON.stringify(body);
               str=JSON.stringify(body.user.codFis);
               console.log('\n\nQUESTO IL BODY dello studente con CF ' +str);
-             resolve(str);
+              //aggiunta del 13/01/2019
+              agent.add('QUESTO IL BODY dello studente con CF ' +str);
+              resolve(agent);
+             //resolve(str);
             // return str;
           } else {
   
@@ -443,19 +447,19 @@ function callAVANEW(agent) {
             case 'getLibretto':
               console.log('sono nel getLibretto');
               //ci sarà una funzione eseguioperazione(cmd)
-              doLogin(cmd).then((str)=>{
+             /* doLogin(cmd).then((str)=>{
                 agent.add('il comando da ESSETRE doLogin = ' ); //+ str
-              });
+              });*/
               break;
             case 'STOP':
               //agent.add('il comando è '+ cmd);
-              var strRitorno='';
-              doLogin(cmd).then((str)=>{
+              //var strRitorno='';
+              doLogin(cmd,agent).then((agent)=>{
                 //+ str
-                strRitorno=str;
-                console.log('la stringa di ritorno da doLogin in case = '+ strRitorno);
+                agent.add('...questo è aggiunto dopo essetre');
+                console.log('la stringa di ritorno da doLogin in case = ');
               });
-              agent.add('parola MULTI comando STOP | da ESSETRE doLogin= ' +strRitorno); 
+              //agent.add('parola MULTI comando STOP | da ESSETRE doLogin= ' +strRitorno); 
               console.log('sono nello stop passo la parola multi comando stop | da ESSETRE doLogin');
               break;
             case 'multi':
