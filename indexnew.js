@@ -193,8 +193,8 @@ app.get('/', function(req, res, next) {
   
   });
   //provo a modificare 13/01/2019 
-  //aggiungo agent
-  function doLogin(cmd, agent) {
+  //
+  function doLogin(cmd) {
     return new Promise((resolve, reject) => {
       
         console.log('+++++++++++ sono in doLogin e il comando =' + cmd);
@@ -223,9 +223,9 @@ app.get('/', function(req, res, next) {
               str=JSON.stringify(body.user.codFis);
               console.log('\n\nQUESTO IL BODY dello studente con CF ' +str);
               //aggiunta del 13/01/2019
-              agent.add('QUESTO IL BODY dello studente con CF ' +str);
+              
               resolve(str);
-             //resolve(str);
+             
             // return str;
           } else {
   
@@ -435,6 +435,8 @@ function callAVANEW(agent) {
       //ora torno i comandi come stringhe OK FUNGE!!!
 
       getPlq(agent, options).then((comandi)=>{
+        console.log('************* comandi in stringa : '+ comandi.toString());
+      }).then(function (comandi){
      //se aggiungi più messaggi, torna un fulfillment messages, altrimenti fulfillment-text
       //agent.add('ho il comando da getPLQ');
       if (comandi.length>=1) // in caso di un comando come NO, lo split non  va bene
@@ -446,41 +448,23 @@ function callAVANEW(agent) {
           switch (cmd) {
             case 'getLibretto':
               console.log('sono nel getLibretto');
-              //ci sarà una funzione eseguioperazione(cmd)
-             /* doLogin(cmd).then((str)=>{
-                agent.add('il comando da ESSETRE doLogin = ' ); //+ str
-              });*/
+             
               break;
             case 'STOP':
-              //agent.add('il comando è '+ cmd);
-              //var strRitorno='';
-              doLogin(cmd,agent).then((str)=>{
-                //+ str
-                agent.add('...questo è aggiunto dopo essetre');
-                console.log('la stringa di ritorno da doLogin in case = '+str);
+             
+              doLogin(cmd).then((str)=>{
+               
+                agent.add('...questo è aggiunto dopo essetre= '+ str);
+                console.log('ho il comando '+str);
+                
               });
-              //agent.add('parola MULTI comando STOP | da ESSETRE doLogin= ' +strRitorno); 
+             
               console.log('sono nello stop passo la parola multi comando stop | da ESSETRE doLogin');
               break;
-            case 'multi':
-              agent.add('il comando è '+ cmd);
-              console.log('sono nello multi');
-              break;
-            case 'paguro':
-              agent.add('il comando è '+ cmd);
-              console.log('sono nel paguro');
-              break;
-            case 'canguro':
-              agent.add('il comando è '+ cmd);
-              console.log('sono nel canguro');
-              break;
-            case 'NO':
-              agent.add('il comando è '+ cmd);
-              console.log('non ci sono comandi');
-              break;
+           
             default:
               agent.add('il comando è '+ cmd);
-              console.log('sono nel getLibretto');
+              console.log('sono nel cmd ' + cmd);
               break;
           }
     }
