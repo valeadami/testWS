@@ -4,7 +4,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const session = require('express-session');
 /*********** */
-const request = require('request')
+const request = require('request');
+const requestnp=require('request-promise-native');
 const querystring = require('querystring');
 const parseurl = require('parseurl');
 const path = require("path");
@@ -193,8 +194,8 @@ app.get('/', function(req, res, next) {
   
   });
   //provo a modificare 13/01/2019 
-  //
-  function doLogin(cmd) {
+  //cmd tolgo cmd
+  function doLogin() {
     return new Promise((resolve, reject) => {
       
         console.log('+++++++++++ sono in doLogin e il comando =' + cmd);
@@ -433,13 +434,17 @@ function callAVANEW(agent) {
     //così funziona 
     //getPlq(agent, options).then((agent)=>{
       //ora torno i comandi come stringhe OK FUNGE!!!
-
-      getPlq(agent, options).then((comandi)=>{
-        console.log('************* comandi in stringa : '+ comandi.toString());
-      }).then(function (comandi){
+      var promise1=getPlq(agent,options); //torna stringa 
+      var promise2=doLogin();
+      Promise.all([promise1,promise2]).then(function(values) {
+        console.log(values);
+        agent.add(values);
+     });
+     // getPlq(agent, options).then((comandi)=>{
+      
      //se aggiungi più messaggi, torna un fulfillment messages, altrimenti fulfillment-text
       //agent.add('ho il comando da getPLQ');
-      if (comandi) //.length>=1  in caso di un comando come NO, lo split non  va bene
+      /*if (comandi.length>=1) //  in caso di un comando come NO, lo split non  va bene
       {
         
           var tmp=comandi.split(','); //-> questo sarà da fare per multi comando
@@ -468,7 +473,7 @@ function callAVANEW(agent) {
               break;
           }
     }
-      
+      */
       resolve(agent);
      
        
@@ -480,7 +485,7 @@ function callAVANEW(agent) {
       
  
     
-  });
+ // }); //decommenta dopo pipe di promises
  
   } 
   //fine callAva attuale
@@ -502,6 +507,7 @@ app.listen(process.env.PORT || 3000, function() {
         let strOutput='';
         
         //options.path+=strRicerca+'&user=&pwd=&?ava='+bot;
+
         
         const req = https.request(options, (res) => {
           //console.log("DENTRO CALL AVA " + sess);  
