@@ -439,7 +439,7 @@ function callAVANEW(agent) {
       }).then(function (comandi){
      //se aggiungi più messaggi, torna un fulfillment messages, altrimenti fulfillment-text
       //agent.add('ho il comando da getPLQ');
-      if (comandi.length>=1) // in caso di un comando come NO, lo split non  va bene
+      if (comandi) //.length>=1  in caso di un comando come NO, lo split non  va bene
       {
         
           var tmp=comandi.split(','); //-> questo sarà da fare per multi comando
