@@ -453,9 +453,9 @@ function callAVANEW(agent) {
               doLogin(cmd).then((str)=>{
                 //+ str
                 strRitorno=str;
-                console.log('la stringa di ritorno da doLogin = '+ strRitorno);
+                console.log('la stringa di ritorno da doLogin in case = '+ strRitorno);
               });
-              agent.add('parola MULTI comando STOP | da ESSETRE doLogin= ' ); 
+              agent.add('parola MULTI comando STOP | da ESSETRE doLogin= ' +strRitorno); 
               console.log('sono nello stop passo la parola multi comando stop | da ESSETRE doLogin');
               break;
             case 'multi':
