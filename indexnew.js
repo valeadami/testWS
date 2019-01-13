@@ -444,19 +444,18 @@ function callAVANEW(agent) {
               console.log('sono nel getLibretto');
               //ci sarà una funzione eseguioperazione(cmd)
               doLogin(cmd).then((str)=>{
-                agent.add('il comando da ESSETRE getLibretto= ' ); //+ str
+                agent.add('il comando da ESSETRE doLogin = ' ); //+ str
               });
               break;
             case 'STOP':
               agent.add('il comando è '+ cmd);
-             
+              doLogin(cmd).then((str)=>{
+                agent.add('parola MULTI comando STOP | da ESSETRE doLogin= ' ); //+ str
+              });
               console.log('sono nello stop');
               break;
             case 'multi':
-              //agent.add('il comando è '+ cmd);
-              doLogin(cmd).then((str)=>{
-                agent.add('MULTI comando | da ESSETRE getLibretto= ' ); //+ str
-              });
+              agent.add('il comando è '+ cmd);
               console.log('sono nello multi');
               break;
             case 'paguro':
