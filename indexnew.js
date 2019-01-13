@@ -440,71 +440,63 @@ function callAVANEW(agent) {
     
       console.log('options.path da passare a plq: '+ options.path);
     }  
-    //così funziona 
-    //getPlq(agent, options).then((agent)=>{
-      //ora torno i comandi come stringhe OK FUNGE!!!
-      //torna stringa 
+    // ************ FUNZIONA ***********
+    /*
+    var promise1=getPlq(agent,options); 
+    var promise2=doLogin();
+    
+    Promise.all([promise1,promise2]).then(function(values) {
+      console.log(values);
+      agent.add(values);
+      resolve(agent);
+      });
+    }).catch((error) => {
      
+        console.log('errore '+ error);
       
-        //se aggiungi più messaggi, torna un fulfillment messages, altrimenti fulfillment-text
-         //agent.add('ho il comando da getPLQ');
-      var promise1=getPlq(agent,options); 
-      var promise2=doLogin();//se passi promise1 passi la stringa???
+     });  
+      *********/
+     
+   
+     getPlq(agent, options).then((comandi)=>{
+      //se aggiungi più messaggi, torna un fulfillment messages, altrimenti fulfillment-text
+       //agent.add('ho il comando da getPLQ');
+       if (comandi.length>=1){
+
       
-      Promise.all([promise1,promise2]).then(function(values) {
-        console.log(values);
-        agent.add(values);
-        resolve(agent);
-     });
-     // getPlq(agent, options).then((comandi)=>{
-      
-     //se aggiungi più messaggi, torna un fulfillment messages, altrimenti fulfillment-text
-      //agent.add('ho il comando da getPLQ');
-      /*if (comandi.length>=1) //  in caso di un comando come NO, lo split non  va bene
-      {
-        
           var tmp=comandi.split(','); //-> questo sarà da fare per multi comando
           console.log('questi sono i valori di tmp '+ tmp[0]);
           var cmd=tmp[0];
           switch (cmd) {
             case 'getLibretto':
               console.log('sono nel getLibretto');
-             
               break;
             case 'STOP':
-             
+              
               doLogin(cmd).then((str)=>{
-               
+                    
                 agent.add('...questo è aggiunto dopo essetre= '+ str);
                 console.log('ho il comando '+str);
-                
+                resolve(agent);
               });
-             
-              console.log('sono nello stop passo la parola multi comando stop | da ESSETRE doLogin');
               break;
-           
+            
             default:
-              agent.add('il comando è '+ cmd);
-              console.log('sono nel cmd ' + cmd);
+              console.log('sono nel getLibretto');
               break;
-          }
-    }
-      */
+          } //fine switch
+        } //fine if 
+      /* agent.add('il comando è '+ tmp[0]);
+       resolve(agent);*/
+        
+       }).catch((error) => {
       
-     
+         console.log('errore '+ error);
        
-      }).catch((error) => {
-     
-        console.log('errore '+ error);
-      
-     });  
-      
- 
-    
- // }); //decommenta dopo pipe di promises
- 
-  } 
-  //fine callAva attuale
+      });  
+   });
+  
+} 
 
 app.listen(process.env.PORT || 3000, function() {
     console.log("App started on port " + process.env.PORT );
