@@ -448,11 +448,11 @@ function callAVANEW(agent) {
               });
               break;
             case 'STOP':
-              agent.add('il comando è '+ cmd);
+              //agent.add('il comando è '+ cmd);
               doLogin(cmd).then((str)=>{
                 agent.add('parola MULTI comando STOP | da ESSETRE doLogin= ' ); //+ str
               });
-              console.log('sono nello stop');
+              console.log('sono nello stop passo la parola multi comando stop | da ESSETRE doLogin');
               break;
             case 'multi':
               agent.add('il comando è '+ cmd);
