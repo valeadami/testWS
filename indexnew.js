@@ -239,6 +239,14 @@ app.get('/', function(req, res, next) {
       });  //fine request
    });
   } 
+
+  function responseAgent(agent,str) {
+    return new Promise((resolve, reject) => {
+      agent.add(str)
+      resolve(agent);
+
+    });
+  } 
   /**** FUNZIONI A SUPPORTO copiate da progetto api */
 
 function scriviSessione(path, strSessione, strValore) {
@@ -435,25 +443,18 @@ function callAVANEW(agent) {
     //getPlq(agent, options).then((agent)=>{
       //ora torno i comandi come stringhe OK FUNGE!!!
       //torna stringa 
-      var promise1=getPlq(agent,options);
-      promise1.then((comandi)=>{
-        doLogin().then((str)=>{
-               
-          agent.add('...questo è aggiunto dopo essetre= '+ str);
-          console.log('ho il comando '+str);
-          
-        });
-
-      });
+     
       
         //se aggiungi più messaggi, torna un fulfillment messages, altrimenti fulfillment-text
          //agent.add('ho il comando da getPLQ');
-     /* var promise1=getPlq(agent,options); /
+      var promise1=getPlq(agent,options); 
       var promise2=doLogin();//se passi promise1 passi la stringa???
-      Promise.all([promise1,promise2]).then(function(values) {
+      var promise3=responseAgent(agent);
+
+      Promise.all([promise1,promise2,promise3]).then(function(values) {
         console.log(values);
-        agent.add(values);
-     });*/
+        //agent.add(values);
+     });
      // getPlq(agent, options).then((comandi)=>{
       
      //se aggiungi più messaggi, torna un fulfillment messages, altrimenti fulfillment-text
