@@ -448,15 +448,15 @@ function callAVANEW(agent) {
               });
               break;
             case 'STOP':
-              //agent.add('il comando è '+ cmd);
-              //torno su farmainfobot... 
-              doLogin(cmd).then((str)=>{
-                agent.add('STOP comando | da ESSETRE getLibretto= ' ); //+ str
-              });
+              agent.add('il comando è '+ cmd);
+             
               console.log('sono nello stop');
               break;
             case 'multi':
-              agent.add('il comando è '+ cmd);
+              //agent.add('il comando è '+ cmd);
+              doLogin(cmd).then((str)=>{
+                agent.add('MULTI comando | da ESSETRE getLibretto= ' ); //+ str
+              });
               console.log('sono nello multi');
               break;
             case 'paguro':
