@@ -194,7 +194,7 @@ app.get('/', function(req, res, next) {
   });
   //provo a modificare 13/01/2019 
   //aggiungo agent
-  function doLogin(cmd) {
+  function doLogin(cmd, agent) {
     return new Promise((resolve, reject) => {
       
         console.log('+++++++++++ sono in doLogin e il comando =' + cmd);
