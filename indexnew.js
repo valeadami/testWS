@@ -449,9 +449,13 @@ function callAVANEW(agent) {
               break;
             case 'STOP':
               //agent.add('il comando è '+ cmd);
+              var strRitorno='';
               doLogin(cmd).then((str)=>{
-                agent.add('parola MULTI comando STOP | da ESSETRE doLogin= ' ); //+ str
+                //+ str
+                strRitorno=str;
+                console.log('la stringa di ritorno da doLogin = '+ strRitorno);
               });
+              agent.add('parola MULTI comando STOP | da ESSETRE doLogin= ' ); 
               console.log('sono nello stop passo la parola multi comando stop | da ESSETRE doLogin');
               break;
             case 'multi':
