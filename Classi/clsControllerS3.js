@@ -48,7 +48,7 @@ function getEsseTreLogin(){
 function doLogin(){
     return new Promise(function(resolve, reject) {
     getEsseTreLogin().then((body)=>{
-       var stud;
+       var stud; //15/01/2019 non studente perchè è un riferimento al modulo 
         stud=new studente(body.user.codFis,body.user.firstName,body.user.lastName,body.user.grpDes,body.user.grpId,body.user.id, body.user.persId,body.user.userId,body.user.trattiCarriera);
         stud.log()
         resolve(stud);
@@ -128,10 +128,10 @@ function getCarrieraAnagraficaHome(userId){
 
 
 }
-//ottieni il libretto-> piano di studi
-function getLibretto(matId){
-    //array che contiene le righe del libretto
-    var libretto=[];
+
+//********LIBRETTO */
+function getEsseTreLibretto(){
+    return new Promise(function(resolve, reject) {
     var options = { 
         method: 'GET',
         url: strUrlGetLibretto,
@@ -144,13 +144,47 @@ function getLibretto(matId){
         json: true 
     }
    
-    let rawData = '';
     request(options, function (error, response, body) {
-    if (error) throw new Error(error);
-        if (response.statusCode==200){
+        if (error) {
+            reject(error);
+            console.log('errore in doLogin '+ error);
+        } else {
+            if (response.statusCode==200){
+                console.log(body);
+                resolve(body); //ritorna una oggetto json
+            }  
+        }
+
+    });
+
+});
+
+}
+
+function doLogin(){
+    return new Promise(function(resolve, reject) {
+    getEsseTreLogin().then((body)=>{
+       var stud; //15/01/2019 non studente perchè è un riferimento al modulo 
+        stud=new studente(body.user.codFis,body.user.firstName,body.user.lastName,body.user.grpDes,body.user.grpId,body.user.id, body.user.persId,body.user.userId,body.user.trattiCarriera);
+        stud.log()
+        resolve(stud);
+
+    });
+});
+}
+//ottieni il libretto-> piano di studi
+//modificata il 15/01/2019 tolto idMat
+function getLibretto(){
+    return new Promise(function(resolve, reject) {
+    //array che contiene le righe del libretto
+    var libretto=[];
+    var rawData='';
+    getEsseTreLibretto().then((body)=>{
             //controllo che body sia un array
             if (Array.isArray(body)){
-
+                rawData=JSON.stringify(body);
+                console.log('\n\nQUESTO IL BODY del libretto ' +rawData);
+                //creo oggetto libretto
                 for(var i=0; i<body.length; i++){
 
                     libretto[i]= new rigaLibretto(body[i].aaFreqId,body[i].adCod, 
@@ -158,26 +192,12 @@ function getLibretto(matId){
                         body[i].dataFreq,body[i].dataScadIscr,body[i].esito);
 
                         libretto[i].log();
-                       
-                         //libretto[i]=rigaLibretto;
-
 
                 }
-
+                resolve(libretto);
             }
-           
-            //per debug
-            rawData=JSON.stringify(body);
-            console.log('\n\nQUESTO IL BODY del libretto ' +rawData);
-        }else {
-
-            //LOGIN FAILED
-            console.log('response.statusCode ' + response.statusCode);
-            console.log('non riesco a leggere il libretto');
-        }
-        return libretto;
-    });
-
+   });
+});// fine getLibretto
 }
 exports.doLogin= doLogin;
 exports.doLogout = doLogout;
