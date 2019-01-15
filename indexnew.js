@@ -164,7 +164,7 @@ app.get('/', function(req, res, next) {
 
   */
  function welcome (agent) {
-    agent.add(`Welcome to Express.JS webhook! `);
+    agent.add(`Ciao, sono l'assistente virtuale dell’Università degli studi di Trieste. Posso aiutarti a prenotare un appello, vedere il tuo libretto, vedere i risultati di un esame. Dì ad esempio elenco esami per ascoltare i dati del tuo libretto `);
     console.log('sono nel welcome');
   }
   
@@ -499,10 +499,10 @@ function callAVANEW(agent) {
               */
 
                 //15/01/2019 rivisto codice business...come lo integro ora???
-                controller.doLogin().then((stud)=> {
+                controller.doLogin().then((studente)=> {
 
-                  agent.add('...questo è aggiunto dopo essetre= '+ stud.codFisc);
-                  console.log('ho lo studente '+stud.codFisc);
+                  agent.add('...questo è aggiunto dopo essetre= '+ studente.codFisc);
+                  console.log('ho lo studente '+studente.codFisc);
                  resolve(agent);
                   
                  }).catch((error) => {
