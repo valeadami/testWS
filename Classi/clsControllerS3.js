@@ -48,10 +48,10 @@ function getEsseTreLogin(){
 function doLogin(){
     return new Promise(function(resolve, reject) {
     getEsseTreLogin().then((body)=>{
-      
-        studente=new studente(body.user.codFis,body.user.firstName,body.user.lastName,body.user.grpDes,body.user.grpId,body.user.id, body.user.persId,body.user.userId,body.user.trattiCarriera);
-        studente.log()
-        resolve(studente);
+       var stud;
+        stud=new studente(body.user.codFis,body.user.firstName,body.user.lastName,body.user.grpDes,body.user.grpId,body.user.id, body.user.persId,body.user.userId,body.user.trattiCarriera);
+        stud.log()
+        resolve(stud);
 
     });
 });

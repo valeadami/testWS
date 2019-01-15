@@ -499,10 +499,10 @@ function callAVANEW(agent) {
               */
 
                 //15/01/2019 rivisto codice business...come lo integro ora???
-                controller.doLogin().then((studente)=> {
+                controller.doLogin().then((stud)=> {
 
-                  agent.add('...questo è aggiunto dopo essetre= '+ studente.codFisc);
-                  console.log('ho lo studente '+studente.codFisc);
+                  agent.add('...questo è aggiunto dopo essetre= '+ stud.codFisc);
+                  console.log('ho lo studente '+stud.codFisc);
                  resolve(agent);
                   
                  }).catch((error) => {
