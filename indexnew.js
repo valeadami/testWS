@@ -501,9 +501,9 @@ function callAVANEW(agent) {
                 //15/01/2019 rivisto codice business...come lo integro ora???
                 controller.doLogin().then((studente)=> {
 
-                  agent.add('...questo è aggiunto dopo essetre= '+ studente.codFisc);
+                  agent.add('...questo è aggiunto dopo essetre= '+ studente.codFisc + 'matricola ID '+ studente.trattiCarriera[0].matId);
                   console.log('ho lo studente '+studente.codFisc + 'matricola ID '+ studente.trattiCarriera[0].matId);
-                 
+                  agent.setContext({ name: 'matricola', lifespan: 5, parameters: { matID: studente.trattiCarriera[0].matId }});
                   resolve(agent);
                   
                  }).catch((error) => {
