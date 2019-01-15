@@ -515,10 +515,20 @@ function callAVANEW(agent) {
             case 'getLibretto':
               console.log('sono nel getLibretto');
               controller.getLibretto().then((libretto)=> {
-              agent.add('primo esame del lbretto '+libretto[0].adDes+ ', secondo esame del libretto '+ libretto[1].adDes);
-              console.log('primo esame del lbretto '+libretto[0].adDes+ ', secondo esame del libretto '+ libretto[1].adDes);
-              //agent.setContext({ name: 'libretto', lifespan: 5, parameters: { matID: studente.trattiCarriera[0].matId }});
-              resolve(agent);
+                var strOutput='ecco gli esami ';
+                if (Array.isArray(libretto)){
+                 
+                  for(var i=0; i<body.length; i++){
+  
+                    strOutput+='esame di ' +   body[i].adDes+ ', frequentato  nell \'anno ' +body[i].aaFreqId +', anno di corso ' +
+                    body[i].annoCorso + ', superato con voto ' +body[i].esito;
+
+                  }
+                }
+                agent.add(strOutput);
+                console.log('strOutput '+ strOutput);
+                //agent.setContext({ name: 'libretto', lifespan: 5, parameters: { matID: studente.trattiCarriera[0].matId }});
+                resolve(agent);
               }).catch((error) => {
                 console.log('Si è verificato errore : ' +error);
                 
