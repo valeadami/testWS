@@ -50,8 +50,8 @@ function Studente(codFisc, firstname, lastname, grpDes, grpId, id, persId, userI
             console.log('sono in debug mode');
 
 
-            console.log('CREATO OGGETTO STUDENTE: cod fisc=' + this.codFisc );
-            //+ ', nome ' + this.firstname + ', cognome  ' + this.lastname + ', gruppo descr' + this.grpDes + ', id gruppo ' + this.grpId + ', id '+ this.id + ',  PersId '+ this.persId+ ', tratti carriera '+ this.getTrattiCarriera());
+            console.log('CREATO OGGETTO STUDENTE: cod fisc=' + this.codFisc + ', nome ' + this.firstname + ', cognome  ' + this.lastname + ', gruppo descr' + this.grpDes + ', id gruppo ' 
+                + this.grpId + ', id '+ this.id + ',  PersId '+ this.persId+ ', tratti carriera '+ this.getTrattiCarriera());
         } else {
 
             console.log('NEL LOG DI clsStudente: creato oggetto studente' + this.codFisc + ', nome ' + this.firstname + ', cognome  ' + this.lastname + ', gruppo descr' + this.grpDes + ', id gruppo ' + this.grpId + ', id '+ this.id + ',  PersId '+ this.persId);

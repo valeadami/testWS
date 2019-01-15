@@ -14,7 +14,9 @@ var strUrlAnagraficaHome='https://units.esse3.pp.cineca.it/e3rest/api/anagrafica
 //scelgo link libretto
 var strUrlGetLibretto="https://units.esse3.pp.cineca.it/e3rest/api/libretto-service-v1/libretti/286879/righe/"; //?filter=adDes%3D%3D'DIRITTO%20COSTITUZIONALE'
 
-function doLogin(){
+//qui ci vorrà user e pwd
+function getEsseTreLogin(){
+    return new Promise(function(resolve, reject) {
     var options = { 
         method: 'GET',
         url: strUrlLogin,
@@ -27,28 +29,32 @@ function doLogin(){
         json: true 
     }
    
-    let rawData = '';
-  
-     
     request(options, function (error, response, body) {
-    if (error) throw new Error(error);
-        if (response.statusCode==200){
-            studente=new studente(body.user.codFis,body.user.firstName,body.user.lastName,body.user.grpDes,body.user.grpId,body.user.id, body.user.persId,body.user.userId,body.user.trattiCarriera);
-            studente.log();
-            //per debug
-            rawData=JSON.stringify(body);
-            console.log('\n\nQUESTO IL BODY dello studente ' +rawData);
-        }else {
-
-            //LOGIN FAILED
-            console.log('response.statusCode ' + response.statusCode);
-            console.log('login failed');
+        if (error) {
+            reject(error);
+            console.log('errore in doLogin '+ error);
+        } else {
+            if (response.statusCode==200){
+                console.log(body);
+                resolve(body); //ritorna una oggetto json
+            }  
         }
 
-        return studente;
     });
 
+});
 
+}
+function doLogin(){
+    return new Promise(function(resolve, reject) {
+    getEsseTreLogin().then((body)=>{
+      
+        studente=new studente(body.user.codFis,body.user.firstName,body.user.lastName,body.user.grpDes,body.user.grpId,body.user.id, body.user.persId,body.user.userId,body.user.trattiCarriera);
+        studente.log()
+        resolve(studente);
+
+    });
+});
 }
 //riscrivo doLogin con le promise
 function doLogout(){
