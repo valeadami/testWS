@@ -80,12 +80,29 @@ app.use(function (req, res, next) {
     }
   };
   app.get('/login', function(req, res, next) {
-     
-      prm.mainMio().then((body)=> {
+     //14/01/2019 LO COMMENTO  
+        //e uso il CONTROLLER
+    controller.doLogin().then((studente)=> {
+      
+      res.setHeader('Content-Type', 'text/html')
+      res.write("ecco i dati  "+ studente.codFisc);
+      res.end();
+      next(); //va qui il next 
+      
+   }).catch((error) => {
+       console.log('Si è verificato errore : ' +error);
+       res.json({ 'fulfillmentText': 'non lo so!!!!!!!!!!'});
+    
+     });
+    }) 
+
+     /* prm.mainMio().then((body)=> {
           //ok ora funge così, però questo codice dovrebbe stare nel controller
+       
+       
+
        var stud=new studente(body.login);
-       //commento per testare metodi "standard"
-     //  res.json({ 'fulfillmentText': stud.codFisc}); 
+   
 
        res.setHeader('Content-Type', 'text/html')
        res.write("ecco i dati  "+ stud.codFisc);
@@ -96,9 +113,9 @@ app.use(function (req, res, next) {
         console.log('Si è verificato errore : ' +error);
         res.json({ 'fulfillmentText': 'non lo so!!!!!!!!!!'});
      
-    });
+    });*/
 
-  });
+  //});
   //prova con async/away
   app.get('/loginAA', async function(req, res, next) {
       //esempio tratto da https://medium.com/@iamsamsmith/promises-in-express-js-apis-testing-dd0243163d57
@@ -198,7 +215,7 @@ app.get('/', function(req, res, next) {
   function doLogin() {
     return new Promise((resolve, reject) => {
       
-        console.log('+++++++++++ sono in doLogin e il comando =' ) ;//+ cmd)
+        //console.log('+++++++++++ sono in doLogin e il comando =' ) ;//+ cmd)
         var strUrlLogin='https://units.esse3.pp.cineca.it/e3rest/api/login';
          var options = { 
           method: 'GET',
@@ -472,13 +489,28 @@ function callAVANEW(agent) {
               console.log('sono nel getLibretto');
               break;
             case 'STOP':
-              
-              doLogin(cmd).then((str)=>{
+             //originale FUNGE!!!! 
+              /*doLogin().then((str)=>{
                     
                 agent.add('...questo è aggiunto dopo essetre= '+ str);
                 console.log('ho il comando '+str);
                 resolve(agent);
               });
+              */
+
+                //15/01/2019 rivisto codice business...come lo integro ora???
+                controller.doLogin().then((studente)=> {
+
+                  agent.add('...questo è aggiunto dopo essetre= '+ studente.codFisc);
+                  console.log('ho lo studente '+studente.codFisc);
+                 resolve(agent);
+                  
+                 }).catch((error) => {
+                   console.log('Si è verificato errore : ' +error);
+                   
+                
+                 });
+              //
               break;
             
             default:
