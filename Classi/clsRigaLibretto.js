@@ -57,7 +57,7 @@ function RigaLibretto(aaFreqId, adCod,adDes,adsceId,annoCorso,chiaveADContestual
     this.tipoEsaDes=tipoEsaDes; //descrizione del tipo di esame previsto per l''attivit� didattica 
     this.tipoInsCod=tipoInsCod; //codice tipo di insegnamento previsto per l''attivit� didattica 
     this.tipoInsDes=tipoInsDes;//descrizione tipo di insegnamento previsto per l''attivit� didattica ,
-    
+   
     
     
     this.getchiaveADContestualizzata=function() {
@@ -86,12 +86,12 @@ function RigaLibretto(aaFreqId, adCod,adDes,adsceId,annoCorso,chiaveADContestual
     };
     this.getEsito=function (){
         var str='';
-        if (this.esito!==undefined ){
+        if (typeof this.esito!=='undefined' ){
             console.log('********* oggetto esito della riga libretto ');
           // for(var i=0; i<this.chiaveADContestualizzata.length; i++){
 
             str+='aaSupId ' + this.esito.aaSupId + ', dataEsame ' +  this.esito.dataEsa + ', lodeFlg '+  this.esito.lodeFlg +
-             ', modValCod '+ this.esito.modValCod.value;
+             ', modValCod '+ this.esito.modValCod.value + ', voto '+ this.esito.voto;
 
           // }
 
@@ -109,7 +109,7 @@ function RigaLibretto(aaFreqId, adCod,adDes,adsceId,annoCorso,chiaveADContestual
             console.log('sono in debug mode');
 
 
-            console.log('CREATO OGGETTO RIGA LIBRETTO: anno frequenza=' +this.aaFreqId+ ', adCod ' + this.adCod + ', adDes  ' + this.adDes + ', adId' + this.adId + ', id matricola ' + this.matId + ', matricola '+ this.matricola + ',  adsceId '+ this.adsceId);
+            console.log('CREATO OGGETTO RIGA LIBRETTO: anno frequenza=' +this.aaFreqId+ ', adCod ' + this.adCod + ', adDes  ' + this.adDes + ', adId' + this.adId + ', id matricola ' + this.matId + ', matricola '+ this.matricola + ',  adsceId '+ this.adsceId + 'esito '+ this.getEsito());
         } else {
 
             console.log('creato oggetto riga libretto');
