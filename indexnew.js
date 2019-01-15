@@ -518,10 +518,10 @@ function callAVANEW(agent) {
                 var strOutput='ecco gli esami ';
                 if (Array.isArray(libretto)){
                  
-                  for(var i=0; i<body.length; i++){
+                  for(var i=0; i<libretto.length; i++){
   
-                    strOutput+='esame di ' +   body[i].adDes+ ', frequentato  nell \'anno ' +body[i].aaFreqId +', anno di corso ' +
-                    body[i].annoCorso + ', superato con voto ' +body[i].esito;
+                    strOutput+='esame di ' +   libretto[i].adDes+ ', frequentato  nell \'anno ' +libretto[i].aaFreqId +', anno di corso ' +
+                    libretto[i].annoCorso + ', superato con voto ' +libretto[i].esito;
 
                   }
                 }
