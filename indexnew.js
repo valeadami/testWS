@@ -502,8 +502,9 @@ function callAVANEW(agent) {
                 controller.doLogin().then((studente)=> {
 
                   agent.add('...questo è aggiunto dopo essetre= '+ studente.codFisc);
-                  console.log('ho lo studente '+studente.codFisc);
-                 resolve(agent);
+                  console.log('ho lo studente '+studente.codFisc + 'matricola ID '+ studente.trattiCarriera[0].matId);
+                 
+                  resolve(agent);
                   
                  }).catch((error) => {
                    console.log('Si è verificato errore : ' +error);
