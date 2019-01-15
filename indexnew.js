@@ -521,7 +521,7 @@ function callAVANEW(agent) {
                   for(var i=0; i<libretto.length; i++){
   
                     strOutput+='esame di ' +   libretto[i].adDes+ ', frequentato  nell \'anno ' +libretto[i].aaFreqId +', anno di corso ' +
-                    libretto[i].annoCorso + ', pari a  ' +libretto[i].peso + 'crediti';
+                    libretto[i].annoCorso + ', ' ;
 
                   }
                 }
