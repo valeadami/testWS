@@ -34,7 +34,7 @@ var prm=require('./testPromise.js');
 
 
 var app = express();
-var bot='FarmaInfoBot'; //HEADdemo
+var bot='HEADdemo'; //HEADdemo FarmaInfoBot
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -80,9 +80,26 @@ app.use(function (req, res, next) {
     }
   };
   app.get('/login', function(req, res, next) {
+
+    //15/01/2019
+    //test del libretto
+    controller.getLibretto().then((libretto)=> {
+      
+      res.setHeader('Content-Type', 'text/html')
+      res.write("ecco i dati del libretto, matricola ID = "+ libretto[0].adDes);
+      res.end();
+      next(); //va qui il next 
+      
+   }).catch((error) => {
+       console.log('Si è verificato errore : ' +error);
+       res.json({ 'fulfillmentText': 'non lo so!!!!!!!!!!'});
+    
+     });
+
+
      //14/01/2019 LO COMMENTO  
         //e uso il CONTROLLER
-    controller.doLogin().then((studente)=> {
+    /*controller.doLogin().then((studente)=> {
       
       res.setHeader('Content-Type', 'text/html')
       res.write("ecco i dati  "+ studente.codFisc);
@@ -93,8 +110,10 @@ app.use(function (req, res, next) {
        console.log('Si è verificato errore : ' +error);
        res.json({ 'fulfillmentText': 'non lo so!!!!!!!!!!'});
     
-     });
+     });*/
+
     }) 
+    
 
      /* prm.mainMio().then((body)=> {
           //ok ora funge così, però questo codice dovrebbe stare nel controller
@@ -474,19 +493,37 @@ function callAVANEW(agent) {
      });  
       *********/
      
-   
+     var tmp;
      getPlq(agent, options).then((comandi)=>{
       //se aggiungi più messaggi, torna un fulfillment messages, altrimenti fulfillment-text
        //agent.add('ho il comando da getPLQ');
-       if (comandi.length>=1){
+       if (comandi.length>1){
+         
+        tmp=comandi.split(',');
+        console.log('comandi '+ comandi.toString());
 
-      
-          var tmp=comandi.split(','); //-> questo sarà da fare per multi comando
-          console.log('questi sono i valori di tmp '+ tmp[0]);
+       } else{
+
+        tmp=comandi[0];
+        console.log('questo il valore del comando in tmp[0] '+ tmp[0]);
+       }
+         //fine if
+           //-> questo sarà da fare per multi comando
+         
           var cmd=tmp[0];
           switch (cmd) {
             case 'getLibretto':
               console.log('sono nel getLibretto');
+              controller.getLibretto().then((libretto)=> {
+              agent.add('primo esame del lbretto '+libretto[0].adDes+ ', secondo esame del libretto '+ libretto[1].adDes);
+              console.log('primo esame del lbretto '+libretto[0].adDes+ ', secondo esame del libretto '+ libretto[1].adDes);
+              //agent.setContext({ name: 'libretto', lifespan: 5, parameters: { matID: studente.trattiCarriera[0].matId }});
+              resolve(agent);
+              }).catch((error) => {
+                console.log('Si è verificato errore : ' +error);
+                
+             
+              });
               break;
             case 'STOP':
              //originale FUNGE!!!! 
@@ -518,7 +555,7 @@ function callAVANEW(agent) {
               console.log('sono nel getLibretto');
               break;
           } //fine switch
-        } //fine if 
+        
       /* agent.add('il comando è '+ tmp[0]);
        resolve(agent);*/
         
