@@ -184,7 +184,8 @@ app.get('/', function(req, res, next) {
   */
  function welcome (agent) {
     agent.add(`Ciao, sono l'assistente virtuale dell’Università degli studi di Trieste. Posso aiutarti a prenotare un appello, vedere il tuo libretto, vedere i risultati di un esame. Dì ad esempio elenco esami per ascoltare i dati del tuo libretto `);
-    console.log('sono nel welcome');
+ 
+   console.log('sono nel welcome');
   }
   
   function fallback (agent) {
@@ -211,7 +212,7 @@ app.get('/', function(req, res, next) {
     
     let intentMap = new Map();
     
-    intentMap.set('Welcome', welcome); //la funzione callAva sostiutisce la funzione welcome 
+    intentMap.set('Welcome', callAVANEW); welcome//la funzione callAva sostiutisce la funzione welcome 
     intentMap.set('AnyText', callAVANEW); // callAVA anytext AnyText sostituisce 'qualunquetesto'
     intentMap.set('Fallback', fallback); //modifica del 22/11/2018 per gestire la fine della conversazione
     //intentMap.set('CloseConversation', callAVA);
@@ -494,24 +495,24 @@ function callAVANEW(agent) {
       *********/
      
      var tmp;
+     var strOutput
      getPlq(agent, options).then((comandi)=>{
       //se aggiungi più messaggi, torna un fulfillment messages, altrimenti fulfillment-text
        //agent.add('ho il comando da getPLQ');
-       if (comandi.length>=1){
+       if (comandi.length>1){
          
         tmp=comandi.split(',');
         console.log('comandi '+ comandi.toString());
-        }
-     /*  } else{
+        } else{
 
         tmp=comandi[0];
         console.log('questo il valore del comando in tmp[0] '+ tmp[0]);
-       }*/
+       }
          //fine if
            //-> questo sarà da fare per multi comando
          
           //var cmd=tmp[0]; originale
-          var strOutput=tmp[1];//17/01/2019 ora in tmp[0] trovo strOutput
+          strOutput=tmp[1];//17/01/2019 ora in tmp[0] trovo strOutput
           var cmd=tmp[0];  //il comando in posizione 2
           switch (cmd) {
             case 'getLibretto':
@@ -576,7 +577,8 @@ function callAVANEW(agent) {
               break;
             
             default:
-              console.log('sono nel getLibretto');
+              console.log('qui ho solo strOutput');
+              agent.add(strOutput);
               break;
           } //fine switch
         
