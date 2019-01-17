@@ -512,8 +512,9 @@ function callAVANEW(agent) {
            //-> questo sarà da fare per multi comando
          
           //var cmd=tmp[0]; originale
-          strOutput=tmp[0];//17/01/2019 ora in tmp[0] trovo strOutput
-          var cmd=tmp[1];  //il comando in posizione 2
+         //17/01/2019 ora in tmp[0] trovo strOutput
+          var cmd=tmp[0]; 
+          strOutput=tmp[1]; //il comando in posizione 2
           switch (cmd) {
             case 'getLibretto':
               console.log('sono nel getLibretto');
