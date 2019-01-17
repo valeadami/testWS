@@ -578,7 +578,7 @@ function callAVANEW(agent) {
             
             default:
               console.log('qui ho solo strOutput');
-              agent.add(strOutput);
+              agent.add(comandi.toString());
               break;
           } //fine switch
         
