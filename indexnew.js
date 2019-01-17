@@ -497,36 +497,43 @@ function callAVANEW(agent) {
      getPlq(agent, options).then((comandi)=>{
       //se aggiungi più messaggi, torna un fulfillment messages, altrimenti fulfillment-text
        //agent.add('ho il comando da getPLQ');
-       if (comandi.length>1){
+       if (comandi.length>=1){
          
         tmp=comandi.split(',');
         console.log('comandi '+ comandi.toString());
-
-       } else{
+        }
+     /*  } else{
 
         tmp=comandi[0];
         console.log('questo il valore del comando in tmp[0] '+ tmp[0]);
-       }
+       }*/
          //fine if
            //-> questo sarà da fare per multi comando
          
-          var cmd=tmp[0];
+          //var cmd=tmp[0]; originale
+          var strOutput=tmp[0];//17/01/2019 ora in tmp[0] trovo strOutput
+          var cmd=tmp[1];  //il comando in posizione 2
           switch (cmd) {
             case 'getLibretto':
               console.log('sono nel getLibretto');
               controller.getLibretto().then((libretto)=> {
-                var strOutput='ecco gli esami ';
+                var strTemp='';
+               // strOutput='ecco gli esami ';
                 if (Array.isArray(libretto)){
                  
                   for(var i=0; i<libretto.length; i++){
   
-                    strOutput+='esame di ' +   libretto[i].adDes+ ', frequentato  nell \'anno ' +libretto[i].aaFreqId +', anno di corso ' +
+                    strTemp+='esame di ' +   libretto[i].adDes+ ', frequentato  nell \'anno ' +libretto[i].aaFreqId +', anno di corso ' +
                     libretto[i].annoCorso + ', ' ;
 
                   }
                 }
+                //qui devo fare replace della @, che si trova in tmp[0]
+                var str=strOutput;
+                str=str.replace(/(@)/gi, strTemp);
+                strOutput=str;
                 agent.add(strOutput);
-                console.log('strOutput '+ strOutput);
+                console.log('strOutput con replace '+ strOutput);
                 //agent.setContext({ name: 'libretto', lifespan: 5, parameters: { matID: studente.trattiCarriera[0].matId }});
                 resolve(agent);
               }).catch((error) => {
@@ -618,24 +625,30 @@ app.listen(process.env.PORT || 3000, function() {
           res.on('data', (chunk) => {
            console.log(`BODY: ${chunk}`);
            data += chunk;
-        
+           //spostato qua
+           let comandi=[];
            let c=JSON.parse(data);
                   strOutput=c.output[0].output;
                 
                   strOutput=strOutput.replace(/(<\/p>|<p>|<b>|<\/b>|<br>|<\/br>|<strong>|<\/strong>|<div>|<\/div>|<ul>|<li>|<\/ul>|<\/li>|&nbsp;|)/gi, '');
-             
+                 
                   //resolve(strOutput); <--- OLD
                   //18/12/2018  02/01/2019
-                  let comandi=[];
+                  
                   comandi=getComandi(c.output[0].commands);
                  if (typeof comandi!=='undefined' && comandi.length>=1) {
                     console.log('ho almeno un comando, quindi prosegui con l\' azione ' + comandi[0]);
                    // agent.add(comandi.toString()); // ok, anche comandi[0] va bene
+                   comandi.push(strOutput + ',' + comandi.toString());
+                   console.log('ora i comandi sono '+ comandi.toString());
                    resolve(comandi.toString());
                    
                  } else{
-                    //agent.add('NO');
-                    comandi=['NO'];
+                   
+                 // strOutput=c.output[0].output;
+                 // comandi=['NO'];
+                  comandi=strOutput;
+                  console.log('qui go solo la strOutput ' + comandi[0]);
                  }
                
               
