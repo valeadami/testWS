@@ -657,7 +657,7 @@ app.listen(process.env.PORT || 3000, function() {
                  // strOutput=c.output[0].output;
                  // comandi=['NO'];
                   comandi=strOutput;
-                  console.log('qui go solo la strOutput ' + comandi[0]);
+                  console.log('qui ho solo la strOutput ' + comandi);
                  }
                
               
