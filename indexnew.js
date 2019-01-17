@@ -79,16 +79,22 @@ app.use(function (req, res, next) {
       'Cookie':'' // +avaSession 
     }
   };
-  app.get('/login', function(req, res, next) {
+//19/01/2019
+  var responseFromPlq={
+    'strOutput':'',
+    'cmd':''
+}
 
+  app.get('/login', function(req, res, next) {
+    
     //15/01/2019
-    //test del libretto
+   
     controller.getLibretto().then((libretto)=> {
       
       res.setHeader('Content-Type', 'text/html')
       res.write("ecco i dati del libretto, matricola ID = "+ libretto[0].adDes);
       res.end();
-      next(); //va qui il next 
+      next(); 
       
    }).catch((error) => {
        console.log('Si è verificato errore : ' +error);
@@ -577,8 +583,9 @@ function callAVANEW(agent) {
               break;
             
             default:
-              console.log('qui ho solo strOutput');
+              console.log('nel default ho solo strOutput');
               agent.add(comandi.toString());
+              resolve(agent);
               break;
           } //fine switch
         
