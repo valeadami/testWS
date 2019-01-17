@@ -555,7 +555,7 @@ function callAVANEW(agent) {
                 //15/01/2019 rivisto codice business...come lo integro ora???
                 controller.doLogin().then((studente)=> {
                   var strTemp='';
-                  strTemp+='codice fiscale '+ studente.codFisc + 'matricola ID '+ studente.trattiCarriera[0].matId + ' corso di laurea '+ studente.trattiCarriera[0].tipoCorsoDes ;
+                  strTemp+='codice fiscale '+ studente.codFisc + ' matricola ID '+ studente.trattiCarriera[0].matId + ' corso di laurea '+ studente.trattiCarriera[0].cdsDes ;
                  // agent.add('...questo è aggiunto dopo essetre= '+ studente.codFisc + 'matricola ID '+ studente.trattiCarriera[0].matId);
                   console.log('ho lo studente '+studente.codFisc + 'matricola ID '+ studente.trattiCarriera[0].matId);
                  // agent.setContext({ name: 'matricola', lifespan: 5, parameters: { matID: studente.trattiCarriera[0].matId }});
