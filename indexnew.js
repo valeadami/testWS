@@ -284,13 +284,7 @@ app.get('/', function(req, res, next) {
    });
   } 
 
-  function responseAgent(agent,str) {
-    return new Promise((resolve, reject) => {
-      agent.add(str)
-      resolve(agent);
-
-    });
-  } 
+ 
   /**** FUNZIONI A SUPPORTO copiate da progetto api */
 
 function scriviSessione(path, strSessione, strValore) {
@@ -511,15 +505,15 @@ function callAVANEW(agent) {
         console.log('comandi '+ comandi.toString());
         } else{
 
-        tmp=comandi[0];
-        console.log('questo il valore del comando in tmp[0] '+ tmp[0]);
+        tmp=comandi[1];//0
+        console.log('questo il valore del comando in tmp[0] '+ tmp[1]);
        }
          //fine if
            //-> questo sarà da fare per multi comando
          
           //var cmd=tmp[0]; originale
-          strOutput=tmp[1];//17/01/2019 ora in tmp[0] trovo strOutput
-          var cmd=tmp[0];  //il comando in posizione 2
+          strOutput=tmp[0];//17/01/2019 ora in tmp[0] trovo strOutput
+          var cmd=tmp[1];  //il comando in posizione 2
           switch (cmd) {
             case 'getLibretto':
               console.log('sono nel getLibretto');
@@ -655,7 +649,7 @@ app.listen(process.env.PORT || 3000, function() {
                  if (typeof comandi!=='undefined' && comandi.length>=1) {
                     console.log('ho almeno un comando, quindi prosegui con l\' azione ' + comandi[0]);
                    // agent.add(comandi.toString()); // ok, anche comandi[0] va bene
-                   comandi.push(strOutput + ',' + comandi.toString());
+                   comandi.push(strOutput); //+ ',' + comandi.toString()
                    console.log('ora i comandi sono '+ comandi.toString());
                    resolve(comandi.toString());
                    
