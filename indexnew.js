@@ -577,7 +577,7 @@ function callAVANEW(agent) {
                  });*/
                  controller.getCarriera('s260856').then((carriera)=> {
                   var strTemp='';
-                  strTemp+='Ti sei immatricolato nell anno '+ carriera.aaId + ' , con numero matricola  '+ carriera.matricola + ', nel corso di laurea '+ carriera.cdsDes +', tipoCorsoDes '+ carriera.tipoCorsoDes; + 'percorso '+carriera.pdsDes +', stato attuale :' +carriera.motStastuDes
+                  strTemp+='Ti sei immatricolato nell anno '+ carriera.aaId + ' , con numero matricola  '+ carriera.matricola + ', nel corso di laurea '+ carriera.cdsDes +', tipo di corso di laurea '+ carriera.tipoCorsoDes; + 'percorso '+carriera.pdsDes +', stato attuale :' +carriera.motStastuDes
                  console.log('sono nella carriera ...');
                  // console.log('ho lo studente '+studente.codFisc + 'matricola ID '+ studente.trattiCarriera[0].matId);
                  // agent.setContext({ name: 'matricola', lifespan: 5, parameters: { matID: studente.trattiCarriera[0].matId }});
@@ -602,7 +602,7 @@ function callAVANEW(agent) {
               if (Array.isArray(libretto)){
                
               
-                  strTemp+='sei iscritto al ' +   libretto[0].annoCorso+ '\n';
+                  strTemp+='sei iscritto al ' +   libretto[0].annoCorso+ ' anno di corso \n';
                   console.log('comando getStudente->getLibretto');
               }
               //qui devo fare replace della @, che si trova in tmp[0]
