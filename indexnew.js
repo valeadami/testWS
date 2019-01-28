@@ -218,9 +218,9 @@ app.get('/', function(req, res, next) {
     
     let intentMap = new Map();
     
-    intentMap.set('Welcome', callAVANEW); welcome//la funzione callAva sostiutisce la funzione welcome 
+    intentMap.set('Welcome', callAVANEW); //la funzione callAva sostiutisce la funzione welcome 
     intentMap.set('AnyText', callAVANEW); // callAVA anytext AnyText sostituisce 'qualunquetesto'
-    intentMap.set('Fallback', fallback); //modifica del 22/11/2018 per gestire la fine della conversazione
+  //  intentMap.set('Fallback', fallback); //modifica del 22/11/2018 per gestire la fine della conversazione
     //intentMap.set('CloseConversation', callAVA);
     
     agent.handleRequest(intentMap);
@@ -642,6 +642,7 @@ function callAVANEW(agent) {
               
               });
               break;
+              //28/01/2019
               case 'getAnnoImmatricolazione':
               controller.getCarriera('s260856').then((carriera)=> {
                 var strTemp='';
@@ -662,6 +663,27 @@ function callAVANEW(agent) {
                 
               
               });
+              break;
+              
+              //28/01/2019 AGGIUNTO ANCHE LO STOP
+              case 'STOP':
+              if (agent.requestSource=="ACTIONS_ON_GOOGLE"){
+                      
+              
+
+                let conv = agent.conv();
+      
+                console.log(' ---- la conversazione PRIMA ----- ' + JSON.stringify(conv));
+                
+                conv.close(strOutput);
+                console.log(' ---- la conversazione DOPO CHIUSURA ----- ' + JSON.stringify(conv));
+                
+                agent.add(conv);
+                //altrimenti ritorna la strOutput
+              } else{
+                agent.add(strOutput);
+              }
+              resolve(agent);
               break;
             default:
               console.log('nel default ho solo strOutput');
