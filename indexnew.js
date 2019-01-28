@@ -494,7 +494,7 @@ function callAVANEW(agent) {
          
           //var cmd=tmp[0]; originale
          //17/01/2019 ora in tmp[0] trovo strOutput
-          var cmd=tmp; 
+          var cmd=tmp.toString(); 
           console.log('sto cazzo de cmd '+ cmd);
           //28/01/2019 lo commento 
          // strOutput=tmp[1]; //il comando in posizione 2
