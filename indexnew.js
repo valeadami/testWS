@@ -594,7 +594,30 @@ function callAVANEW(agent) {
                    
                 
                  });
-              //
+
+            case 'getStudente':
+            controller.getLibretto().then((libretto)=> {
+              var strTemp='';
+             // strOutput='ecco gli esami ';
+              if (Array.isArray(libretto)){
+               
+              
+                  strTemp+='sei iscritto al ' +   libretto[0].annoCorso+ '\n';
+                  console.log('comando getStudente->getLibretto');
+              }
+              //qui devo fare replace della @, che si trova in tmp[0]
+              var str=strOutput;
+              str=str.replace(/(@)/gi, strTemp);
+              strOutput=str;
+              agent.add(strOutput);
+              console.log('strOutput con replace '+ strOutput);
+              //agent.setContext({ name: 'libretto', lifespan: 5, parameters: { matID: studente.trattiCarriera[0].matId }});
+              resolve(agent);
+            }).catch((error) => {
+              console.log('Si è verificato errore : ' +error);
+              
+           
+            });
               break;
             
             default:
