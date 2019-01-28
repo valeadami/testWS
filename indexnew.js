@@ -602,8 +602,8 @@ function callAVANEW(agent) {
               if (Array.isArray(libretto)){
                
               
-                  strTemp+='sei iscritto al ' +   libretto[0].annoCorso+ ' anno di corso \n';
-                  console.log('comando getStudente->getLibretto');
+                  strTemp+='sei iscritto al ' +   libretto[0].annoCorso + ' anno di corso';
+                  console.log('comando getStudente->getLibretto: ' + strTemp);
               }
               //qui devo fare replace della @, che si trova in tmp[0]
               var str=strOutput;
