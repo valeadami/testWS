@@ -487,14 +487,14 @@ function callAVANEW(agent) {
 
         tmp=responseFromPlq.cmd[0];//0  -> era 1 
       //  console.log('questo il valore del comando in tmp[0] '+ tmp[1]);
-        console.log('questo il valore del comando in tmp[0] '+ tmp[0]);
+        console.log('questo il valore del comando in tmp[0] '+ tmp);
        }
          //fine if
            //-> questo sarà da fare per multi comando
          
           //var cmd=tmp[0]; originale
          //17/01/2019 ora in tmp[0] trovo strOutput
-          var cmd=tmp[0]; 
+          var cmd=tmp; 
           //28/01/2019 lo commento 
          // strOutput=tmp[1]; //il comando in posizione 2
 
