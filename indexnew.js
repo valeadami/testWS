@@ -478,17 +478,17 @@ function callAVANEW(agent) {
      getPlq(agent, options).then((responseFromPlq)=>{ //responseFromPlq  -> comandi
       //se aggiungi più messaggi, torna un fulfillment messages, altrimenti fulfillment-text
        //agent.add('ho il comando da getPLQ');
-       if (responseFromPlq.cmd.length>1){
+      /* if (responseFromPlq.cmd.length>1){
          
         tmp=responseFromPlq.cmd.split(',');
        // console.log('comandi '+ comandi.toString());
        console.log('comandi tmp.toString() = '+ tmp.toString());
         } else{
-
+*/
         tmp=responseFromPlq.cmd[0];//0  -> era 1 
       //  console.log('questo il valore del comando in tmp[0] '+ tmp[1]);
         console.log('questo il valore del comando in tmp[0] '+ tmp);
-       }
+      // }
          //fine if
            //-> questo sarà da fare per multi comando
          
