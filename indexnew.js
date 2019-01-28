@@ -545,6 +545,7 @@ function callAVANEW(agent) {
              
               });
               break;
+              //28/01/2019
             case 'getInformazioni':
              //originale FUNGE!!!! 
               /*doLogin().then((str)=>{
@@ -594,7 +595,7 @@ function callAVANEW(agent) {
                    
                 
                  });
-
+                 break;
             case 'getStudente':
             controller.getLibretto().then((libretto)=> {
               var strTemp='';
@@ -613,13 +614,55 @@ function callAVANEW(agent) {
               console.log('strOutput con replace '+ strOutput);
               //agent.setContext({ name: 'libretto', lifespan: 5, parameters: { matID: studente.trattiCarriera[0].matId }});
               resolve(agent);
-            }).catch((error) => {
+              }).catch((error) => {
               console.log('Si è verificato errore : ' +error);
               
            
             });
               break;
-            
+            //28/01/2019
+            case 'getNumeroMatricola':
+              controller.getCarriera('s260856').then((carriera)=> {
+                var strTemp='';
+                strTemp+='' + carriera.matricola;
+              console.log('chiedo il numero di matricola ...');
+              // console.log('ho lo studente '+studente.codFisc + 'matricola ID '+ studente.trattiCarriera[0].matId);
+              // agent.setContext({ name: 'matricola', lifespan: 5, parameters: { matID: studente.trattiCarriera[0].matId }});
+                
+              var str=strOutput;
+              str=str.replace(/(@)/gi, strTemp);
+              strOutput=str;
+              agent.add(strOutput);
+              console.log('strOutput con replace '+ strOutput);
+              resolve(agent);
+                
+              }).catch((error) => {
+                console.log('Si è verificato errore : ' +error);
+                
+              
+              });
+              break;
+              case 'getAnnoImmatricolazione':
+              controller.getCarriera('s260856').then((carriera)=> {
+                var strTemp='';
+                strTemp+='' + carriera.dataImm;
+              console.log('chiedo la data immatricolazione...');
+              // console.log('ho lo studente '+studente.codFisc + 'matricola ID '+ studente.trattiCarriera[0].matId);
+              // agent.setContext({ name: 'matricola', lifespan: 5, parameters: { matID: studente.trattiCarriera[0].matId }});
+                
+              var str=strOutput;
+              str=str.replace(/(@)/gi, strTemp);
+              strOutput=str;
+              agent.add(strOutput);
+              console.log('strOutput con replace '+ strOutput);
+              resolve(agent);
+                
+              }).catch((error) => {
+                console.log('Si è verificato errore : ' +error);
+                
+              
+              });
+              break;
             default:
               console.log('nel default ho solo strOutput');
               agent.add(comandi.toString());
