@@ -485,7 +485,7 @@ function callAVANEW(agent) {
        console.log('comandi tmp.toString() = '+ tmp.toString());
         } else{
 */
-        tmp=responseFromPlq.cmd[0];//0  -> era 1 
+        tmp=responseFromPlq.cmd;//0  -> era 1 
       //  console.log('questo il valore del comando in tmp[0] '+ tmp[1]);
         console.log('questo il valore del comando in tmp[0] '+ tmp);
       // }
@@ -495,6 +495,7 @@ function callAVANEW(agent) {
           //var cmd=tmp[0]; originale
          //17/01/2019 ora in tmp[0] trovo strOutput
           var cmd=tmp; 
+          console.log('sto cazzo de cmd '+ cmd);
           //28/01/2019 lo commento 
          // strOutput=tmp[1]; //il comando in posizione 2
 
@@ -671,8 +672,9 @@ function callAVANEW(agent) {
               resolve(agent);
               break;
             default:
-              console.log('nel default ho solo strOutput');
-              agent.add(comandi.toString());
+              console.log('nel default ho solo strOutput :' +responseFromPlq.strOutput);
+             // agent.add(comandi.toString()); 28/01/2019
+             agent.add(responseFromPlq.strOutput);
               resolve(agent);
               break;
           } //fine switch
