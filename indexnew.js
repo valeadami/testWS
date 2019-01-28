@@ -745,9 +745,9 @@ app.listen(process.env.PORT || 3000, function() {
                    // 28/01/2019 commento questo sotto
                   // comandi.push(strOutput); //+ ',' + comandi.toString()
 
-                  responseFromPlq.cmd.push(comandi.toString());
+                  responseFromPlq.cmd.push(comandi);
 
-                   console.log('ora i comandi sono '+ comandi.toString());
+                   console.log('ora in getPLQ i comandi sono '+ comandi);
                    //in origine 28/01/2019
                  //  resolve(comandi.toString());
                  resolve(responseFromPlq);
