@@ -647,7 +647,7 @@ function callAVANEW(agent) {
               controller.getCarriera('s260856').then((carriera)=> {
                 var strTemp='';
                 var dt=carriera.dataImm; //elimino minuti e secondi
-                strTemp+='' + dt.substring(1,10);
+                strTemp+='' + dt.substring(0,9);
               console.log('chiedo la data immatricolazione...');
               // console.log('ho lo studente '+studente.codFisc + 'matricola ID '+ studente.trattiCarriera[0].matId);
               // agent.setContext({ name: 'matricola', lifespan: 5, parameters: { matID: studente.trattiCarriera[0].matId }});
