@@ -79,48 +79,23 @@ app.use(function (req, res, next) {
       'Cookie':'' // +avaSession 
     }
   };
-//19/01/2019
-  var responseFromPlq={
-    'strOutput':'',
-    'cmd':[]
-  }
+ 
 //28/01/2019
 var responseFromPlq={
   'strOutput':'',
-  'cmd':''
+  'cmd':[]
 }
   app.get('/login', function(req, res, next) {
     
-    //15/01/2019
    
-    controller.getLibretto().then((libretto)=> {
-      
+  var commands=[];
+commands[0]='STOP';
+//commands[1]='CAZZO';
+    responseFromPlq.cmd.push(commands);
       res.setHeader('Content-Type', 'text/html')
-      res.write("ecco i dati del libretto, matricola ID = "+ libretto[0].adDes);
+      res.write("ecco i dati del libretto, matricola ID = "+ responseFromPlq.cmd[0]);
       res.end();
       next(); 
-      
-   }).catch((error) => {
-       console.log('Si è verificato errore : ' +error);
-       res.json({ 'fulfillmentText': 'non lo so!!!!!!!!!!'});
-    
-     });
-
-
-     //14/01/2019 LO COMMENTO  
-        //e uso il CONTROLLER
-    /*controller.doLogin().then((studente)=> {
-      
-      res.setHeader('Content-Type', 'text/html')
-      res.write("ecco i dati  "+ studente.codFisc);
-      res.end();
-      next(); //va qui il next 
-      
-   }).catch((error) => {
-       console.log('Si è verificato errore : ' +error);
-       res.json({ 'fulfillmentText': 'non lo so!!!!!!!!!!'});
-    
-     });*/
 
     }) 
     
@@ -506,7 +481,8 @@ function callAVANEW(agent) {
        if (responseFromPlq.cmd.length>1){
          
         tmp=responseFromPlq.cmd.split(',');
-        console.log('comandi '+ comandi.toString());
+       // console.log('comandi '+ comandi.toString());
+       console.log('comandi tmp.toString() = '+ tmp.toString());
         } else{
 
         tmp=responseFromPlq.cmd[0];//0  -> era 1 
