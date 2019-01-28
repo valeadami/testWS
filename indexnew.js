@@ -82,9 +82,13 @@ app.use(function (req, res, next) {
 //19/01/2019
   var responseFromPlq={
     'strOutput':'',
-    'cmd':''
+    'cmd':[]
+  }
+//28/01/2019
+var responseFromPlq={
+  'strOutput':'',
+  'cmd':''
 }
-
   app.get('/login', function(req, res, next) {
     
     //15/01/2019
@@ -496,17 +500,18 @@ function callAVANEW(agent) {
      
      var tmp;
      var strOutput
-     getPlq(agent, options).then((comandi)=>{
+     getPlq(agent, options).then((responseFromPlq)=>{ //responseFromPlq  -> comandi
       //se aggiungi più messaggi, torna un fulfillment messages, altrimenti fulfillment-text
        //agent.add('ho il comando da getPLQ');
-       if (comandi.length>1){
+       if (responseFromPlq.cmd.length>1){
          
-        tmp=comandi.split(',');
+        tmp=responseFromPlq.cmd.split(',');
         console.log('comandi '+ comandi.toString());
         } else{
 
-        tmp=comandi[1];//0
-        console.log('questo il valore del comando in tmp[0] '+ tmp[1]);
+        tmp=responseFromPlq.cmd[0];//0  -> era 1 
+      //  console.log('questo il valore del comando in tmp[0] '+ tmp[1]);
+        console.log('questo il valore del comando in tmp[0] '+ tmp[0]);
        }
          //fine if
            //-> questo sarà da fare per multi comando
@@ -514,7 +519,9 @@ function callAVANEW(agent) {
           //var cmd=tmp[0]; originale
          //17/01/2019 ora in tmp[0] trovo strOutput
           var cmd=tmp[0]; 
-          strOutput=tmp[1]; //il comando in posizione 2
+          //28/01/2019 lo commento 
+         // strOutput=tmp[1]; //il comando in posizione 2
+
           switch (cmd) {
             case 'getLibretto':
               console.log('sono nel getLibretto');
@@ -532,11 +539,12 @@ function callAVANEW(agent) {
                  
                 }
                 //qui devo fare replace della @, che si trova in tmp[0]
-                var str=strOutput;
+                var str=responseFromPlq.strOutput;
                 str=str.replace(/(@)/gi, strTemp);
-                strOutput=str;
-                agent.add(strOutput);
-                console.log('strOutput con replace '+ strOutput);
+                responseFromPlq.strOutput=str;
+                agent.add(responseFromPlq.strOutput);
+                
+                console.log('strOutput con replace '+ responseFromPlq.strOutput);
                 //agent.setContext({ name: 'libretto', lifespan: 5, parameters: { matID: studente.trattiCarriera[0].matId }});
                 resolve(agent);
               }).catch((error) => {
@@ -710,7 +718,7 @@ app.listen(process.env.PORT || 3000, function() {
   });
 
 
-    //11/01/2019
+    //11/01/2019 -> modificata il 28/01/2019
     function getPlq(agent, options) { 
         return new Promise((resolve, reject) => {
       
@@ -749,26 +757,32 @@ app.listen(process.env.PORT || 3000, function() {
            let comandi=[];
            let c=JSON.parse(data);
                   strOutput=c.output[0].output;
-                
-                  strOutput=strOutput.replace(/(<\/p>|<p>|<b>|<\/b>|<br>|<\/br>|<strong>|<\/strong>|<div>|<\/div>|<ul>|<li>|<\/ul>|<\/li>|&nbsp;|)/gi, '');
-                 
+                //28/01/2019
+                 // strOutput=strOutput.replace(/(<\/p>|<p>|<b>|<\/b>|<br>|<\/br>|<strong>|<\/strong>|<div>|<\/div>|<ul>|<li>|<\/ul>|<\/li>|&nbsp;|)/gi, '');
+                  responseFromPlq.strOutput=strOutput.replace(/(<\/p>|<p>|<b>|<\/b>|<br>|<\/br>|<strong>|<\/strong>|<div>|<\/div>|<ul>|<li>|<\/ul>|<\/li>|&nbsp;|)/gi, '');
                   //resolve(strOutput); <--- OLD
                   //18/12/2018  02/01/2019
                   
                   comandi=getComandi(c.output[0].commands);
                  if (typeof comandi!=='undefined' && comandi.length>=1) {
                     console.log('ho almeno un comando, quindi prosegui con l\' azione ' + comandi[0]);
-                   // agent.add(comandi.toString()); // ok, anche comandi[0] va bene
-                   comandi.push(strOutput); //+ ',' + comandi.toString()
+                   // 28/01/2019 commento questo sotto
+                  // comandi.push(strOutput); //+ ',' + comandi.toString()
+
+                  responseFromPlq.cmd.push(comandi.toString());
+
                    console.log('ora i comandi sono '+ comandi.toString());
-                   resolve(comandi.toString());
-                   
+                   //in origine 28/01/2019
+                 //  resolve(comandi.toString());
+                 resolve(responseFromPlq);
                  } else{
                    
                  // strOutput=c.output[0].output;
                  // comandi=['NO'];
-                  comandi=strOutput;
-                  console.log('qui ho solo la strOutput ' + comandi);
+                 /* comandi=strOutput;
+                  console.log('qui ho solo la strOutput ' + comandi);*/
+                  responseFromPlq.strOutput=strOutput;
+                  console.log('qui ho solo la strOutput ' + responseFromPlq.strOutput);
                  }
                
               
@@ -776,7 +790,9 @@ app.listen(process.env.PORT || 3000, function() {
        
                 
                //così funziona, resolve(agent);
-                resolve(comandi);
+               //modifica del 28/01/2019
+                //resolve(comandi);
+                resolve(responseFromPlq);
                  
                
           });
