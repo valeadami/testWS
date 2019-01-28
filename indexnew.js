@@ -88,8 +88,20 @@ var responseFromPlq={
   app.get('/login', function(req, res, next) {
     
    
-  var commands=[];
-commands[0]='STOP';
+  var commands=["getLibretto"];
+  var comandi=[];
+  comandi=getComandi(commands);
+  if (typeof comandi!=='undefined' && comandi.length>=1) {
+    console.log('ho almeno un comando, quindi prosegui con l\' azione ' + comandi[0]);
+   // 28/01/2019 commento questo sotto
+  // comandi.push(strOutput); //+ ',' + comandi.toString()
+
+  responseFromPlq.cmd=comandi;
+
+   console.log('ora in getPLQ i comandi sono '+ comandi);
+
+ 
+ }
 
     responseFromPlq.cmd.push(commands);
       res.setHeader('Content-Type', 'text/html')
@@ -487,7 +499,7 @@ function callAVANEW(agent) {
 */
         tmp=responseFromPlq.cmd;//0  -> era 1 
       //  console.log('questo il valore del comando in tmp[0] '+ tmp[1]);
-        console.log('questo il valore del comando in tmp[0] '+ tmp);
+        console.log('questo il valore del comando in tmp '+ tmp);
       // }
          //fine if
            //-> questo sarà da fare per multi comando
@@ -744,7 +756,9 @@ app.listen(process.env.PORT || 3000, function() {
                    // 28/01/2019 commento questo sotto
                   // comandi.push(strOutput); //+ ',' + comandi.toString()
 
-                  responseFromPlq.cmd.push(comandi);
+                  //responseFromPlq.cmd.push(comandi);
+                  responseFromPlq.cmd=comandi;
+                  console.log(' responseFromPlq.cmd=comandi ->'+ responseFromPlq.cmd);
 
                    console.log('ora in getPLQ i comandi sono '+ comandi);
                    //in origine 28/01/2019
