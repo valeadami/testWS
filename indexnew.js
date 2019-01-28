@@ -90,7 +90,7 @@ var responseFromPlq={
    
   var commands=[];
 commands[0]='STOP';
-//commands[1]='CAZZO';
+
     responseFromPlq.cmd.push(commands);
       res.setHeader('Content-Type', 'text/html')
       res.write("ecco i dati del libretto, matricola ID = "+ responseFromPlq.cmd[0]);
@@ -494,10 +494,11 @@ function callAVANEW(agent) {
          
           //var cmd=tmp[0]; originale
          //17/01/2019 ora in tmp[0] trovo strOutput
+         //28/01/2019 il comando deve essere STRINGA!!
           var cmd=tmp.toString(); 
-          console.log('sto cazzo de cmd '+ cmd);
+        //  console.log('il cmd'+ cmd);
           //28/01/2019 lo commento 
-         // strOutput=tmp[1]; //il comando in posizione 2
+          strOutput=responseFromPlq.strOutput; //tmp[1]il comando in posizione 2
 
           switch (cmd) {
             case 'getLibretto':
@@ -516,12 +517,13 @@ function callAVANEW(agent) {
                  
                 }
                 //qui devo fare replace della @, che si trova in tmp[0]
-                var str=responseFromPlq.strOutput;
+                var str=strOutput;
                 str=str.replace(/(@)/gi, strTemp);
-                responseFromPlq.strOutput=str;
-                agent.add(responseFromPlq.strOutput);
+                strOutput=str;
+                agent.add(strOutput);
                 
-                console.log('strOutput con replace '+ responseFromPlq.strOutput);
+                console.log('strOutput con replace '+ strOutput);
+                
                 //agent.setContext({ name: 'libretto', lifespan: 5, parameters: { matID: studente.trattiCarriera[0].matId }});
                 resolve(agent);
               }).catch((error) => {
@@ -532,14 +534,7 @@ function callAVANEW(agent) {
               break;
               //28/01/2019
             case 'getInformazioni':
-             //originale FUNGE!!!! 
-              /*doLogin().then((str)=>{
-                    
-                agent.add('...questo è aggiunto dopo essetre= '+ str);
-                console.log('ho il comando '+str);
-                resolve(agent);
-              });
-              */
+          
 
                 //15/01/2019 rivisto codice business...come lo integro ora???
                 /*controller.doLogin().then((studente)=> {
@@ -572,7 +567,9 @@ function callAVANEW(agent) {
                  str=str.replace(/(@)/gi, strTemp);
                  strOutput=str;
                  agent.add(strOutput);
-                 console.log('strOutput con replace '+ strOutput);
+
+                 
+                 console.log('strOutput con replace '+ responseFromPlq.strOutput);
                  resolve(agent);
                   
                  }).catch((error) => {
