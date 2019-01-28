@@ -525,11 +525,11 @@ function callAVANEW(agent) {
                  
                   for(var i=0; i<libretto.length; i++){
   
-                    strTemp+='esame di ' +   libretto[i].adDes+ '\n'
-                    /*', frequentato  nell \'anno ' +libretto[i].aaFreqId +', anno di corso ' +
-                    libretto[i].annoCorso + ', ' */;
+                    strTemp+='esame di ' +   libretto[i].adDes+ ', frequentato  nell \'anno ' +libretto[i].aaFreqId +', anno di corso ' +
+                    libretto[i].annoCorso + '\n';
 
                   }
+                 
                 }
                 //qui devo fare replace della @, che si trova in tmp[0]
                 var str=strOutput;
@@ -556,11 +556,30 @@ function callAVANEW(agent) {
               */
 
                 //15/01/2019 rivisto codice business...come lo integro ora???
-                controller.doLogin().then((studente)=> {
+                /*controller.doLogin().then((studente)=> {
                   var strTemp='';
                   strTemp+='codice fiscale '+ studente.codFisc + ' matricola ID '+ studente.trattiCarriera[0].matId + ' corso di laurea '+ studente.trattiCarriera[0].cdsDes ;
-                 // agent.add('...questo è aggiunto dopo essetre= '+ studente.codFisc + 'matricola ID '+ studente.trattiCarriera[0].matId);
+                 
                   console.log('ho lo studente '+studente.codFisc + 'matricola ID '+ studente.trattiCarriera[0].matId);
+                 // agent.setContext({ name: 'matricola', lifespan: 5, parameters: { matID: studente.trattiCarriera[0].matId }});
+                  
+                 var str=strOutput;
+                 str=str.replace(/(@)/gi, strTemp);
+                 strOutput=str;
+                 agent.add(strOutput);
+                 console.log('strOutput con replace '+ strOutput);
+                 resolve(agent);
+                  
+                 }).catch((error) => {
+                   console.log('Si è verificato errore : ' +error);
+                   
+                
+                 });*/
+                 controller.getCarriera('s260856').then((carriera)=> {
+                  var strTemp='';
+                  strTemp+='Ti sei immatricolato nell anno '+ carriera.aaId + ' , con numero matricola  '+ carriera.matricola + ', nel corso di laurea '+ carriera.cdsDes +', tipoCorsoDes '+ carriera.tipoCorsoDes; + 'percorso '+carriera.pdsDes +', stato attuale :' +carriera.motStastuDes
+                 console.log('sono nella carriera ...');
+                 // console.log('ho lo studente '+studente.codFisc + 'matricola ID '+ studente.trattiCarriera[0].matId);
                  // agent.setContext({ name: 'matricola', lifespan: 5, parameters: { matID: studente.trattiCarriera[0].matId }});
                   
                  var str=strOutput;
