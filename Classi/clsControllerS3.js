@@ -272,13 +272,18 @@ function GetDettaglioEsame(matId, adsceId,param){ //matId, adsceId
             break;
 
             case 'peso':
-                singoloEsame=new rigaLibretto(body.peso);
+                singoloEsame=new rigaLibretto(undefined,undefined,undefined,adsceId,undefined,undefined,undefined, undefined,undefined,undefined,undefined,undefined,undefined,undefined,
+                    undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,
+                    body.peso);
                 console.log('peso di adsceId ' +adsceId +' con param '+param + ':' + body.peso);
                 resolve(singoloEsame);
             break;
 
             case 'tipoEsaDes':
-                singoloEsame=new rigaLibretto(body.tipoEsaDes);
+                singoloEsame=new rigaLibretto(undefined, undefined,undefined,adsceId,undefined,undefined,undefined,undefined,undefined,undefined,undefined,
+                    undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,
+                    undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,
+                    body.tipoEsaDes);
                 console.log('tipoEsaDes di adsceId ' +adsceId +' con param '+param + ':' + body.tipoEsaDes);
                 resolve(singoloEsame);
             break;
