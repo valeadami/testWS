@@ -102,7 +102,7 @@ var responseFromPlq={
  
  }*/
  //test chiaveAdContestualizzata
- /*7
+ /*
  var libretto=[];
  var chiaveADContestualizzata={
   "aaOffId": 2017,
@@ -128,8 +128,26 @@ var responseFromPlq={
       res.setHeader('Content-Type', 'text/html')
       res.write("ecco i dati del libretto, matricola ID = "+ responseFromPlq.cmd[0]);
       res.end();
-      next(); 
-*/
+      next(); */
+var esito={
+  "aaSupId": null,
+  "dataEsa": "",
+  "lodeFlg": 0,
+  "modValCod": {
+    "value": "V"
+  },
+  "supEsaFlg": null,
+  "tipoGiudCod": "",
+  "tipoGiudDes": "",
+  "voto": null
+}
+if (typeof esito !=='undefined' && esito.dataEsa!=='' && esito.voto!=null){
+ console.log('qui ho esame fatto');
+} else{
+
+  console.log('qui non ho esame fatto');
+}
+
     }) 
     
 
@@ -689,10 +707,12 @@ function callAVANEW(agent) {
           
                   strTemp += ' anno di corso ' + esame.annoCorso +', codice '+ esame.adCod +', corso di ' + esame.adDes + ', crediti in  CFU' + esame.peso + ', attività didattica '
                   + esame.statoDes +', frequentata nel '+  esame.aaFreqId;
-                  if (typeof esame.esito !=='undefined'){
+                  if (typeof esito !=='undefined' && esito.dataEsa!=='' && esito.voto!=null){
+                  
+                  //if (typeof esame.esito !=='undefined'){
                     var dt= esame.esito.dataEsa;
                    
-                    strTemp +=', superata in data ' + dt.substring(0,10) + ' con voto di ' + esame.esito.voto + 'trentesimi'
+                    strTemp +=', superata in data ' + dt.substring(0,10) + ' con voto di ' + esame.esito.voto + ' trentesimi'
                   }
                   var str=strOutput;
                   str=str.replace(/(@)/gi, strTemp);
@@ -703,6 +723,34 @@ function callAVANEW(agent) {
 
               }).catch((error) => {
                 console.log('Si è verificato errore in getDirittoCostituzionale: ' +error);
+                
+              
+              });
+                break;
+                //getEconomiaAziendale 29/01/2019
+                case 'getEconomiaAziendale':
+                controller.getEsame('286879','5057985').then((esame) => { 
+                  var strTemp=''; 
+                  console.log( '**************** dati del getEconomiaAziendale ******************');
+          
+                  strTemp += ' anno di corso ' + esame.annoCorso +', codice '+ esame.adCod +', corso di ' + esame.adDes + ', crediti in  CFU' + esame.peso + ', attività didattica '
+                  + esame.statoDes +', frequentata nel '+  esame.aaFreqId;
+                  if (typeof esito !=='undefined' && esito.dataEsa!=='' && esito.voto!=null){
+                  
+                    //if (typeof esame.esito !=='undefined'){
+                      var dt= esame.esito.dataEsa;
+                     
+                      strTemp +=', superata in data ' + dt.substring(0,10) + ' con voto di ' + esame.esito.voto + ' trentesimi'
+                    }
+                  var str=strOutput;
+                  str=str.replace(/(@)/gi, strTemp);
+                  strOutput=str;
+                  agent.add(strOutput);
+                  console.log('strOutput con replace in getEconomiaAziendale'+ strOutput);
+                  resolve(agent);
+
+              }).catch((error) => {
+                console.log('Si è verificato errore in getEconomiaAziendale: ' +error);
                 
               
               });
