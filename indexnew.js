@@ -812,6 +812,27 @@ function callAVANEW(agent) {
                
                });
                  break;
+                 //getVotoDirittoCostituzionale
+                 case 'getVotoDirittoCostituzionale':
+                 controller.GetDettaglioEsame('286879','5057980', 'esito.voto').then((esame) => { 
+                   var strTemp=''; 
+                   console.log( '**************** dati del esito.dataEsa getVotoDirittoCostituzionale ' +esame.esito.voto);
+           
+                   strTemp +=  esame.esito.voto; //Diritto Costituzionale è un corso dell'anno : 1
+                   var str=strOutput;
+                   str=str.replace(/(@)/gi, strTemp);
+                   strOutput=str;
+                   agent.add(strOutput);
+                   console.log('strOutput con replace in getVotoDirittoCostituzionale '+ strOutput);
+                   resolve(agent);
+ 
+               }).catch((error) => {
+                 console.log('Si è verificato errore in getVotoDirittoCostituzionale: ' +error);
+                 
+               
+               });
+                 break;
+
                 //******** ECONOMIA AZIENDALE  */
                 //**********  */getEconomiaAziendale 29/01/2019
                 case 'getEconomiaAziendale':

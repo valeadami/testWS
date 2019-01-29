@@ -312,6 +312,20 @@ function GetDettaglioEsame(matId, adsceId,param){ //matId, adsceId
                 console.log('esito.dataEsa di adsceId ' +adsceId +' con param '+param + ':' + body.esito.dataEsa + ' e singolo esame' +singoloEsame.esito.dataEsa);
                 resolve(singoloEsame);
             break;
+            //esito voto
+            case 'esito.voto':
+                    var esitoVoto={
+                        "voto":body.esito.voto
+                    }
+                    singoloEsame=new rigaLibretto(undefined,undefined, 
+                        undefined,adsceId, undefined, 
+                        undefined,
+                        undefined, undefined, undefined,esito);
+            
+                    
+                console.log('esito.voto di adsceId ' +adsceId +' con param '+param + ':' + body.esito.voto + ' e singolo esame con voto' +singoloEsame.esito.voto);
+                resolve(singoloEsame);
+            break;
             default:
             singoloEsame=new rigaLibretto(body.aaFreqId,body.adCod, 
                 body.adDes,body.adsceId, body.annoCorso, 
