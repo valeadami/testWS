@@ -687,12 +687,12 @@ function callAVANEW(agent) {
                   var strTemp=''; 
                   console.log( '**************** dati del getDirittoCostituzionale******************');
           
-                  strTemp += ' anno di corso' + esame.annoCorso +', codice '+ esame.adCod +', corso di' + esame.adDes + ', crediti in  CFU' + esame.peso + ', stato '
-                  + esame.statoDes +', frequentato nel '+  esame.aaFreqid;
+                  strTemp += ' anno di corso ' + esame.annoCorso +', codice '+ esame.adCod +', corso di ' + esame.adDes + ', crediti in  CFU' + esame.peso + ', attività didattica '
+                  + esame.statoDes +', frequentata nel '+  esame.aaFreqId;
                   if (typeof esame.esito !=='undefined'){
                     var dt= esame.esito.dataEsa;
                    
-                    strTemp +=' superato in data ' + dt.substring(0,10) + ' con voto di ' + esame.esito.voto + 'trentesimi'
+                    strTemp +=', superata in data ' + dt.substring(0,10) + ' con voto di ' + esame.esito.voto + 'trentesimi'
                   }
                   var str=strOutput;
                   str=str.replace(/(@)/gi, strTemp);
