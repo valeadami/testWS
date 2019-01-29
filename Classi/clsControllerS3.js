@@ -15,6 +15,7 @@ var strUrlAnagraficaHome='https://units.esse3.pp.cineca.it/e3rest/api/anagrafica
 var strUrlGetLibretto="https://units.esse3.pp.cineca.it/e3rest/api/libretto-service-v1/libretti/286879/righe/"; //?filter=adDes%3D%3D'DIRITTO%20COSTITUZIONALE'
 //per recuperare esami prenotabili vado sul libretto
 var strUrlGetSingoloEsame='https://units.esse3.pp.cineca.it/e3rest/api/libretto-service-v1/libretti/'; // 286879/5057980  matId=286879  adsceId=5057980
+//var GetSingoloDettaglioEsame='https://units.esse3.pp.cineca.it/e3rest/api/libretto-service-v1/libretti'; // 286879/righe/5057980?fields=annoCorso';
 //var strUrlAppelliPrenotabili='https://units.esse3.pp.cineca.it/e3rest/api/libretto-service-v1/libretti/' ;// 286879/righe/?filter=numAppelliPrenotabili%3D%3D1';
 //qui recupero ultima data utile dell'appello collegato a una riga del libretto
 var strUrlGetAppelloDaPrenotare='https://units.esse3.pp.cineca.it/e3rest/api/calesa-service-v1/appelli/'; //10094/117740/?stato=P'
@@ -197,7 +198,7 @@ function getEsame(matId, adsceId){ //matId, adsceId
             rawData=JSON.stringify(body);
             console.log('\n\nQUESTO IL BODY del SINGOLO ESAME ' +rawData);
           //modifica del 29/01/2018
-          /*new rigaLibretto(body.aaFreqId,body.adCod, 
+          /* singoloEsame=new rigaLibretto(body.aaFreqId,body.adCod, 
                 body.adDes,body.adsceId, body.annoCorso, body.chiaveADContestualizzata.adId, 
                 body.dataFreq,body.dataScadIscr,body.esito.dataEsa);*/
             singoloEsame=new rigaLibretto(body.aaFreqId,body.adCod, 
@@ -217,7 +218,92 @@ function getEsame(matId, adsceId){ //matId, adsceId
       
     });
 }
+//29/01/2019
+function GetSingoloDettaglioEsame(matId,adsceId, param){ //matID, adsceId, param con param=annoCorso
+    return new Promise(function(resolve, reject) {
+        var options = { 
+            method: 'GET',
+            url: strUrlGetSingoloEsame  + matId +'/righe/' + adsceId+'?fields='+param,
+            headers: 
+                { 
+                    'cache-control': 'no-cache',
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Basic czI2MDg1NjpRM1ZSQUFRUA=='
+                },
+            json: true 
+        }
+        request(options, function (error, response, body) {
+            console.log('url di singolo esame '+ options.url);
+            if (error) {
+                reject(error);
+                console.log('errore in GetSingoloDettaglioEsame '+ error);
+            } else {
+                if (response.statusCode==200){
+                 
+                    resolve(body); 
+                }  
+            }
+    
+        });
+    
+    }); 
+}
+function GetDettaglioEsame(matId, adsceId,param){ //matId, adsceId
+    return new Promise(function(resolve, reject) {
+      //da verificare che il param sia corretto!!!
+        var rawData='';
+        var singoloEsame;
+        GetSingoloDettaglioEsame(matId, adsceId, param).then((body)=>{ //matId, adsceId
+            rawData=JSON.stringify(body);
+            console.log('\n\nQUESTO IL BODY del DETTAGLIO CON PARAMETRO ' +rawData);
+          //modifica del 29/01/2018
+         switch (param){
+            case 'annoCorso':
+                singoloEsame=new rigaLibretto(body.annoCorso);
+                console.log('annoCorso di adsceId ' +adsceId +' con param '+param + ':' + body.annoCorso);
+                resolve(singoloEsame);
+            break;
 
+
+            case 'aaFreqId':
+                singoloEsame=new rigaLibretto(body.aaFreqId);
+                console.log('annoCorso di adsceId ' +adsceId +' con param '+param + ':' + body.aaFreqId);
+                resolve(singoloEsame);
+            break;
+
+            case 'peso':
+                singoloEsame=new rigaLibretto(body.peso);
+                console.log('annoCorso di adsceId ' +adsceId +' con param '+param + ':' + body.peso);
+                resolve(singoloEsame);
+            break;
+
+            case 'tipoEsaDes':
+                singoloEsame=new rigaLibretto(body.tipoEsaDes);
+                console.log('annoCorso di adsceId ' +adsceId +' con param '+param + ':' + body.tipoEsaDes);
+                resolve(singoloEsame);
+            break;
+
+            default:
+            singoloEsame=new rigaLibretto(body.aaFreqId,body.adCod, 
+                body.adDes,body.adsceId, body.annoCorso, 
+                body.chiaveADContestualizzata,
+                body.dataFreq, body.dataScadIscr, body.dataChiusura, body.esito,
+                body.freqObbligFlg, body.freqUffFlg, body.gruppoGiudCod,  body.gruppoGiudDes,
+                body.gruppoVotoId, body.gruppoVotoLodeFlg, body.gruppoVotoMaxVoto,
+                body.gruppoVotoMinVoto, body.itmId, body.matId, body.numAppelliPrenotabili,
+                body.numPrenotazioni, body.ord, body.peso, body.pianoId, body.ragId,body.raggEsaTipo,
+                body.ricId, body.sovranFlg,body.stato, body.statoDes, body.stuId,body.superataFlg,
+                body.tipoEsaCod, body.tipoEsaDes, body.tipoInsCod, body.tipoInsDes);
+       
+                resolve(singoloEsame);
+            break;
+         }
+            
+          
+        });
+      
+    });
+}
 // FA IL LOGIN
 function doLogin(){
     return new Promise(function(resolve, reject) {
@@ -553,3 +639,4 @@ exports.getAppelloDaPrenotare=getAppelloDaPrenotare;
 exports.postSingoloAppelloDaPrenotare=postSingoloAppelloDaPrenotare;
 exports.deleteSingoloAppelloDaPrenotare=deleteSingoloAppelloDaPrenotare;
 exports.getPrenotati=getPrenotati;
+exports.GetDettaglioEsame=GetDettaglioEsame;

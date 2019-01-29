@@ -699,6 +699,7 @@ function callAVANEW(agent) {
               });
               break;
               //29/01/2019
+              //******** DIRITTO COSTITUZIONALE  */
               //getDirittoCostituzionale
               case 'getDirittoCostituzionale':
                 controller.getEsame('286879','5057980').then((esame) => { 
@@ -727,14 +728,34 @@ function callAVANEW(agent) {
               
               });
                 break;
-                //getEconomiaAziendale 29/01/2019
+                case 'getAnnoDirittoCostituzionale':
+                controller.getEsame('286879','5057980', 'annoCorso').then((esame) => { 
+                  var strTemp=''; 
+                  console.log( '**************** dati del ANNO getDirittoCostituzionale******************');
+          
+                  strTemp += ' anno di corso ' + esame.annoCorso;
+                  var str=strOutput;
+                  str=str.replace(/(@)/gi, strTemp);
+                  strOutput=str;
+                  agent.add(strOutput);
+                  console.log('strOutput con replace in getDirittoCostituzionale'+ strOutput);
+                  resolve(agent);
+
+              }).catch((error) => {
+                console.log('Si è verificato errore in getDirittoCostituzionale: ' +error);
+                
+              
+              });
+                break;
+                //******** ECONOMIA AZIENDALE  */
+                //**********  */getEconomiaAziendale 29/01/2019
                 case 'getEconomiaAziendale':
                 controller.getEsame('286879','5057985').then((esame) => { 
                   var strTemp=''; 
                   console.log( '**************** dati del getEconomiaAziendale ******************');
           
                   strTemp += ' anno di corso ' + esame.annoCorso +', codice '+ esame.adCod +', corso di ' + esame.adDes + ', crediti in  CFU' + esame.peso + ', attività didattica '
-                  + esame.statoDes +' '+  esame.aaFreqId;
+                  + esame.statoDes +' nel '+  esame.aaFreqId;
                   if (typeof esito !=='undefined' && esito.dataEsa!=='' && esito.voto!=null){
                   
                     //if (typeof esame.esito !=='undefined'){
