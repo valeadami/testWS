@@ -706,7 +706,7 @@ function callAVANEW(agent) {
                   console.log( '**************** dati del getDirittoCostituzionale******************');
           
                   strTemp += ' anno di corso ' + esame.annoCorso +', codice '+ esame.adCod +', corso di ' + esame.adDes + ', crediti in  CFU' + esame.peso + ', attività didattica '
-                  + esame.statoDes +' nel '+  esame.aaFreqId;
+                  + esame.statoDes +', frequentata nel '+  esame.aaFreqId;
                   if (typeof esito !=='undefined' && esito.dataEsa!=='' && esito.voto!=null){
                   
                   //if (typeof esame.esito !=='undefined'){
@@ -734,7 +734,7 @@ function callAVANEW(agent) {
                   console.log( '**************** dati del getEconomiaAziendale ******************');
           
                   strTemp += ' anno di corso ' + esame.annoCorso +', codice '+ esame.adCod +', corso di ' + esame.adDes + ', crediti in  CFU' + esame.peso + ', attività didattica '
-                  + esame.statoDes +', frequentata nel '+  esame.aaFreqId;
+                  + esame.statoDes +' '+  esame.aaFreqId;
                   if (typeof esito !=='undefined' && esito.dataEsa!=='' && esito.voto!=null){
                   
                     //if (typeof esame.esito !=='undefined'){
