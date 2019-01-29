@@ -196,10 +196,20 @@ function getEsame(matId, adsceId){ //matId, adsceId
         getSingoloEsame(matId, adsceId).then((body)=>{ //matId, adsceId
             rawData=JSON.stringify(body);
             console.log('\n\nQUESTO IL BODY del SINGOLO ESAME ' +rawData);
-          
-            singoloEsame=new rigaLibretto(body.aaFreqId,body.adCod, 
+          //modifica del 29/01/2018
+          /*new rigaLibretto(body.aaFreqId,body.adCod, 
                 body.adDes,body.adsceId, body.annoCorso, body.chiaveADContestualizzata.adId, 
-                body.dataFreq,body.dataScadIscr,body.esito.dataEsa);
+                body.dataFreq,body.dataScadIscr,body.esito.dataEsa);*/
+            singoloEsame=new rigaLibretto(body.aaFreqId,body.adCod, 
+                    body.adDes,body.adsceId, body.annoCorso, 
+                    body.chiaveADContestualizzata,
+                    body.dataFreq, body.dataScadIscr, body.dataChiusura, body.esito,
+                    body.freqObbligFlg, body.freqUffFlg, body.gruppoGiudCod,  body.gruppoGiudDes,
+                    body.gruppoVotoId, body.gruppoVotoLodeFlg, body.gruppoVotoMaxVoto,
+                    body.gruppoVotoMinVoto, body.itmId, body.matId, body.numAppelliPrenotabili,
+                    body.numPrenotazioni, body.ord, body.peso, body.pianoId, body.ragId,body.raggEsaTipo,
+                    body.ricId, body.sovranFlg,body.stato, body.statoDes, body.stuId,body.superataFlg,
+                    body.tipoEsaCod, body.tipoEsaDes, body.tipoInsCod, body.tipoInsDes);
             singoloEsame.log();
             resolve(singoloEsame);
           
@@ -258,7 +268,16 @@ function getLibretto(){
 
                     libretto[i]= new rigaLibretto(body[i].aaFreqId,body[i].adCod, 
                         body[i].adDes,body[i].adsceId, body[i].annoCorso, 
-                        body[i].dataFreq,body[i].dataScadIscr,body[i].esito);
+                        body[i].chiaveADContestualizzata,
+                        body[i].dataFreq, body[i].dataScadIscr, body[i].dataChiusura, body[i].esito,
+                        //aggiunti qua
+                        body[i].freqObbligFlg, body[i].freqUffFlg, body[i].gruppoGiudCod,  body[i].gruppoGiudDes,
+                        body[i].gruppoVotoId, body[i].gruppoVotoLodeFlg, body[i].gruppoVotoMaxVoto,
+                        body[i].gruppoVotoMinVoto, body[i].itmId, body[i].matId, body[i].numAppelliPrenotabili,
+                        body[i].numPrenotazioni, body[i].ord, body[i].peso, body[i].pianoId, body[i].ragId,body[i].raggEsaTipo,
+                        body[i].ricId, body[i].sovranFlg,body[i].stato, body[i].statoDes, body[i].stuId,body[i].superataFlg,
+                        body[i].tipoEsaCod, body[i].tipoEsaDes, body[i].tipoInsCod, body[i].tipoInsDes);
+                     
 
                         libretto[i].log();
 

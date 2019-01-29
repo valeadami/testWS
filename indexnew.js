@@ -87,28 +87,49 @@ var responseFromPlq={
 }
   app.get('/login', function(req, res, next) {
     
-   
+   /* test comandi
   var commands=["getLibretto"];
   var comandi=[];
   comandi=getComandi(commands);
   if (typeof comandi!=='undefined' && comandi.length>=1) {
     console.log('ho almeno un comando, quindi prosegui con l\' azione ' + comandi[0]);
-   // 28/01/2019 commento questo sotto
-  // comandi.push(strOutput); //+ ',' + comandi.toString()
+ 
 
   responseFromPlq.cmd=comandi;
 
    console.log('ora in getPLQ i comandi sono '+ comandi);
 
  
- }
+ }*/
+ //test chiaveAdContestualizzata
+ /*7
+ var libretto=[];
+ var chiaveADContestualizzata={
+  "aaOffId": 2017,
+  "aaOrdCod": "GI01-17",
+  "aaOrdDes": "GIURISPRUDENZA",
+  "aaOrdId": 2017,
+  "adCod": "015GI",
+  "adDes": "FILOSOFIA DEL DIRITTO",
+  "adId": 111211,
+  "afId": 236856,
+  "cdsCod": "GI01",
+  "cdsDes": "GIURISPRUDENZA",
+  "cdsId": 10094,
+  "pdsCod": "PDS0-2017",
+  "pdsDes": "comune",
+  "pdsId": 9999
+};
 
+ libretto[0]= new rigaLibretto('2017','www', 
+  'adDes',222222, 2018, chiaveADContestualizzata,
+  '2018');
     responseFromPlq.cmd.push(commands);
       res.setHeader('Content-Type', 'text/html')
       res.write("ecco i dati del libretto, matricola ID = "+ responseFromPlq.cmd[0]);
       res.end();
       next(); 
-
+*/
     }) 
     
 
@@ -521,8 +542,8 @@ function callAVANEW(agent) {
                 if (Array.isArray(libretto)){
                  
                   for(var i=0; i<libretto.length; i++){
-  
-                    strTemp+='esame di ' +   libretto[i].adDes+ ', frequentato  nell \'anno ' +libretto[i].aaFreqId +', anno di corso ' +
+                    //tolto 'esame di ' in data 29/01/2019 e aggiunti i campi per avere i dati come su EsseTre RigaLibretto
+                    strTemp+=  libretto[i].adDes+ ', frequentato  nell \'anno ' +libretto[i].aaFreqId +', anno di corso ' +
                     libretto[i].annoCorso + '\n';
 
                   }
@@ -659,7 +680,33 @@ function callAVANEW(agent) {
               
               });
               break;
+              //29/01/2019
+              //getDirittoCostituzionale
+              case 'getDirittoCostituzionale':
+                controller.getEsame('286879','5057980').then((esame) => { 
+                  var strTemp=''; 
+                  console.log( '**************** dati del getDirittoCostituzionale******************');
+          
+                  strTemp += ' anno di corso' + esame.annoCorso +', codice '+ esame.adCod +', corso di' + esame.adDes + ', crediti in  CFU' + esame.peso + ', stato '
+                  + esame.statoDes +', frequentato nel '+  esame.aaFreqid;
+                  if (typeof esame.esito !=='undefined'){
+                    var dt= esame.dataEsa;
+                   
+                    strTemp +=' superato in data ' + dt.substring(0,10) + ' con voto di ' + esame.esito.voto + 'trentesimi'
+                  }
+                  var str=strOutput;
+                  str=str.replace(/(@)/gi, strTemp);
+                  strOutput=str;
+                  agent.add(strOutput);
+                  console.log('strOutput con replace in getDirittoCostituzionale'+ strOutput);
+                  resolve(agent);
+
+              }).catch((error) => {
+                console.log('Si è verificato errore ingetDirittoCostituzionale: ' +error);
+                
               
+              });
+                break;
               //28/01/2019 AGGIUNTO ANCHE LO STOP
               case 'STOP':
               if (agent.requestSource=="ACTIONS_ON_GOOGLE"){
