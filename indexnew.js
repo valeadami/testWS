@@ -767,6 +767,46 @@ function callAVANEW(agent) {
               
               });
                 break;
+                //peso
+                case 'getCreditoFormativoDirittoCostituzionale':
+                controller.GetDettaglioEsame('286879','5057980', 'peso').then((esame) => { 
+                  var strTemp=''; 
+                  console.log( '**************** dati del peso getCreditoFormativoDirittoCostituzionale' +esame.tipoEsaDes);
+          
+                  strTemp +=  esame.peso +' CFU'; //Diritto Costituzionale è un corso dell'anno : 1
+                  var str=strOutput;
+                  str=str.replace(/(@)/gi, strTemp);
+                  strOutput=str;
+                  agent.add(strOutput);
+                  console.log('strOutput con replace in getCreditoFormativoDirittoCostituzionale'+ strOutput);
+                  resolve(agent);
+
+              }).catch((error) => {
+                console.log('Si è verificato errore in getTipoEsameDirittoCostituzionale: ' +error);
+                
+              
+              });
+                break;
+                //anno di frequenza
+                case 'getAnnoFrequentatoDirittoCostituzionale':
+                controller.GetDettaglioEsame('286879','5057980', 'aaFreqId').then((esame) => { 
+                  var strTemp=''; 
+                  console.log( '**************** dati del ANNO DI FREQUENZA getAnnoFrequentatoDirittoCostituzionale' +esame.tipoEsaDes);
+          
+                  strTemp +=  esame.aaFreqId; //Diritto Costituzionale è un corso dell'anno : 1
+                  var str=strOutput;
+                  str=str.replace(/(@)/gi, strTemp);
+                  strOutput=str;
+                  agent.add(strOutput);
+                  console.log('strOutput con replace in getAnnoFrequentatoDirittoCostituzionale'+ strOutput);
+                  resolve(agent);
+
+              }).catch((error) => {
+                console.log('Si è verificato errore in getTipoEsameDirittoCostituzionale: ' +error);
+                
+              
+              });
+                break;
                 //******** ECONOMIA AZIENDALE  */
                 //**********  */getEconomiaAziendale 29/01/2019
                 case 'getEconomiaAziendale':
