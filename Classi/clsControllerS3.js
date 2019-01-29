@@ -275,7 +275,7 @@ function GetDettaglioEsame(matId, adsceId,param){ //matId, adsceId
                 singoloEsame=new rigaLibretto(undefined,undefined,undefined,adsceId,undefined,undefined,undefined, undefined,undefined,undefined,
                     undefined,undefined,undefined,undefined,
                     undefined,undefined,undefined,undefined,undefined,undefined,undefined,
-                    undefined,undefined,
+                    undefined,
                     body.peso);
                 console.log('peso di adsceId ' +adsceId +' con param '+param + ':' + body.peso);
                 resolve(singoloEsame);
@@ -292,7 +292,7 @@ function GetDettaglioEsame(matId, adsceId,param){ //matId, adsceId
                         undefined, undefined, undefined, undefined,
                         undefined,undefined, undefined, undefined, undefined,undefined,
                         undefined, undefined,undefined, undefined, undefined,undefined,
-                        body.tipoEsaCod);
+                        body.tipoEsaDes);
                
                       
                 console.log('tipoEsaDes di adsceId ' +adsceId +' con param '+param + ':' + body.tipoEsaDes);
@@ -300,14 +300,16 @@ function GetDettaglioEsame(matId, adsceId,param){ //matId, adsceId
             break;
                         //esito esame
             case 'esito.dataEsa':
-  
+                        var esito={
+                            "dataEsa":body.esito.dataEsa
+                        }
                     singoloEsame=new rigaLibretto(undefined,undefined, 
-                        undefined,undefined, undefined, 
+                        undefined,adsceId, undefined, 
                         undefined,
-                        undefined, undefined, undefined,body.esito.dataEsa);
+                        undefined, undefined, undefined,esito);
                
                       
-                console.log('esito.dataEsa di adsceId ' +adsceId +' con param '+param + ':' + body.esito.dataEsa);
+                console.log('esito.dataEsa di adsceId ' +adsceId +' con param '+param + ':' + body.esito.dataEsa + ' e singolo esame' +singoloEsame.esito.dataEsa);
                 resolve(singoloEsame);
             break;
             default:

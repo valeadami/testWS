@@ -102,33 +102,14 @@ var responseFromPlq={
  
  }*/
  //test chiaveAdContestualizzata
- /*
- var libretto=[];
- var chiaveADContestualizzata={
-  "aaOffId": 2017,
-  "aaOrdCod": "GI01-17",
-  "aaOrdDes": "GIURISPRUDENZA",
-  "aaOrdId": 2017,
-  "adCod": "015GI",
-  "adDes": "FILOSOFIA DEL DIRITTO",
-  "adId": 111211,
-  "afId": 236856,
-  "cdsCod": "GI01",
-  "cdsDes": "GIURISPRUDENZA",
-  "cdsId": 10094,
-  "pdsCod": "PDS0-2017",
-  "pdsDes": "comune",
-  "pdsId": 9999
-};
+ /* 
 
- libretto[0]= new rigaLibretto('2017','www', 
-  'adDes',222222, 2018, chiaveADContestualizzata,
-  '2018');
+ 
     responseFromPlq.cmd.push(commands);
       res.setHeader('Content-Type', 'text/html')
       res.write("ecco i dati del libretto, matricola ID = "+ responseFromPlq.cmd[0]);
       res.end();
-      next(); */
+      next();
 var esito={
   "aaSupId": null,
   "dataEsa": "",
@@ -147,7 +128,7 @@ if (typeof esito !=='undefined' && esito.dataEsa!=='' && esito.voto!=null){
 
   console.log('qui non ho esame fatto');
 }
-
+*/
     }) 
     
 
