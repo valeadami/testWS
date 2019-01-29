@@ -732,9 +732,9 @@ function callAVANEW(agent) {
                 case 'getAnnoDirittoCostituzionale':
                 controller.GetDettaglioEsame('286879','5057980', 'annoCorso').then((esame) => { 
                   var strTemp=''; 
-                  console.log( '**************** dati del ANNO getDirittoCostituzionale******************');
+                  console.log( '**************** dati del ANNO getDirittoCostituzionale= ' + esame.annoCorso);
           
-                  strTemp =  esame.annoCorso; //Diritto Costituzionale è un corso dell'anno : 1
+                  strTemp +=  esame.annoCorso; //Diritto Costituzionale è un corso dell'anno : 1
                   var str=strOutput;
                   str=str.replace(/(@)/gi, strTemp);
                   strOutput=str;

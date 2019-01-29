@@ -267,19 +267,19 @@ function GetDettaglioEsame(matId, adsceId,param){ //matId, adsceId
 
             case 'aaFreqId':
                 singoloEsame=new rigaLibretto(body.aaFreqId);
-                console.log('annoCorso di adsceId ' +adsceId +' con param '+param + ':' + body.aaFreqId);
+                console.log('aaFreqId di adsceId ' +adsceId +' con param '+param + ':' + body.aaFreqId);
                 resolve(singoloEsame);
             break;
 
             case 'peso':
                 singoloEsame=new rigaLibretto(body.peso);
-                console.log('annoCorso di adsceId ' +adsceId +' con param '+param + ':' + body.peso);
+                console.log('peso di adsceId ' +adsceId +' con param '+param + ':' + body.peso);
                 resolve(singoloEsame);
             break;
 
             case 'tipoEsaDes':
                 singoloEsame=new rigaLibretto(body.tipoEsaDes);
-                console.log('annoCorso di adsceId ' +adsceId +' con param '+param + ':' + body.tipoEsaDes);
+                console.log('tipoEsaDes di adsceId ' +adsceId +' con param '+param + ':' + body.tipoEsaDes);
                 resolve(singoloEsame);
             break;
 
