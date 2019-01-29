@@ -292,16 +292,16 @@ function GetDettaglioEsame(matId, adsceId,param){ //matId, adsceId
                         undefined, undefined, undefined, undefined,
                         undefined,undefined, undefined, undefined, undefined,undefined,
                         undefined, undefined,undefined, undefined, undefined,undefined,
-                        body.tipoEsaDes);
+                        body.tipoEsaDes,body.tipoEsaDes);
                
                       
-                console.log('tipoEsaDes di adsceId ' +adsceId +' con param '+param + ':' + body.tipoEsaDes);
+                console.log('tipoEsaDes di adsceId ' +adsceId +' con param '+param + ':' + body.tipoEsaDes );
                 resolve(singoloEsame);
             break;
                         //esito esame
             case 'esito.dataEsa':
                         var esito={
-                            "dataEsa":body.esito.dataEsa
+                            "dataEsa":body.esito.dataEsa.substring(0,10)//substring(0,10)
                         }
                     singoloEsame=new rigaLibretto(undefined,undefined, 
                         undefined,adsceId, undefined, 

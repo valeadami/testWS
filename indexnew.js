@@ -86,8 +86,12 @@ var responseFromPlq={
   'cmd':[]
 }
   app.get('/login', function(req, res, next) {
-    
-   /* test comandi
+    /* var data='15/06/2018 00:00:00';
+    var esito={
+      "dataEsa": data.substring(0,10)
+    }
+    console.log(esito.dataEsa);
+   test comandi
   var commands=["getLibretto"];
   var comandi=[];
   comandi=getComandi(commands);
@@ -732,7 +736,7 @@ function callAVANEW(agent) {
                 case 'getTipoEsameDirittoCostituzionale':
                 controller.GetDettaglioEsame('286879','5057980', 'tipoEsaDes').then((esame) => { 
                   var strTemp=''; 
-                  console.log( '**************** dati del TIPO getTipoEsameDirittoCostituzionale' +esame.tipoEsaDes);
+                  console.log( '**************** dati del TIPO getTipoEsameDirittoCostituzionale ' +esame.tipoEsaDes);
           
                   strTemp +=  esame.tipoEsaDes; //Diritto Costituzionale è un corso dell'anno : 1
                   var str=strOutput;
@@ -752,9 +756,9 @@ function callAVANEW(agent) {
                 case 'getCreditoFormativoDirittoCostituzionale':
                 controller.GetDettaglioEsame('286879','5057980', 'peso').then((esame) => { 
                   var strTemp=''; 
-                  console.log( '**************** dati del peso getCreditoFormativoDirittoCostituzionale' +esame.tipoEsaDes);
+                  console.log( '**************** dati del peso getCreditoFormativoDirittoCostituzionale' +esame.peso);
           
-                  strTemp +=  esame.peso +' CFU'; //Diritto Costituzionale è un corso dell'anno : 1
+                  strTemp +=  esame.peso; //Diritto Costituzionale è un corso dell'anno : 1
                   var str=strOutput;
                   str=str.replace(/(@)/gi, strTemp);
                   strOutput=str;
@@ -763,7 +767,7 @@ function callAVANEW(agent) {
                   resolve(agent);
 
               }).catch((error) => {
-                console.log('Si è verificato errore in getTipoEsameDirittoCostituzionale: ' +error);
+                console.log('Si è verificato errore in getCreditoFormativoDirittoCostituzionale: ' +error);
                 
               
               });
@@ -772,7 +776,7 @@ function callAVANEW(agent) {
                 case 'getAnnoFrequentatoDirittoCostituzionale':
                 controller.GetDettaglioEsame('286879','5057980', 'aaFreqId').then((esame) => { 
                   var strTemp=''; 
-                  console.log( '**************** dati del ANNO DI FREQUENZA getAnnoFrequentatoDirittoCostituzionale' +esame.tipoEsaDes);
+                  console.log( '**************** dati del ANNO DI FREQUENZA getAnnoFrequentatoDirittoCostituzionale' +esame.aaFreqId);
           
                   strTemp +=  esame.aaFreqId; //Diritto Costituzionale è un corso dell'anno : 1
                   var str=strOutput;
@@ -783,7 +787,7 @@ function callAVANEW(agent) {
                   resolve(agent);
 
               }).catch((error) => {
-                console.log('Si è verificato errore in getTipoEsameDirittoCostituzionale: ' +error);
+                console.log('Si è verificato errore in getAnnoFrequentatoDirittoCostituzionale: ' +error);
                 
               
               });
@@ -792,7 +796,7 @@ function callAVANEW(agent) {
                  case 'getDataEsameFattoDirittoCostituzionale':
                  controller.GetDettaglioEsame('286879','5057980', 'esito.dataEsa').then((esame) => { 
                    var strTemp=''; 
-                   console.log( '**************** dati del esito.dataEsa getDataEsameFattoDirittoCostituzionale' +esame.tipoEsaDes);
+                   console.log( '**************** dati del esito.dataEsa getDataEsameFattoDirittoCostituzionale' +esame.esito.dataEsa);
            
                    strTemp +=  esame.esito.dataEsa; //Diritto Costituzionale è un corso dell'anno : 1
                    var str=strOutput;
