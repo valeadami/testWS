@@ -807,6 +807,26 @@ function callAVANEW(agent) {
               
               });
                 break;
+                 //getDataEsameFattoDirittoCostituzionale esito.dataEsa
+                 case 'getDataEsameFattoDirittoCostituzionale':
+                 controller.GetDettaglioEsame('286879','5057980', 'esito.dataEsa').then((esame) => { 
+                   var strTemp=''; 
+                   console.log( '**************** dati del esito.dataEsa getDataEsameFattoDirittoCostituzionale' +esame.tipoEsaDes);
+           
+                   strTemp +=  esame.esito.dataEsa; //Diritto Costituzionale è un corso dell'anno : 1
+                   var str=strOutput;
+                   str=str.replace(/(@)/gi, strTemp);
+                   strOutput=str;
+                   agent.add(strOutput);
+                   console.log('strOutput con replace in getDataEsameFattoDirittoCostituzionale'+ strOutput);
+                   resolve(agent);
+ 
+               }).catch((error) => {
+                 console.log('Si è verificato errore in getDataEsameFattoDirittoCostituzionale: ' +error);
+                 
+               
+               });
+                 break;
                 //******** ECONOMIA AZIENDALE  */
                 //**********  */getEconomiaAziendale 29/01/2019
                 case 'getEconomiaAziendale':
@@ -836,6 +856,9 @@ function callAVANEW(agent) {
               
               });
                 break;
+               
+
+
               //28/01/2019 AGGIUNTO ANCHE LO STOP
               case 'STOP':
               if (agent.requestSource=="ACTIONS_ON_GOOGLE"){

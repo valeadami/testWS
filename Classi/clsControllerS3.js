@@ -272,8 +272,10 @@ function GetDettaglioEsame(matId, adsceId,param){ //matId, adsceId
             break;
 
             case 'peso':
-                singoloEsame=new rigaLibretto(undefined,undefined,undefined,adsceId,undefined,undefined,undefined, undefined,undefined,undefined,undefined,undefined,undefined,undefined,
-                    undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,
+                singoloEsame=new rigaLibretto(undefined,undefined,undefined,adsceId,undefined,undefined,undefined, undefined,undefined,undefined,
+                    undefined,undefined,undefined,undefined,
+                    undefined,undefined,undefined,undefined,undefined,undefined,undefined,
+                    undefined,undefined,
                     body.peso);
                 console.log('peso di adsceId ' +adsceId +' con param '+param + ':' + body.peso);
                 resolve(singoloEsame);
@@ -296,7 +298,18 @@ function GetDettaglioEsame(matId, adsceId,param){ //matId, adsceId
                 console.log('tipoEsaDes di adsceId ' +adsceId +' con param '+param + ':' + body.tipoEsaDes);
                 resolve(singoloEsame);
             break;
-
+                        //esito esame
+            case 'esito.dataEsa':
+  
+                    singoloEsame=new rigaLibretto(undefined,undefined, 
+                        undefined,undefined, undefined, 
+                        undefined,
+                        undefined, undefined, undefined,body.esito.dataEsa);
+               
+                      
+                console.log('esito.dataEsa di adsceId ' +adsceId +' con param '+param + ':' + body.esito.dataEsa);
+                resolve(singoloEsame);
+            break;
             default:
             singoloEsame=new rigaLibretto(body.aaFreqId,body.adCod, 
                 body.adDes,body.adsceId, body.annoCorso, 
