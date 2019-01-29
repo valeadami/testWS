@@ -320,7 +320,7 @@ function GetDettaglioEsame(matId, adsceId,param){ //matId, adsceId
                     singoloEsame=new rigaLibretto(undefined,undefined, 
                         undefined,adsceId, undefined, 
                         undefined,
-                        undefined, undefined, undefined,esito);
+                        undefined, undefined, undefined,esitoVoto);
             
                     
                 console.log('esito.voto di adsceId ' +adsceId +' con param '+param + ':' + body.esito.voto + ' e singolo esame con voto' +singoloEsame.esito.voto);
