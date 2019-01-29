@@ -751,9 +751,9 @@ function callAVANEW(agent) {
                 case 'getTipoEsameDirittoCostituzionale':
                 controller.GetDettaglioEsame('286879','5057980', 'tipoEsaDes').then((esame) => { 
                   var strTemp=''; 
-                  console.log( '**************** dati del ANNO getTipoEsameDirittoCostituzionale******************');
+                  console.log( '**************** dati del TIPO getTipoEsameDirittoCostituzionale' +esame.tipoEsaDes);
           
-                  strTemp =  esame.tipoEsaDes; //Diritto Costituzionale è un corso dell'anno : 1
+                  strTemp +=  esame.tipoEsaDes; //Diritto Costituzionale è un corso dell'anno : 1
                   var str=strOutput;
                   str=str.replace(/(@)/gi, strTemp);
                   strOutput=str;
