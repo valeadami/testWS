@@ -275,7 +275,7 @@ function GetDettaglioEsame(matId, adsceId,param){ //matId, adsceId
                 singoloEsame=new rigaLibretto(undefined,undefined,undefined,adsceId,undefined,undefined,undefined, undefined,undefined,undefined,
                     undefined,undefined,undefined,undefined,
                     undefined,undefined,undefined,undefined,undefined,undefined,undefined,
-                    undefined,
+                    undefined, undefined,
                     body.peso);
                 console.log('peso di adsceId ' +adsceId +' con param '+param + ':' + body.peso);
                 resolve(singoloEsame);
