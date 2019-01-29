@@ -259,7 +259,7 @@ function GetDettaglioEsame(matId, adsceId,param){ //matId, adsceId
           //modifica del 29/01/2018
          switch (param){
             case 'annoCorso':
-                singoloEsame=new rigaLibretto(body.annoCorso);
+                singoloEsame=new rigaLibretto(undefined,undefined,undefined,adsceId, body.annoCorso);
                 console.log('annoCorso di adsceId ' +adsceId +' con param '+param + ':' + body.annoCorso);
                 resolve(singoloEsame);
             break;
