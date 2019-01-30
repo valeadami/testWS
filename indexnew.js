@@ -86,9 +86,34 @@ var responseFromPlq={
   'cmd':[]
 }
   app.get('/login', function(req, res, next) {
+    var body=
+    [{
+      "adsceId":5057980,
+      "attributi":
+      {
+        "ambId":2001,
+        "ambitoDes":"Costituzionalistico",
+        "dataRegFreq":"",
+        "discCod":"",
+        "discDes":"",
+        "durata":80,
+        "freqObbligFlg":0,
+        "oreMinFreq":null,
+        "oreRegFreq":null,
+        "peso":12,
+        "settCod":"IUS/08",
+        "settDes":"DIRITTO COSTITUZIONALE",
+        "taf":{"value":"A"},
+        "tafDes":"Base",
+        "tipoCreCod":"LEZ",
+        "udCod":"004GI",
+        "udDes":"DIRITTO COSTITUZIONALE"
+      },"matId":286879,"segsceId":6156632}];
+      console.log(body[0].attributi.tipoCreCod);
     /* var data='15/06/2018 00:00:00';
     var esito={
       "dataEsa": data.substring(0,10)
+
     }
     console.log(esito.dataEsa);
    test comandi
@@ -837,7 +862,7 @@ function callAVANEW(agent) {
               case 'getDocenteDirittoCostituzionale':
               controller.GetDocente('286879','5057980').then((esame) => { 
                 var strTemp=''; 
-                console.log( '**************** dati del DOCENTE getDocenteDirittoCostituzionale ' +esame.esito.voto);
+                console.log( '**************** dati del DOCENTE getDocenteDirittoCostituzionale ');
         
                 strTemp +=  esame; //ritorna una stringa con cognome e nome del docente
                 var str=strOutput;
@@ -1028,7 +1053,7 @@ function callAVANEW(agent) {
               case 'getDocenteEconomiaAziendale':
               controller.GetDocente('286879','5057985').then((esame) => { 
                 var strTemp=''; 
-                console.log( '**************** dati del DOCENTE getDocenteEconomiaAziendale ' +esame.esito.voto);
+                console.log( '**************** dati del DOCENTE getDocenteEconomiaAziendale ');
         
                 strTemp +=  esame; //ritorna una stringa con cognome e nome del docente
                 var str=strOutput;
