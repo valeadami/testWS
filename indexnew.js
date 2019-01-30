@@ -882,7 +882,7 @@ function callAVANEW(agent) {
             case 'getTipoCorsoDirittoCostituzionale':
               controller.getSegmento('286879','5057980').then((esame) => { 
                 var strTemp=''; 
-                console.log( '**************** dati del TIPO CORSO getTipoCorsoDirittoCostituzionale ' +esame.esito.voto);
+                console.log( '**************** dati del TIPO CORSO getTipoCorsoDirittoCostituzionale ');
         
                 strTemp +=  esame; //ritorna una stringa con LEZ
                 var str=strOutput;
@@ -1073,7 +1073,7 @@ function callAVANEW(agent) {
             case 'getTipoCorsoEconomiaAziendale':
             controller.getSegmento('286879','5057985').then((esame) => { 
               var strTemp=''; 
-              console.log( '**************** dati del TIPO CORSO getTipoCorsoEconomiaAziendale ' +esame.esito.voto);
+              console.log( '**************** dati del TIPO CORSO getTipoCorsoEconomiaAziendale ');
       
               strTemp +=  esame; //ritorna una stringa con LEZ
               var str=strOutput;
