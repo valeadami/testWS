@@ -832,7 +832,47 @@ function callAVANEW(agent) {
                
                });
                  break;
+               //30/01/2019
+              // getDocenteDirittoCostituzionale
+              case 'getDocenteDirittoCostituzionale':
+              controller.getDocente('286879','5057980').then((esame) => { 
+                var strTemp=''; 
+                console.log( '**************** dati del DOCENTE getDocenteDirittoCostituzionale ' +esame.esito.voto);
+        
+                strTemp +=  esame; //ritorna una stringa con cognome e nome del docente
+                var str=strOutput;
+                str=str.replace(/(@)/gi, strTemp);
+                strOutput=str;
+                agent.add(strOutput);
+                console.log('strOutput con replace in getDocenteDirittoCostituzionale '+ strOutput);
+                resolve(agent);
 
+            }).catch((error) => {
+              console.log('Si è verificato errore in getDocenteDirittoCostituzionale: ' +error);
+              
+            
+            });
+            break;
+            //getTipoCorsoDirittoCostituzionale
+            case 'getTipoCorsoDirittoCostituzionale':
+              controller.getDocente('286879','5057980').then((esame) => { 
+                var strTemp=''; 
+                console.log( '**************** dati del TIPO CORSO getTipoCorsoDirittoCostituzionale ' +esame.esito.voto);
+        
+                strTemp +=  esame; //ritorna una stringa con LEZ
+                var str=strOutput;
+                str=str.replace(/(@)/gi, strTemp);
+                strOutput=str;
+                agent.add(strOutput);
+                console.log('strOutput con replace in getTipoCorsoDirittoCostituzionale '+ strOutput);
+                resolve(agent);
+
+            }).catch((error) => {
+              console.log('Si è verificato errore in getTipoCorsoDirittoCostituzionale: ' +error);
+              
+            
+            });
+            break;
                 //******** ECONOMIA AZIENDALE  */
                 //**********  */getEconomiaAziendale 29/01/2019 generico
                 case 'getEconomiaAziendale':
@@ -984,6 +1024,45 @@ function callAVANEW(agent) {
             
             });
               break;
+              //5057985
+              case 'getDocenteEconomiaAziendale':
+              controller.getDocente('286879','5057985').then((esame) => { 
+                var strTemp=''; 
+                console.log( '**************** dati del DOCENTE getDocenteEconomiaAziendale ' +esame.esito.voto);
+        
+                strTemp +=  esame; //ritorna una stringa con cognome e nome del docente
+                var str=strOutput;
+                str=str.replace(/(@)/gi, strTemp);
+                strOutput=str;
+                agent.add(strOutput);
+                console.log('strOutput con replace in getDocenteEconomiaAziendale '+ strOutput);
+                resolve(agent);
+
+            }).catch((error) => {
+              console.log('Si è verificato errore in getDocenteEconomiaAziendale: ' +error);
+              
+            
+            });
+            break;
+            //TIPOCORSO 
+            case 'getTipoCorsoEconomiaAziendale':
+            controller.getDocente('286879','5057985').then((esame) => { 
+              var strTemp=''; 
+              console.log( '**************** dati del TIPO CORSO getTipoCorsoEconomiaAziendale ' +esame.esito.voto);
+      
+              strTemp +=  esame; //ritorna una stringa con LEZ
+              var str=strOutput;
+              str=str.replace(/(@)/gi, strTemp);
+              strOutput=str;
+              agent.add(strOutput);
+              console.log('strOutput con replace in getTipoCorsoEconomiaAziendale '+ strOutput);
+              resolve(agent);
+
+          }).catch((error) => {
+            console.log('Si è verificato errore in getTipoCorsoEconomiaAziendale: ' +error);
+            
+          
+          });
               //28/01/2019 AGGIUNTO ANCHE LO STOP
               case 'STOP':
               if (agent.requestSource=="ACTIONS_ON_GOOGLE"){

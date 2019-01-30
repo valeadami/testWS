@@ -21,6 +21,8 @@ var strUrlGetSingoloEsame='https://units.esse3.pp.cineca.it/e3rest/api/libretto-
 var strUrlGetAppelloDaPrenotare='https://units.esse3.pp.cineca.it/e3rest/api/calesa-service-v1/appelli/'; //10094/117740/?stato=P'
 var strUrlPostAppello='https://units.esse3.pp.cineca.it/e3rest/api/calesa-service-v1/appelli/'; //10094/117740/5/iscritti'
 var strUrlDeleteAppello='https://units.esse3.pp.cineca.it/e3rest/api/calesa-service-v1/appelli/'; //10094/117740/5/iscritti/236437;'
+// PARTIZIONI-> PER NOME DOCENTE 'https://units.esse3.pp.cineca.it/e3rest/api/libretto-service-v1/libretti/286879/righe/5057982/partizioni; //
+//segmenti -> per il tipo di corso LEZ https://units.esse3.pp.cineca.it/e3rest/api/libretto-service-v1/libretti/286879/righe/5057980/segmenti
 //var strUrlGetAppelliPrenotati=strUrlGetSingoloEsame';
 //qui ci vorrà user e pwd
 function getEsseTreLogin(){
@@ -347,6 +349,116 @@ function GetDettaglioEsame(matId, adsceId,param){ //matId, adsceId
       
     });
 }
+//******* 30/01/2019 partizioni per aver nome e cognome del docente */
+//'https://units.esse3.pp.cineca.it/e3rest/api/libretto-service-v1/libretti/286879/righe/5057982/partizioni
+
+function GetDocenteEsame(matId,adsceId){ //matID, adsceId, param con param=annoCorso
+    return new Promise(function(resolve, reject) {
+        var options = { 
+            method: 'GET',
+            url: strUrlGetSingoloEsame  + matId +'/righe/' + adsceId+'/partizioni',
+            headers: 
+                { 
+                    'cache-control': 'no-cache',
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Basic czI2MDg1NjpRM1ZSQUFRUA=='
+                },
+            json: true 
+        }
+        request(options, function (error, response, body) {
+            console.log('url di GetDocenteEsame-partizioni '+ options.url);
+            if (error) {
+                reject(error);
+                console.log('errore in GetDocenteEsame '+ error);
+            } else {
+                if (response.statusCode==200){
+                 
+                    resolve(body); 
+                }  
+            }
+    
+        });
+    
+    }); 
+}
+function GetDocente(matId,adsceId){ //matID, adsceId, param con param=annoCorso
+    return new Promise(function(resolve, reject) {
+        GetDocenteEsame(matId, adsceId).then((body)=>{ 
+            var strDocente='';
+            rawData=JSON.stringify(body);
+            console.log('\n\nQUESTO IL BODY del DOCENTE DA PARTIZIONI ' +rawData);
+         if (Array.isArray(body)){
+           
+            strDocente=body[0].cognomeDocTit + ' ' + body[0].nomeDoctit;
+            console.log('il nome del docente '+ strDocente)
+            resolve(strDocente);
+
+         }else{
+            resolve(strDocente);
+            console.log('il nome del docente manca');
+         }
+           
+          
+        });
+    
+    }); 
+}
+
+//https://units.esse3.pp.cineca.it/e3rest/api/libretto-service-v1/libretti/286879/righe/5057980/segmenti
+//getSegmentoEsame
+function getSegmentoEsame(matId,adsceId){ 
+    return new Promise(function(resolve, reject) {
+        var options = { 
+            method: 'GET',
+            url: strUrlGetSingoloEsame  + matId +'/righe/' + adsceId+'/segmenti',
+            headers: 
+                { 
+                    'cache-control': 'no-cache',
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Basic czI2MDg1NjpRM1ZSQUFRUA=='
+                },
+            json: true 
+        }
+        request(options, function (error, response, body) {
+            console.log('url di getSegmentoEsame '+ options.url);
+            if (error) {
+                reject(error);
+                console.log('errore in getSegmentoEsame '+ error);
+            } else {
+                if (response.statusCode==200){
+                 
+                    resolve(body); 
+                }  
+            }
+    
+        });
+    
+    }); 
+}
+//getSegmento
+function getSegmento(matId,adsceId){ //matID, adsceId, param con param=annoCorso
+    return new Promise(function(resolve, reject) {
+        getSegmentoEsame(matId, adsceId).then((body)=>{ 
+            var tipoCorso='';
+            rawData=JSON.stringify(body);
+            console.log('\n\nQUESTO IL BODY del tipoCorso ' +rawData);
+         if (Array.isArray(body)){
+           
+            tipoCorso=body[0].attibuti.tipoCreCod ;
+            console.log('il tipo del corso '+ tipoCorso);
+            resolve(tipoCorso);
+
+         }else{
+            resolve(tipoCorso);
+            console.log('il nome del tipoCorso manca');
+         }
+           
+          
+        });
+    
+    }); 
+}
+
 // FA IL LOGIN
 function doLogin(){
     return new Promise(function(resolve, reject) {
@@ -359,6 +471,7 @@ function doLogin(){
     });
 });
 }
+
 //CARRIERA 
 function getCarriera(userid){
     return new Promise(function(resolve, reject) {
@@ -683,3 +796,4 @@ exports.postSingoloAppelloDaPrenotare=postSingoloAppelloDaPrenotare;
 exports.deleteSingoloAppelloDaPrenotare=deleteSingoloAppelloDaPrenotare;
 exports.getPrenotati=getPrenotati;
 exports.GetDettaglioEsame=GetDettaglioEsame;
+exports.GetDocente=GetDocente;
