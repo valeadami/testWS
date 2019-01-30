@@ -86,30 +86,24 @@ var responseFromPlq={
   'cmd':[]
 }
   app.get('/login', function(req, res, next) {
-    var body=
-    [{
-      "adsceId":5057980,
-      "attributi":
-      {
-        "ambId":2001,
-        "ambitoDes":"Costituzionalistico",
-        "dataRegFreq":"",
-        "discCod":"",
-        "discDes":"",
-        "durata":80,
-        "freqObbligFlg":0,
-        "oreMinFreq":null,
-        "oreRegFreq":null,
-        "peso":12,
-        "settCod":"IUS/08",
-        "settDes":"DIRITTO COSTITUZIONALE",
-        "taf":{"value":"A"},
-        "tafDes":"Base",
-        "tipoCreCod":"LEZ",
-        "udCod":"004GI",
-        "udDes":"DIRITTO COSTITUZIONALE"
-      },"matId":286879,"segsceId":6156632}];
-      console.log(body[0].attributi.tipoCreCod);
+    /*
+    controller.getSegmento('286879','5057985').then((esame) => { 
+      var strTemp=''; 
+      console.log( '**************** dati del TIPO CORSO getTipoCorsoDirittoCostituzionale ');
+
+      strTemp +=  esame; //ritorna una stringa con LEZ
+      var str=strOutput;
+      str=str.replace(/(@)/gi, strTemp);
+      strOutput=str;
+      agent.add(strOutput);
+      console.log('strOutput con replace in getTipoCorsoDirittoCostituzionale '+ strOutput);
+      resolve(agent);
+
+  }).catch((error) => {
+    console.log('Si è verificato errore in getTipoCorsoDirittoCostituzionale: ' +error);
+    
+  
+  });*/
     /* var data='15/06/2018 00:00:00';
     var esito={
       "dataEsa": data.substring(0,10)

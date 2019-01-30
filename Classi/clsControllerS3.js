@@ -443,11 +443,12 @@ function getSegmento(matId,adsceId){ //matID, adsceId, param con param=annoCorso
             rawData=JSON.stringify(body);
             console.log('\n\nQUESTO IL BODY del tipoCorso ' +rawData);
          if (Array.isArray(body)){
-           
-            tipoCorso=body[0].attibuti.tipoCreCod;
+            console.log('il tipo di corso ora = '+body[0].attributi.tipoCreCod);
+           /* tipoCorso=body[0].attibuti.tipoCreCod.toString();
             
             console.log('il tipo del corso '+ tipoCorso);
-            resolve(tipoCorso);
+            tipoCorso=body[0].attibuti.tipoCreCod.toString();*/
+            resolve(body[0].attributi.tipoCreCod); //body[0].attributi.tipoCreCod
 
          }else{
             resolve(tipoCorso);
