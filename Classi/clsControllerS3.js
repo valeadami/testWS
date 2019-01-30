@@ -527,6 +527,10 @@ function getEsamiUltimoAnno(matId,anno){ //matID, adsceId, param con param=annoC
     
     }); 
 }
+//getElencoCreditiUltimoAnno
+
+
+//getCreditiUltimoAnno
 // FA IL LOGIN
 function doLogin(){
     return new Promise(function(resolve, reject) {
