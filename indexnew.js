@@ -86,6 +86,36 @@ var responseFromPlq={
   'cmd':[]
 }
   app.get('/login', function(req, res, next) {
+    controller.getEsamiUltimoAnno('286879',2017).then((libretto) => { 
+      var strTemp=''; 
+     
+      var strTemp='';
+      // strOutput='ecco gli esami ';
+       if (Array.isArray(libretto)){
+        
+         for(var i=0; i<libretto.length; i++){
+           //tolto 'esame di ' in data 29/01/2019 e aggiunti i campi per avere i dati come su EsseTre RigaLibretto
+           strTemp+=  libretto[i].adDes+ ', frequentato  nell \'anno ' +libretto[i].aaFreqId +', anno di corso ' +
+           libretto[i].annoCorso + '\n';
+
+         }
+        
+       }
+       //qui devo fare replace della @, che si trova in tmp[0]
+       var str=strOutput;
+       str=str.replace(/(@)/gi, strTemp);
+       strOutput=str;
+       agent.add(strOutput);
+       
+       console.log('strOutput con replace '+ strOutput);
+       
+       //agent.setContext({ name: 'libretto', lifespan: 5, parameters: { matID: studente.trattiCarriera[0].matId }});
+       
+      }).catch((error) => {
+        console.log('Si è verificato errore in getTipoCorsoDirittoCostituzionale: ' +error);
+        
+      
+      });
     /*
     controller.getSegmento('286879','5057985').then((esame) => { 
       var strTemp=''; 
@@ -99,7 +129,7 @@ var responseFromPlq={
       console.log('strOutput con replace in getTipoCorsoDirittoCostituzionale '+ strOutput);
       resolve(agent);
 
-  }).catch((error) => {
+ }).catch((error) => {
     console.log('Si è verificato errore in getTipoCorsoDirittoCostituzionale: ' +error);
     
   
@@ -1043,7 +1073,7 @@ function callAVANEW(agent) {
             
             });
               break;
-              //5057985
+              //getDocenteEconomiaAziendale
               case 'getDocenteEconomiaAziendale':
               controller.GetDocente('286879','5057985').then((esame) => { 
                 var strTemp=''; 
@@ -1063,7 +1093,7 @@ function callAVANEW(agent) {
             
             });
             break;
-            //TIPOCORSO 
+            //TIPOCORSO  getTipoCorsoEconomiaAziendale
             case 'getTipoCorsoEconomiaAziendale':
             controller.getSegmento('286879','5057985').then((esame) => { 
               var strTemp=''; 
@@ -1083,6 +1113,41 @@ function callAVANEW(agent) {
           
           });
           break;
+          //30/01/2019
+          //getEsamiUltimoAnno ---> QUANTI ESAMI HO FATTO!!!
+          case 'getEsamiUltimoAnno':
+          controller.getEsamiUltimoAnno('286879',2017).then((libretto) => { 
+           console.log('sono in getEsamiUltimoAnno')
+            var strTemp=''; 
+           
+            if (Array.isArray(libretto)){
+              /*   
+              for(var i=0; i<libretto.length; i++){
+               
+                strTemp+=  libretto[i].adDes+ ', frequentato  nell \'anno ' +libretto[i].aaFreqId +', anno di corso ' +
+                libretto[i].annoCorso + '\n';
+
+              }*/
+              strTemp+=libretto.length;
+              console.log('quanti esami ho fatto ='+ strTemp);
+             
+            }
+            //qui devo fare replace della @, che si trova in tmp[0]
+            var str=strOutput;
+            str=str.replace(/(@)/gi, strTemp);
+            strOutput=str;
+            agent.add(strOutput);
+            
+            console.log('strOutput con replace '+ strOutput);
+            
+            //agent.setContext({ name: 'libretto', lifespan: 5, parameters: { matID: studente.trattiCarriera[0].matId }});
+            resolve(agent);
+          }).catch((error) => {
+            console.log('Si è verificato errore : ' +error);
+            
+         
+          });
+            break;
               //28/01/2019 AGGIUNTO ANCHE LO STOP
               case 'STOP':
               if (agent.requestSource=="ACTIONS_ON_GOOGLE"){

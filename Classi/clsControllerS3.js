@@ -23,6 +23,7 @@ var strUrlPostAppello='https://units.esse3.pp.cineca.it/e3rest/api/calesa-servic
 var strUrlDeleteAppello='https://units.esse3.pp.cineca.it/e3rest/api/calesa-service-v1/appelli/'; //10094/117740/5/iscritti/236437;'
 // PARTIZIONI-> PER NOME DOCENTE 'https://units.esse3.pp.cineca.it/e3rest/api/libretto-service-v1/libretti/286879/righe/5057982/partizioni; //
 //segmenti -> per il tipo di corso LEZ https://units.esse3.pp.cineca.it/e3rest/api/libretto-service-v1/libretti/286879/righe/5057980/segmenti
+// ESAMI SOSTENUTI NEL 2018 PERTINENTI AL 2017 https://units.esse3.pp.cineca.it/e3rest/api/libretto-service-v1/libretti/286879/righe/?filter=esito.aaSupId%3D%3D2017
 //var strUrlGetAppelliPrenotati=strUrlGetSingoloEsame';
 //qui ci vorrà user e pwd
 function getEsseTreLogin(){
@@ -461,7 +462,71 @@ function getSegmento(matId,adsceId){ //matID, adsceId, param con param=annoCorso
     
     }); 
 }
+//30/01/2019
+//ESAMI SOSTENUTI NEL 2018 PERTINENTI AL 2017 https://units.esse3.pp.cineca.it/e3rest/api/libretto-service-v1/libretti/286879/righe/?filter=esito.aaSupId%3D%3D2017
+//getEsamiUltimoAnno(anno)
+function getElencoEsamiUltimoAnno(matId,anno){ 
+    return new Promise(function(resolve, reject) {
+        var options = { 
+            method: 'GET',
+            url: strUrlGetSingoloEsame  + matId +'/righe/' + '?filter=esito.aaSupId%3D%3D' + anno,
+            headers: 
+                { 
+                    'cache-control': 'no-cache',
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Basic czI2MDg1NjpRM1ZSQUFRUA=='
+                },
+            json: true 
+        }
+        request(options, function (error, response, body) {
+            console.log('url di getElencoEsamiUltimoAnno '+ options.url);
+            if (error) {
+                reject(error);
+                console.log('errore in getElencoEsamiUltimoAnno '+ error);
+            } else {
+                if (response.statusCode==200){
+                 
+                    resolve(body); 
+                }  
+            }
+    
+        });
+    
+    }); 
+}
+//getEsamiUltimoAnno
+function getEsamiUltimoAnno(matId,anno){ //matID, adsceId, param con param=annoCorso
+    return new Promise(function(resolve, reject) {
+        getElencoEsamiUltimoAnno(matId, anno).then((body)=>{ 
+            var rawData='';
+            var libretto=[];
+                    //controllo che body sia un array
+            if (Array.isArray(body)){
+                rawData=JSON.stringify(body);
+                console.log('\n\nQUESTO IL BODY degli esami ultimo anno ' +rawData);
+                //creo oggetto libretto
+                for(var i=0; i<body.length; i++){
 
+                    libretto[i]= new rigaLibretto(body[i].aaFreqId,body[i].adCod, 
+                        body[i].adDes,body[i].adsceId, body[i].annoCorso, 
+                        body[i].chiaveADContestualizzata,
+                        body[i].dataFreq, body[i].dataScadIscr, body[i].dataChiusura, body[i].esito,
+                        //aggiunti qua
+                        body[i].freqObbligFlg, body[i].freqUffFlg, body[i].gruppoGiudCod,  body[i].gruppoGiudDes,
+                        body[i].gruppoVotoId, body[i].gruppoVotoLodeFlg, body[i].gruppoVotoMaxVoto,
+                        body[i].gruppoVotoMinVoto, body[i].itmId, body[i].matId, body[i].numAppelliPrenotabili,
+                        body[i].numPrenotazioni, body[i].ord, body[i].peso, body[i].pianoId, body[i].ragId,body[i].raggEsaTipo,
+                        body[i].ricId, body[i].sovranFlg,body[i].stato, body[i].statoDes, body[i].stuId,body[i].superataFlg,
+                        body[i].tipoEsaCod, body[i].tipoEsaDes, body[i].tipoInsCod, body[i].tipoInsDes);
+    
+                }
+                resolve(libretto);
+            }
+          
+        });
+    
+    }); 
+}
 // FA IL LOGIN
 function doLogin(){
     return new Promise(function(resolve, reject) {
@@ -801,3 +866,4 @@ exports.getPrenotati=getPrenotati;
 exports.GetDettaglioEsame=GetDettaglioEsame;
 exports.GetDocente=GetDocente;
 exports.getSegmento=getSegmento;
+exports.getEsamiUltimoAnno=getEsamiUltimoAnno;
