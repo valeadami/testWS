@@ -865,7 +865,7 @@ function callAVANEW(agent) {
                
               //30/01/2019
               //5057985 getAnnoEconomia Aziendale
-              case 'getAnnoEconomia':
+              case 'getAnnoEconomiaAziendale':
               controller.GetDettaglioEsame('286879','5057985', 'annoCorso').then((esame) => { 
                 var strTemp=''; 
                 console.log( '**************** dati del ANNO getAnnoEconomia= ' + esame.annoCorso);
@@ -1094,7 +1094,8 @@ app.listen(process.env.PORT || 3000, function() {
                  // comandi=['NO'];
                  /* comandi=strOutput;
                   console.log('qui ho solo la strOutput ' + comandi);*/
-                  responseFromPlq.strOutput=strOutput;
+                 // responseFromPlq.strOutput=strOutput;
+                  responseFromPlq.strOutput=strOutput.replace(/(<\/p>|<p>|<b>|<\/b>|<br>|<\/br>|<strong>|<\/strong>|<div>|<\/div>|<ul>|<li>|<\/ul>|<\/li>|&nbsp;|)/gi, '');
                   console.log('qui ho solo la strOutput ' + responseFromPlq.strOutput);
                  }
                
