@@ -719,7 +719,7 @@ function callAVANEW(agent) {
                   var strTemp=''; 
                   console.log( '**************** dati del ANNO getDirittoCostituzionale= ' + esame.annoCorso);
           
-                  strTemp +=  esame.annoCorso; //Diritto Costituzionale è un corso dell'anno : 1
+                  strTemp +=  esame.annoCorso; 
                   var str=strOutput;
                   str=str.replace(/(@)/gi, strTemp);
                   strOutput=str;
@@ -738,7 +738,7 @@ function callAVANEW(agent) {
                   var strTemp=''; 
                   console.log( '**************** dati del TIPO getTipoEsameDirittoCostituzionale ' +esame.tipoEsaDes);
           
-                  strTemp +=  esame.tipoEsaDes; //Diritto Costituzionale è un corso dell'anno : 1
+                  strTemp +=  esame.tipoEsaDes; 
                   var str=strOutput;
                   str=str.replace(/(@)/gi, strTemp);
                   strOutput=str;
@@ -758,7 +758,7 @@ function callAVANEW(agent) {
                   var strTemp=''; 
                   console.log( '**************** dati del peso getCreditoFormativoDirittoCostituzionale' +esame.peso);
           
-                  strTemp +=  esame.peso; //Diritto Costituzionale è un corso dell'anno : 1
+                  strTemp +=  esame.peso; 
                   var str=strOutput;
                   str=str.replace(/(@)/gi, strTemp);
                   strOutput=str;
@@ -778,7 +778,7 @@ function callAVANEW(agent) {
                   var strTemp=''; 
                   console.log( '**************** dati del ANNO DI FREQUENZA getAnnoFrequentatoDirittoCostituzionale' +esame.aaFreqId);
           
-                  strTemp +=  esame.aaFreqId; //Diritto Costituzionale è un corso dell'anno : 1
+                  strTemp +=  esame.aaFreqId;
                   var str=strOutput;
                   str=str.replace(/(@)/gi, strTemp);
                   strOutput=str;
@@ -798,7 +798,7 @@ function callAVANEW(agent) {
                    var strTemp=''; 
                    console.log( '**************** dati del esito.dataEsa getDataEsameFattoDirittoCostituzionale' +esame.esito.dataEsa);
            
-                   strTemp +=  esame.esito.dataEsa; //Diritto Costituzionale è un corso dell'anno : 1
+                   strTemp +=  esame.esito.dataEsa; 
                    var str=strOutput;
                    str=str.replace(/(@)/gi, strTemp);
                    strOutput=str;
@@ -834,7 +834,7 @@ function callAVANEW(agent) {
                  break;
 
                 //******** ECONOMIA AZIENDALE  */
-                //**********  */getEconomiaAziendale 29/01/2019
+                //**********  */getEconomiaAziendale 29/01/2019 generico
                 case 'getEconomiaAziendale':
                 controller.getEsame('286879','5057985').then((esame) => { 
                   var strTemp=''; 
@@ -863,8 +863,127 @@ function callAVANEW(agent) {
               });
                 break;
                
+              //30/01/2019
+              //5057985 getAnnoEconomia Aziendale
+              case 'getAnnoEconomia':
+              controller.GetDettaglioEsame('286879','5057985', 'annoCorso').then((esame) => { 
+                var strTemp=''; 
+                console.log( '**************** dati del ANNO getAnnoEconomia= ' + esame.annoCorso);
+        
+                strTemp +=  esame.annoCorso; 
+                var str=strOutput;
+                str=str.replace(/(@)/gi, strTemp);
+                strOutput=str;
+                agent.add(strOutput);
+                console.log('strOutput con replace in getAnnoEconomia'+ strOutput);
+                resolve(agent);
 
+            }).catch((error) => {
+              console.log('Si è verificato errore in getAnnoEconomia: ' +error);
+              
+            
+            });
+              break;
+              //getTipoEsameEconomiaAziendale
+              case 'getTipoEsameEconomiaAziendale':
+              controller.GetDettaglioEsame('286879','5057985', 'tipoEsaDes').then((esame) => { 
+                var strTemp=''; 
+                console.log( '**************** dati del TIPO getTipoEsameEconomiaAziendale ' +esame.tipoEsaDes);
+        
+                strTemp +=  esame.tipoEsaDes; 
+                var str=strOutput;
+                str=str.replace(/(@)/gi, strTemp);
+                strOutput=str;
+                agent.add(strOutput);
+                console.log('strOutput con replace in getTipoEsameEconomiaAziendale'+ strOutput);
+                resolve(agent);
 
+            }).catch((error) => {
+              console.log('Si è verificato errore in getTipoEsameEconomiaAziendale: ' +error);
+              
+            
+            });
+              break;
+              //peso
+              case 'getCreditoFormativoEconomiaAziendale':
+              controller.GetDettaglioEsame('286879','5057985', 'peso').then((esame) => { 
+                var strTemp=''; 
+                console.log( '**************** dati del peso getCreditoFormativoEconomiaAziendale' +esame.peso);
+        
+                strTemp +=  esame.peso; 
+                var str=strOutput;
+                str=str.replace(/(@)/gi, strTemp);
+                strOutput=str;
+                agent.add(strOutput);
+                console.log('strOutput con replace in getCreditoFormativoEconomiaAziendale'+ strOutput);
+                resolve(agent);
+
+            }).catch((error) => {
+              console.log('Si è verificato errore in getCreditoFormativoEconomiaAziendale: ' +error);
+              
+            
+            });
+              break;
+              //getAnnoFrequentatoEconomiaAziendale
+              case 'getAnnoFrequentatoEconomiaAziendale':
+              controller.GetDettaglioEsame('286879','5057985', 'aaFreqId').then((esame) => { 
+                var strTemp=''; 
+                console.log( '**************** dati del ANNO DI FREQUENZA getAnnoFrequentatoEconomiaAziendale' +esame.aaFreqId);
+        
+                strTemp +=  esame.aaFreqId; 
+                var str=strOutput;
+                str=str.replace(/(@)/gi, strTemp);
+                strOutput=str;
+                agent.add(strOutput);
+                console.log('strOutput con replace in getAnnoFrequentatoEconomiaAziendale'+ strOutput);
+                resolve(agent);
+
+            }).catch((error) => {
+              console.log('Si è verificato errore in getAnnoFrequentatoEconomiaAziendale: ' +error);
+              
+            
+            });
+              break;
+              //getDataEsameFattoEconomiaAziendale
+              case 'getDataEsameFattoEconomiaAziendale':
+              controller.GetDettaglioEsame('286879','5057985', 'esito.dataEsa').then((esame) => { 
+                var strTemp=''; 
+                console.log( '**************** dati del esito.dataEsa getDataEsameFattoEconomiaAziendale' +esame.esito.dataEsa);
+        
+                strTemp +=  esame.esito.dataEsa; 
+                var str=strOutput;
+                str=str.replace(/(@)/gi, strTemp);
+                strOutput=str;
+                agent.add(strOutput);
+                console.log('strOutput con replace in getDataEsameFattoEconomiaAziendale'+ strOutput);
+                resolve(agent);
+
+            }).catch((error) => {
+              console.log('Si è verificato errore in getDataEsameFattoEconomiaAziendale: ' +error);
+              
+            
+            });
+              break;
+              //getVotoEconomiaAziendale
+              case 'getVotoEconomiaAziendale':
+              controller.GetDettaglioEsame('286879','5057985', 'esito.voto').then((esame) => { 
+                var strTemp=''; 
+                console.log( '**************** dati del esito.dataEsa getVotoEconomiaAziendale ' +esame.esito.voto);
+        
+                strTemp +=  esame.esito.voto; 
+                var str=strOutput;
+                str=str.replace(/(@)/gi, strTemp);
+                strOutput=str;
+                agent.add(strOutput);
+                console.log('strOutput con replace in getVotoEconomiaAziendale '+ strOutput);
+                resolve(agent);
+
+            }).catch((error) => {
+              console.log('Si è verificato errore in getVotoEconomiaAziendale: ' +error);
+              
+            
+            });
+              break;
               //28/01/2019 AGGIUNTO ANCHE LO STOP
               case 'STOP':
               if (agent.requestSource=="ACTIONS_ON_GOOGLE"){
