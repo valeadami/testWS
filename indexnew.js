@@ -835,7 +835,7 @@ function callAVANEW(agent) {
                //30/01/2019
               // getDocenteDirittoCostituzionale
               case 'getDocenteDirittoCostituzionale':
-              controller.getDocente('286879','5057980').then((esame) => { 
+              controller.GetDocente('286879','5057980').then((esame) => { 
                 var strTemp=''; 
                 console.log( '**************** dati del DOCENTE getDocenteDirittoCostituzionale ' +esame.esito.voto);
         
@@ -855,7 +855,7 @@ function callAVANEW(agent) {
             break;
             //getTipoCorsoDirittoCostituzionale
             case 'getTipoCorsoDirittoCostituzionale':
-              controller.getDocente('286879','5057980').then((esame) => { 
+              controller.getSegmento('286879','5057980').then((esame) => { 
                 var strTemp=''; 
                 console.log( '**************** dati del TIPO CORSO getTipoCorsoDirittoCostituzionale ' +esame.esito.voto);
         
@@ -1026,7 +1026,7 @@ function callAVANEW(agent) {
               break;
               //5057985
               case 'getDocenteEconomiaAziendale':
-              controller.getDocente('286879','5057985').then((esame) => { 
+              controller.GetDocente('286879','5057985').then((esame) => { 
                 var strTemp=''; 
                 console.log( '**************** dati del DOCENTE getDocenteEconomiaAziendale ' +esame.esito.voto);
         
@@ -1046,7 +1046,7 @@ function callAVANEW(agent) {
             break;
             //TIPOCORSO 
             case 'getTipoCorsoEconomiaAziendale':
-            controller.getDocente('286879','5057985').then((esame) => { 
+            controller.getSegmento('286879','5057985').then((esame) => { 
               var strTemp=''; 
               console.log( '**************** dati del TIPO CORSO getTipoCorsoEconomiaAziendale ' +esame.esito.voto);
       

@@ -797,3 +797,4 @@ exports.deleteSingoloAppelloDaPrenotare=deleteSingoloAppelloDaPrenotare;
 exports.getPrenotati=getPrenotati;
 exports.GetDettaglioEsame=GetDettaglioEsame;
 exports.GetDocente=GetDocente;
+exports.getSegmento=getSegmento;
