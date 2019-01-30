@@ -1069,7 +1069,7 @@ function callAVANEW(agent) {
               var strTemp=''; 
               console.log( '**************** dati del TIPO CORSO getTipoCorsoEconomiaAziendale ');
       
-              strTemp +=  esame; //ritorna una stringa con LEZ
+              strTemp += esame; //ritorna una stringa con LEZ
               var str=strOutput;
               str=str.replace(/(@)/gi, strTemp);
               strOutput=str;
@@ -1082,6 +1082,7 @@ function callAVANEW(agent) {
             
           
           });
+          break;
               //28/01/2019 AGGIUNTO ANCHE LO STOP
               case 'STOP':
               if (agent.requestSource=="ACTIONS_ON_GOOGLE"){

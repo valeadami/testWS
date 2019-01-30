@@ -448,7 +448,8 @@ function getSegmento(matId,adsceId){ //matID, adsceId, param con param=annoCorso
             
             console.log('il tipo del corso '+ tipoCorso);
             tipoCorso=body[0].attibuti.tipoCreCod.toString();*/
-            resolve(body[0].attributi.tipoCreCod); //body[0].attributi.tipoCreCod
+            resolve(body[0].attributi.tipoCreCod); //body[0].attributi.tipoCreCod 
+            //perchè??? non ho ancora capito...
 
          }else{
             resolve(tipoCorso);
