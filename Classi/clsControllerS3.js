@@ -24,6 +24,7 @@ var strUrlDeleteAppello='https://units.esse3.pp.cineca.it/e3rest/api/calesa-serv
 // PARTIZIONI-> PER NOME DOCENTE 'https://units.esse3.pp.cineca.it/e3rest/api/libretto-service-v1/libretti/286879/righe/5057982/partizioni; //
 //segmenti -> per il tipo di corso LEZ https://units.esse3.pp.cineca.it/e3rest/api/libretto-service-v1/libretti/286879/righe/5057980/segmenti
 // ESAMI SOSTENUTI NEL 2018 PERTINENTI AL 2017 https://units.esse3.pp.cineca.it/e3rest/api/libretto-service-v1/libretti/286879/righe/?filter=esito.aaSupId%3D%3D2017
+// MEDIA ARITMETICA DEL LIBRETTO https://units.esse3.pp.cineca.it/e3rest/api/libretto-service-v1/libretti/286879/medie/CDSORD/A
 //var strUrlGetAppelliPrenotati=strUrlGetSingoloEsame';
 //qui ci vorrà user e pwd
 function getEsseTreLogin(){
@@ -527,10 +528,59 @@ function getEsamiUltimoAnno(matId,anno){ //matID, adsceId, param con param=annoC
     
     }); 
 }
-//getElencoCreditiUltimoAnno
-
-
-//getCreditiUltimoAnno
+//getMediaComplessiva
+//https://units.esse3.pp.cineca.it/e3rest/api/libretto-service-v1/libretti/286879/medie/CDSORD/A
+function getMediaLibrettoComplessiva(matId){ 
+    return new Promise(function(resolve, reject) {
+        var options = { 
+            method: 'GET',
+            url: strUrlGetSingoloEsame  + matId +'/medie/CDSORD/A',
+            headers: 
+                { 
+                    'cache-control': 'no-cache',
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Basic czI2MDg1NjpRM1ZSQUFRUA=='
+                },
+            json: true 
+        }
+        request(options, function (error, response, body) {
+            console.log('url di getMediaLibrettoComplessiva '+ options.url);
+            if (error) {
+                reject(error);
+                console.log('errore in getMediaLibrettoComplessiva '+ error);
+            } else {
+                if (response.statusCode==200){
+                 
+                    resolve(body); 
+                }  
+            }
+    
+        });
+    
+    }); 
+}
+//getMediaComplessiva
+function getMediaComplessiva(matId){ 
+    return new Promise(function(resolve, reject) {
+        getMediaLibrettoComplessiva(matId).then((body)=>{ 
+            var rawData='';
+            var media='';
+                    //controllo che body sia un array
+            if (Array.isArray(body)){
+                rawData=JSON.stringify(body);
+                console.log('\n\nQUESTO IL BODY della media aritmetica ' +rawData);
+                //creo oggetto libretto
+                media=body[0].media;
+                resolve(media);
+            } else{
+                console.log('manca la media');
+                resolve(media);
+            }
+          
+        });
+    
+    }); 
+}
 // FA IL LOGIN
 function doLogin(){
     return new Promise(function(resolve, reject) {
@@ -871,3 +921,4 @@ exports.GetDettaglioEsame=GetDettaglioEsame;
 exports.GetDocente=GetDocente;
 exports.getSegmento=getSegmento;
 exports.getEsamiUltimoAnno=getEsamiUltimoAnno;
+exports.getMediaComplessiva=getMediaComplessiva;

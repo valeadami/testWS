@@ -86,29 +86,18 @@ var responseFromPlq={
   'cmd':[]
 }
   app.get('/login', function(req, res, next) {
-    controller.getEsamiUltimoAnno('286879',2017).then((libretto) => { 
-      console.log('sono in getCreditiUltimoAnno')
+    controller.getMediaComplessiva('286879').then((libretto) => { 
+      console.log('sono in getmediacomplessiva')
        var strTemp=''; 
-       var conteggioCFU=0;
+     
        if (Array.isArray(libretto)){
           
-         for(var i=0; i<libretto.length; i++){
-           conteggioCFU+=libretto[i].peso;
+         console.log('la media '+ libretto[0].media);
           
 
          }
-         console.log('conteggio di CFU per anno '+conteggioCFU);
-         strTemp+=conteggioCFU;
-         console.log(' ho totalizzato cfu ='+ strTemp);
         
-       }
-       //qui devo fare replace della @, che si trova in tmp[0]
-       var str=strOutput;
-       str=str.replace(/(@)/gi, strTemp);
-       strOutput=str;
-       agent.add(strOutput);
        
-       console.log('strOutput con replace '+ strOutput);
        
        //agent.setContext({ name: 'libretto', lifespan: 5, parameters: { matID: studente.trattiCarriera[0].matId }});
        resolve(agent);
@@ -1182,6 +1171,33 @@ function callAVANEW(agent) {
               
            
             });
+              break;
+              //MEDIA ARITMETICA
+              case 'getMediaComplessiva':
+              controller.getMediaComplessiva('286879').then((media) => { 
+                console.log('sono in getMediaComplessiva');
+                 strTemp=''; 
+               
+                
+                  strTemp+=media; 
+                   
+                  console.log('la media '+ strTemp);
+                  
+                   var str=strOutput;
+                   str=str.replace(/(@)/gi, strTemp);
+                   strOutput=str;
+                   agent.add(strOutput);
+                   
+                   console.log('strOutput con replace '+ strOutput);
+                   
+                   //agent.setContext({ name: 'libretto', lifespan: 5, parameters: { matID: studente.trattiCarriera[0].matId }});
+                   resolve(agent);
+               }).catch((error) => {
+                 console.log('Si è verificato errore : ' +error);
+                 
+              
+               });
+
               break;
               //28/01/2019 AGGIUNTO ANCHE LO STOP
               case 'STOP':
