@@ -81,10 +81,11 @@ app.use(function (req, res, next) {
   };
  
 //28/01/2019
+/*
 var responseFromPlq={
   'strOutput':'',
   'cmd':[]
-}
+}*/
   app.get('/login', function(req, res, next) {
     controller.getMediaComplessiva('286879').then((libretto) => { 
       console.log('sono in getmediacomplessiva')
@@ -1248,7 +1249,11 @@ app.listen(process.env.PORT || 3000, function() {
     function getPlq(agent, options) { 
         return new Promise((resolve, reject) => {
       
-    
+    //31/01/2019 sposto qua, se no diventano globali dell'applicazione
+      var responseFromPlq={
+        'strOutput':'',
+        'cmd':[]
+      };
         console.log('dentro getPLQ con options path '+ options.path + ', hostname ' + options.hostname);
        
       
@@ -1311,6 +1316,8 @@ app.listen(process.env.PORT || 3000, function() {
                   console.log('qui ho solo la strOutput ' + comandi);*/
                  // responseFromPlq.strOutput=strOutput;
                   responseFromPlq.strOutput=strOutput.replace(/(<\/p>|<p>|<b>|<\/b>|<br>|<\/br>|<strong>|<\/strong>|<div>|<\/div>|<ul>|<li>|<\/ul>|<\/li>|&nbsp;|)/gi, '');
+                 //31/01/2019 AGGIUNTO QUESTO PER BUG-> ZZZSTART CHIUDE LA CONVERSAZIONE
+                  responseFromPlq.cmd=null;
                   console.log('qui ho solo la strOutput ' + responseFromPlq.strOutput);
                  }
                
