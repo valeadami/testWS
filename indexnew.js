@@ -1317,7 +1317,7 @@ app.listen(process.env.PORT || 3000, function() {
                  // responseFromPlq.strOutput=strOutput;
                   responseFromPlq.strOutput=strOutput.replace(/(<\/p>|<p>|<b>|<\/b>|<br>|<\/br>|<strong>|<\/strong>|<div>|<\/div>|<ul>|<li>|<\/ul>|<\/li>|&nbsp;|)/gi, '');
                  //31/01/2019 AGGIUNTO QUESTO PER BUG-> ZZZSTART CHIUDE LA CONVERSAZIONE
-                  responseFromPlq.cmd=null;
+                  responseFromPlq.cmd='';
                   console.log('qui ho solo la strOutput ' + responseFromPlq.strOutput);
                  }
                
