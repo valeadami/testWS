@@ -12,7 +12,7 @@ var strUrlLogout='https://units.esse3.pp.cineca.it/e3rest/api/logout'
 //anagrafica utente homepage dopo login ->carriere(userId)
 var strUrlAnagraficaHome='https://units.esse3.pp.cineca.it/e3rest/api/anagrafica-service-v1/carriere/'; //s260856/
 //scelgo link libretto
-var strUrlGetLibretto="https://units.esse3.pp.cineca.it/e3rest/api/libretto-service-v1/libretti/286879/righe/"; //?filter=adDes%3D%3D'DIRITTO%20COSTITUZIONALE'
+var strUrlGetLibretto="https://units.esse3.pp.cineca.it/e3rest/api/libretto-service-v1/libretti/291783/righe/"; //?filter=adDes%3D%3D'DIRITTO%20COSTITUZIONALE'
 //per recuperare esami prenotabili vado sul libretto
 var strUrlGetSingoloEsame='https://units.esse3.pp.cineca.it/e3rest/api/libretto-service-v1/libretti/'; // 286879/5057980  matId=286879  adsceId=5057980
 //var GetSingoloDettaglioEsame='https://units.esse3.pp.cineca.it/e3rest/api/libretto-service-v1/libretti'; // 286879/righe/5057980?fields=annoCorso';
