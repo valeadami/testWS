@@ -36,7 +36,7 @@ function getEsseTreLogin(){
             { 
                 'cache-control': 'no-cache',
                 'Content-Type': 'application/json',
-                'Authorization': 'Basic czI2MDg1NjpRM1ZSQUFRUA=='
+                'Authorization': 'Basic czI2MjUwMjpDR1ZZUDNURQ=='
             },
         json: true 
     }
@@ -80,7 +80,7 @@ function doLogout(){
             { 
                 'cache-control': 'no-cache',
                 'Content-Type': 'application/json',
-                'Authorization': 'Basic czI2MDg1NjpRM1ZSQUFRUA=='
+                'Authorization': 'Basic czI2MjUwMjpDR1ZZUDNURQ=='
             },
         json: true 
     }
@@ -112,7 +112,7 @@ return new Promise(function(resolve, reject) {
             { 
                 'cache-control': 'no-cache',
                 'Content-Type': 'application/json',
-                'Authorization': 'Basic czI2MDg1NjpRM1ZSQUFRUA=='
+                'Authorization': 'Basic czI2MjUwMjpDR1ZZUDNURQ=='
             },
         json: true 
     }
@@ -142,7 +142,7 @@ function getEsseTreLibretto(){
             { 
                 'cache-control': 'no-cache',
                 'Content-Type': 'application/json',
-                'Authorization': 'Basic czI2MDg1NjpRM1ZSQUFRUA=='
+                'Authorization': 'Basic czI2MjUwMjpDR1ZZUDNURQ=='
             },
         json: true 
     }
@@ -173,7 +173,7 @@ function getSingoloEsame(matId, adsceId){ //matID, adsceId
                 { 
                     'cache-control': 'no-cache',
                     'Content-Type': 'application/json',
-                    'Authorization': 'Basic czI2MDg1NjpRM1ZSQUFRUA=='
+                    'Authorization': 'Basic czI2MjUwMjpDR1ZZUDNURQ=='
                 },
             json: true 
         }
@@ -232,7 +232,7 @@ function GetSingoloDettaglioEsame(matId,adsceId, param){ //matID, adsceId, param
                 { 
                     'cache-control': 'no-cache',
                     'Content-Type': 'application/json',
-                    'Authorization': 'Basic czI2MDg1NjpRM1ZSQUFRUA=='
+                    'Authorization': 'Basic czI2MjUwMjpDR1ZZUDNURQ=='
                 },
             json: true 
         }
@@ -363,7 +363,7 @@ function GetDocenteEsame(matId,adsceId){ //matID, adsceId, param con param=annoC
                 { 
                     'cache-control': 'no-cache',
                     'Content-Type': 'application/json',
-                    'Authorization': 'Basic czI2MDg1NjpRM1ZSQUFRUA=='
+                    'Authorization': 'Basic czI2MjUwMjpDR1ZZUDNURQ=='
                 },
             json: true 
         }
@@ -417,7 +417,7 @@ function getSegmentoEsame(matId,adsceId){
                 { 
                     'cache-control': 'no-cache',
                     'Content-Type': 'application/json',
-                    'Authorization': 'Basic czI2MDg1NjpRM1ZSQUFRUA=='
+                    'Authorization': 'Basic czI2MjUwMjpDR1ZZUDNURQ=='
                 },
             json: true 
         }
@@ -475,7 +475,7 @@ function getElencoEsamiUltimoAnno(matId,anno){
                 { 
                     'cache-control': 'no-cache',
                     'Content-Type': 'application/json',
-                    'Authorization': 'Basic czI2MDg1NjpRM1ZSQUFRUA=='
+                    'Authorization': 'Basic czI2MjUwMjpDR1ZZUDNURQ=='
                 },
             json: true 
         }
@@ -539,7 +539,7 @@ function getMediaLibrettoComplessiva(matId){
                 { 
                     'cache-control': 'no-cache',
                     'Content-Type': 'application/json',
-                    'Authorization': 'Basic czI2MDg1NjpRM1ZSQUFRUA=='
+                    'Authorization': 'Basic czI2MjUwMjpDR1ZZUDNURQ=='
                 },
             json: true 
         }
@@ -661,7 +661,7 @@ function getAppelliPrenotabili(matId){
                 { 
                     'cache-control': 'no-cache',
                     'Content-Type': 'application/json',
-                    'Authorization': 'Basic czI2MDg1NjpRM1ZSQUFRUA=='
+                    'Authorization': 'Basic czI2MjUwMjpDR1ZZUDNURQ=='
                 },
             json: true 
         }
@@ -718,7 +718,7 @@ function getAppelliPrenotati(matId){
                 { 
                     'cache-control': 'no-cache',
                     'Content-Type': 'application/json',
-                    'Authorization': 'Basic czI2MDg1NjpRM1ZSQUFRUA=='
+                    'Authorization': 'Basic czI2MjUwMjpDR1ZZUDNURQ=='
                 },
             json: true 
         }
@@ -774,7 +774,7 @@ function getSingoloAppelloDaPrenotare(cdsId,adId){
                 { 
                     'cache-control': 'no-cache',
                     'Content-Type': 'application/json',
-                    'Authorization': 'Basic czI2MDg1NjpRM1ZSQUFRUA=='
+                    'Authorization': 'Basic czI2MjUwMjpDR1ZZUDNURQ=='
                 },
             json: true 
         }
@@ -833,7 +833,7 @@ function postSingoloAppelloDaPrenotare(cdsId,adId,appId,adsceId){ //csdId= 10094
                 { 
                     'cache-control': 'no-cache',
                     'Content-Type': 'application/json',
-                    'Authorization': 'Basic czI2MDg1NjpRM1ZSQUFRUA=='
+                    'Authorization': 'Basic czI2MjUwMjpDR1ZZUDNURQ=='
                 },
                 body:{
                     "adsceId": adsceId
@@ -876,7 +876,7 @@ function deleteSingoloAppelloDaPrenotare(cdsId,adId,appId,studId){ //csdId= 1009
                 { 
                     'cache-control': 'no-cache',
                     'Content-Type': 'application/json',
-                    'Authorization': 'Basic czI2MDg1NjpRM1ZSQUFRUA=='
+                    'Authorization': 'Basic czI2MjUwMjpDR1ZZUDNURQ=='
                 },
                
             json: true 

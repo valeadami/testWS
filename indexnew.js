@@ -34,7 +34,7 @@ var prm=require('./testPromise.js');
 
 
 var app = express();
-var bot='HEADdemo'; //HEADdemo FarmaInfoBot
+var bot='HEADdemo'; // modificato in data 14/03/2019 in HEAD -->HEADdemo FarmaInfoBot
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -87,7 +87,7 @@ var responseFromPlq={
   'cmd':[]
 }*/
   app.get('/login', function(req, res, next) {
-    controller.getMediaComplessiva('286879').then((libretto) => { 
+    controller.getMediaComplessiva('291783').then((libretto) => { 
       console.log('sono in getmediacomplessiva')
        var strTemp=''; 
      
@@ -632,7 +632,8 @@ function callAVANEW(agent) {
                    
                 
                  });*/
-                 controller.getCarriera('s260856').then((carriera)=> {
+                 //14/03/2109 il nuovo user è s262502
+                 controller.getCarriera('s262502').then((carriera)=> {
                   var strTemp='';
                   strTemp+='Ti sei immatricolato nell anno '+ carriera.aaId + ' , con numero matricola  '+ carriera.matricola + ', nel corso di laurea '+ carriera.cdsDes +', tipo di corso di laurea '+ carriera.tipoCorsoDes; + 'percorso '+carriera.pdsDes +', stato attuale :' +carriera.motStastuDes
                  console.log('sono nella carriera ...');
@@ -680,7 +681,7 @@ function callAVANEW(agent) {
               break;
             //28/01/2019
             case 'getNumeroMatricola':
-              controller.getCarriera('s260856').then((carriera)=> {
+              controller.getCarriera('s262502').then((carriera)=> {
                 var strTemp='';
                 strTemp+='' + carriera.matricola;
               console.log('chiedo il numero di matricola ...');
@@ -702,7 +703,7 @@ function callAVANEW(agent) {
               break;
               //28/01/2019
               case 'getAnnoImmatricolazione':
-              controller.getCarriera('s260856').then((carriera)=> {
+              controller.getCarriera('s262502').then((carriera)=> {
                 var strTemp='';
                 var dt=carriera.dataImm; //elimino minuti e secondi
                 strTemp+='' + dt.substring(0,10);
@@ -723,11 +724,12 @@ function callAVANEW(agent) {
               
               });
               break;
-              //29/01/2019
+              //29/01/2019 
+              //14/03/2019: cambiato matId da 286879 a 291783, adsceId da 5057980 a 5188667
               //******** DIRITTO COSTITUZIONALE  */
               //getDirittoCostituzionale
               case 'getDirittoCostituzionale':
-                controller.getEsame('286879','5057980').then((esame) => { 
+                controller.getEsame('291783','5188667').then((esame) => { 
                   var strTemp=''; 
                   console.log( '**************** dati del getDirittoCostituzionale******************');
           
@@ -755,7 +757,7 @@ function callAVANEW(agent) {
                 break;
                 //******** DETTAGLIO DIRITTO COSTITUZIONALE  */
                 case 'getAnnoDirittoCostituzionale':
-                controller.GetDettaglioEsame('286879','5057980', 'annoCorso').then((esame) => { 
+                controller.GetDettaglioEsame('291783','5188667', 'annoCorso').then((esame) => { 
                   var strTemp=''; 
                   console.log( '**************** dati del ANNO getDirittoCostituzionale= ' + esame.annoCorso);
           
@@ -774,7 +776,7 @@ function callAVANEW(agent) {
               });
                 break;
                 case 'getTipoEsameDirittoCostituzionale':
-                controller.GetDettaglioEsame('286879','5057980', 'tipoEsaDes').then((esame) => { 
+                controller.GetDettaglioEsame('291783','5188667', 'tipoEsaDes').then((esame) => { 
                   var strTemp=''; 
                   console.log( '**************** dati del TIPO getTipoEsameDirittoCostituzionale ' +esame.tipoEsaDes);
           
@@ -794,7 +796,7 @@ function callAVANEW(agent) {
                 break;
                 //peso
                 case 'getCreditoFormativoDirittoCostituzionale':
-                controller.GetDettaglioEsame('286879','5057980', 'peso').then((esame) => { 
+                controller.GetDettaglioEsame('291783','5188667', 'peso').then((esame) => { 
                   var strTemp=''; 
                   console.log( '**************** dati del peso getCreditoFormativoDirittoCostituzionale' +esame.peso);
           
@@ -814,7 +816,7 @@ function callAVANEW(agent) {
                 break;
                 //anno di frequenza
                 case 'getAnnoFrequentatoDirittoCostituzionale':
-                controller.GetDettaglioEsame('286879','5057980', 'aaFreqId').then((esame) => { 
+                controller.GetDettaglioEsame('291783','5188667', 'aaFreqId').then((esame) => { 
                   var strTemp=''; 
                   console.log( '**************** dati del ANNO DI FREQUENZA getAnnoFrequentatoDirittoCostituzionale' +esame.aaFreqId);
           
@@ -834,7 +836,7 @@ function callAVANEW(agent) {
                 break;
                  //getDataEsameFattoDirittoCostituzionale esito.dataEsa
                  case 'getDataEsameFattoDirittoCostituzionale':
-                 controller.GetDettaglioEsame('286879','5057980', 'esito.dataEsa').then((esame) => { 
+                 controller.GetDettaglioEsame('291783','5188667', 'esito.dataEsa').then((esame) => { 
                    var strTemp=''; 
                    console.log( '**************** dati del esito.dataEsa getDataEsameFattoDirittoCostituzionale' +esame.esito.dataEsa);
            
@@ -854,7 +856,7 @@ function callAVANEW(agent) {
                  break;
                  //getVotoDirittoCostituzionale
                  case 'getVotoDirittoCostituzionale':
-                 controller.GetDettaglioEsame('286879','5057980', 'esito.voto').then((esame) => { 
+                 controller.GetDettaglioEsame('291783','5188667', 'esito.voto').then((esame) => { 
                    var strTemp=''; 
                    console.log( '**************** dati del esito.dataEsa getVotoDirittoCostituzionale ' +esame.esito.voto);
            
@@ -875,7 +877,7 @@ function callAVANEW(agent) {
                //30/01/2019
               // getDocenteDirittoCostituzionale
               case 'getDocenteDirittoCostituzionale':
-              controller.GetDocente('286879','5057980').then((esame) => { 
+              controller.GetDocente('291783','5188667').then((esame) => { 
                 var strTemp=''; 
                 console.log( '**************** dati del DOCENTE getDocenteDirittoCostituzionale ');
         
@@ -895,7 +897,7 @@ function callAVANEW(agent) {
             break;
             //getTipoCorsoDirittoCostituzionale
             case 'getTipoCorsoDirittoCostituzionale':
-              controller.getSegmento('286879','5057980').then((esame) => { 
+              controller.getSegmento('291783','5188667').then((esame) => { 
                 var strTemp=''; 
                 console.log( '**************** dati del TIPO CORSO getTipoCorsoDirittoCostituzionale ');
         
@@ -913,10 +915,11 @@ function callAVANEW(agent) {
             
             });
             break;
-                //******** ECONOMIA AZIENDALE  */
+                //******** ECONOMIA AZIENDALE  */ 
+                //14/03/2019 da  5057985 a 5188670
                 //**********  */getEconomiaAziendale 29/01/2019 generico
                 case 'getEconomiaAziendale':
-                controller.getEsame('286879','5057985').then((esame) => { 
+                controller.getEsame('291783','5188670').then((esame) => { 
                   var strTemp=''; 
                   console.log( '**************** dati del getEconomiaAziendale ******************');
           
@@ -944,9 +947,9 @@ function callAVANEW(agent) {
                 break;
                
               //30/01/2019
-              //5057985 getAnnoEconomia Aziendale
+              //5188670 getAnnoEconomia Aziendale
               case 'getAnnoEconomiaAziendale':
-              controller.GetDettaglioEsame('286879','5057985', 'annoCorso').then((esame) => { 
+              controller.GetDettaglioEsame('291783','5188670', 'annoCorso').then((esame) => { 
                 var strTemp=''; 
                 console.log( '**************** dati del ANNO getAnnoEconomia= ' + esame.annoCorso);
         
@@ -966,7 +969,7 @@ function callAVANEW(agent) {
               break;
               //getTipoEsameEconomiaAziendale
               case 'getTipoEsameEconomiaAziendale':
-              controller.GetDettaglioEsame('286879','5057985', 'tipoEsaDes').then((esame) => { 
+              controller.GetDettaglioEsame('291783','5188670', 'tipoEsaDes').then((esame) => { 
                 var strTemp=''; 
                 console.log( '**************** dati del TIPO getTipoEsameEconomiaAziendale ' +esame.tipoEsaDes);
         
@@ -986,7 +989,7 @@ function callAVANEW(agent) {
               break;
               //peso
               case 'getCreditoFormativoEconomiaAziendale':
-              controller.GetDettaglioEsame('286879','5057985', 'peso').then((esame) => { 
+              controller.GetDettaglioEsame('291783','5188670', 'peso').then((esame) => { 
                 var strTemp=''; 
                 console.log( '**************** dati del peso getCreditoFormativoEconomiaAziendale' +esame.peso);
         
@@ -1006,7 +1009,7 @@ function callAVANEW(agent) {
               break;
               //getAnnoFrequentatoEconomiaAziendale
               case 'getAnnoFrequentatoEconomiaAziendale':
-              controller.GetDettaglioEsame('286879','5057985', 'aaFreqId').then((esame) => { 
+              controller.GetDettaglioEsame('291783','5188670', 'aaFreqId').then((esame) => { 
                 var strTemp=''; 
                 console.log( '**************** dati del ANNO DI FREQUENZA getAnnoFrequentatoEconomiaAziendale' +esame.aaFreqId);
         
@@ -1026,7 +1029,7 @@ function callAVANEW(agent) {
               break;
               //getDataEsameFattoEconomiaAziendale
               case 'getDataEsameFattoEconomiaAziendale':
-              controller.GetDettaglioEsame('286879','5057985', 'esito.dataEsa').then((esame) => { 
+              controller.GetDettaglioEsame('291783','5188670', 'esito.dataEsa').then((esame) => { 
                 var strTemp=''; 
                 console.log( '**************** dati del esito.dataEsa getDataEsameFattoEconomiaAziendale' +esame.esito.dataEsa);
         
@@ -1046,7 +1049,7 @@ function callAVANEW(agent) {
               break;
               //getVotoEconomiaAziendale
               case 'getVotoEconomiaAziendale':
-              controller.GetDettaglioEsame('286879','5057985', 'esito.voto').then((esame) => { 
+              controller.GetDettaglioEsame('291783','5188670', 'esito.voto').then((esame) => { 
                 var strTemp=''; 
                 console.log( '**************** dati del esito.dataEsa getVotoEconomiaAziendale ' +esame.esito.voto);
         
@@ -1066,7 +1069,7 @@ function callAVANEW(agent) {
               break;
               //getDocenteEconomiaAziendale
               case 'getDocenteEconomiaAziendale':
-              controller.GetDocente('286879','5057985').then((esame) => { 
+              controller.GetDocente('291783','5188670').then((esame) => { 
                 var strTemp=''; 
                 console.log( '**************** dati del DOCENTE getDocenteEconomiaAziendale ');
         
@@ -1086,7 +1089,7 @@ function callAVANEW(agent) {
             break;
             //TIPOCORSO  getTipoCorsoEconomiaAziendale
             case 'getTipoCorsoEconomiaAziendale':
-            controller.getSegmento('286879','5057985').then((esame) => { 
+            controller.getSegmento('291783','5188670').then((esame) => { 
               var strTemp=''; 
               console.log( '**************** dati del TIPO CORSO getTipoCorsoEconomiaAziendale ');
       
@@ -1107,7 +1110,7 @@ function callAVANEW(agent) {
           //30/01/2019
           //getEsamiUltimoAnno ---> QUANTI ESAMI HO FATTO!!!
           case 'getEsamiUltimoAnno':
-          controller.getEsamiUltimoAnno('286879',2017).then((libretto) => { 
+          controller.getEsamiUltimoAnno('291783',2017).then((libretto) => { 
            console.log('sono in getEsamiUltimoAnno')
             var strTemp=''; 
            
@@ -1141,7 +1144,7 @@ function callAVANEW(agent) {
             break;
             //getCreditiUltimoAnno
             case 'getCreditiUltimoAnno':
-            controller.getEsamiUltimoAnno('286879',2017).then((libretto) => { 
+            controller.getEsamiUltimoAnno('291783',2017).then((libretto) => { 
              console.log('sono in getCreditiUltimoAnno')
               var strTemp=''; 
               var conteggioCFU=0;
@@ -1175,7 +1178,7 @@ function callAVANEW(agent) {
               break;
               //MEDIA ARITMETICA
               case 'getMediaComplessiva':
-              controller.getMediaComplessiva('286879').then((media) => { 
+              controller.getMediaComplessiva('291783').then((media) => { 
                 console.log('sono in getMediaComplessiva');
                  strTemp=''; 
                
