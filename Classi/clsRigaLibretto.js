@@ -117,7 +117,6 @@ function RigaLibretto(aaFreqId, adCod,adDes,adsceId,annoCorso,chiaveADContestual
        
     };
 }
-
 module.exports = RigaLibretto;
 
 
