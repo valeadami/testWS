@@ -548,7 +548,7 @@ function callAVANEW(agent) {
       
      });  
       *********/
-     
+      
      var tmp;
      var strOutput
      getPlq(agent, options).then((responseFromPlq)=>{ //responseFromPlq  -> comandi
