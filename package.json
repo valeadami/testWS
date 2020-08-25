@@ -2,7 +2,7 @@
   "name": "testws",
   "version": "1.0.0",
   "description": "test per ws3",
-  "main": "indexnew.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node indexnew.js"

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+   <!-- <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <title>Voicebot</title>
     <link type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="normalize.css" />
@@ -10,9 +10,12 @@
     <link rel="icon" href="i/favicon.png" type="image/x-icon" />
     <script type="text/javascript" src="app.js"></script>
     <meta name="viewport" content="width=device-width" />
+-->
   </head>
 <body>
-
+  <h1>TEST DI CHATBOT VERSIONE INGLESE/ITALIANO</h1>
+  <h2>CAMBIA LA LINGUA NELLO SCRIPT PER ABILITARE EN O IT</h2>
+<!-- 
   <div class="app-container">
     <div class="app-header"><h1>Voicebot</h1></div>
     <div class="app-content">
@@ -39,6 +42,15 @@
     ga('send', 'pageview');
 
   </script>
+-->
+<script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <df-messenger
+      intent="WELCOME"
+      chat-title="Faq_Chatbot"
+      agent-id="bba56ecb-fa2a-4fc0-a24b-821f936e789f"
+      language-code="en"
+    ></df-messenger>
+
 
 </body>
 </html>
